@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx, fancyhdr}
+\usepackage{amsmath, amsfonts}
+\usepackage{color, hyperref}
+\usepackage{enumerate}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+ 
+\newcommand{\blue}[1]{{\color{blue} #1}}
+
+\setlength{\topmargin}{-.375 in}
+\setlength{\textheight}{8.75 in}
+\setlength{\textwidth}{6.5 in}
+\setlength{\evensidemargin}{0 in}
+\setlength{\oddsidemargin}{0 in}
+\setlength{\parindent}{0 in}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\lhead{Stat 305} 
+\chead{Homework 10} 
+\rhead{Wednesday, May 8}
+\lfoot{Spring 2019}
+\cfoot{\thepage} 
+\rfoot{} 
+
+\def\Exp#1#2{\ensuremath{#1\times 10^{#2}}}
+\def\Case#1#2#3#4{\left\{ \begin{tabular}{cc} #1 & #2 \phantom
+{\Big|} \\ #3 & #4 \phantom{\Big|} \end{tabular} \right.}
+
+\begin{document}
+\pagestyle{fancy} 
+
+Show \textbf{all} of your work on this assignment and answer each question fully in the given context. \\
+
+\emph{Please} staple your assignment!! \\
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The ``treadwear warranty'' of a tire is often used as a tool to
+  communicate to consumers some idea of the tire's treadlife. Assuming
+  that the conditions of the warranty are met (for instance, that the
+  tires are regularly rotated), the warranty may allow the tire
+  purchaser to be reimbursed for lost mileage if the tire does not last
+  as long as the warranty indicated. For instance, if an \$80.00 tire
+  has a tread wear warranty of 60,000 miles and is sufficiently worn
+  down at 45,000 miles, the manufacturer may be required to pay for the
+  remaining 15,000 - in other words, to reimburse the customer \$20.00.
+  In light of this, consider the following scenario:
+
+  An engineer working for a tire company has developed a very cheap tire
+  - the cost of production is \$20.00. 40 of these tires are sampled in
+  order to determine the lifetime of the tire in terms of miles it it
+  can be driven until the tread depth is 2/32 of an inch (the legal
+  minimum tread depth). The sampled tire lifetimes are recorded below
+  (in thousands of miles):
+
+  \begin{quote}
+  41.3, 30.7, 39.7, 31.8, 39.3, 35, 33.6, 38.9, 31.7, 38.1, 43.9, 30.6,
+  33.3, 29.8, 35.9, 34.8, 34.6, 36, 41.5, 37.2, 40.4, 38.4, 36.8, 32.5,
+  27.7, 32.1, 35.3, 36.7, 39.4, 40.6, 31.2, 33.9, 33, 43.9, 33.6, 32.6,
+  36.2, 32.5, 31.7, 31.5
+  \end{quote}
+
+  The average lifetime of the 40 tires is \(\bar{x} = 35.44\) thousand
+  miles and the sample variance is \(s^2 = 15.88\) thousand miles
+  squared.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Provide a 95\% confidence lower bound for the mean lifetime of this
+    type tire.
+  \item
+    Suppose market research suggests the tire could be sold with a
+    60,000 mile treadwear warranty for \$60.00. If the company
+    reimburses mileage \$1.00 for every thousand miles short of 60,000
+    the tire travels, is there evidence they could make money on this
+    tire?
+  \end{enumerate}
+\item
+  A common rule-of-thumb for safe following distance is to stay two
+  seconds behind the lead car. For a car travelling at 60 mph, a safe
+  stopping distance would thus be \(176\) feet.
+
+  In order to test this requirement, a common current model of car is
+  accelerated to 60 mph, after which point a signal is given for the
+  driver to bring the car to a complete halt. The distance required from
+  the point the driver was signaled to the point the car came to a halt
+  is recorded. The experiment is repeated 10 times, and the resulting
+  stopping distances are recorded below:
+
+  \begin{quote}
+  175, 187.5, 200.55, 180.4, 200.12, 186.77, 188.9, 183.78, 175.16,
+  183.86
+  \end{quote}
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \item
+    Find the sample mean, \(\bar{x}\), and the sample standard
+    deviation, \(s^2\), for the sample.
+  \item
+    For \(\mu\) representing the true mean stopping time, conduct a 95\%
+    confidence test for the null hypothesis \(\mu \le 176 \text{ feet}\)
+    against the alternative hypothesis \(\mu > 176 \text{ feet}\).
+    Include the hypothesis statement, your test statistic, an estimate
+    of the p-value, and your conclusion.
+  \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  While ornate stained glass doors can improve the curb appeal of a new
+  construction home, the process of installing such doors can be a
+  headache for the construction companies building them. There are
+  several stages where the process can go wrong - the door can be
+  damaged at the warehouse, while being shipped, while waiting to be
+  installed, by construction mishaps after installation, etc. A
+  construction company looking to minimize the problems associated with
+  reordering such doors is attempting to determine what proportion of
+  doors actually arrive on the job site damaged. The company's current
+  working belief is that 10\% of fragile products will be damaged during
+  shipping. Keeping track of the next 50 doors shipped, they found 4 of
+  the doors arrived already damaged.
+
+  Suppose that we are interested in \(p\), the probability that a door
+  is damaged during shipping. In order to do inference on \(p\), we need
+  to find a test statistic that connects our observable data (the number
+  of damaged doors) to \(p\) through a distribution. Assuming the
+  shipments are independent, the following problems help us find such a
+  test statistic:
+
+  If we define a Bernoulli random variable, \(X_i\), for each shipment
+  as \(X_i = 1\) if Door \(i\) is damaged and \(X_i\) = 0 if Door \(i\)
+  is undamaged, then we can also say the following \(P(X_i = 1) = p\)
+  (which is just the probability a door is damaged during shippinig).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \tightlist
+  \item
+    Find \(E(X_i)\)
+  \item
+    Find \(Var(X_i)\)
+  \end{enumerate}
+
+  Define the sample mean of the \(X_i\) random variables as
+  \(\bar{X} = \frac{1}{n} \sum_{i=1}^n X_i\).
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \setcounter{enumii}{2}
+  \tightlist
+  \item
+    Find \(E(\bar{X})\)
+  \item
+    Find \(Var{\bar{X}}\)
+  \item
+    What is the distribution of \(\bar{X}\)?
+  \end{enumerate}
+
+  At this point we should be able to recognize a test statistic we can
+  use to test hypotheses.
+
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii}.}
+  \setcounter{enumii}{5}
+  \tightlist
+  \item
+    Perform a hypothesis test for the claim that the probability of a
+    door being damaged is less than 0.10. Include the hypothesis
+    statement, your test statistic, an estimate of the p-value, and your
+    conclusion.
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}

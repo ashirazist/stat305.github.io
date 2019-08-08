@@ -10,9 +10,9 @@ markdown: kramdown
 navigation:
 
 - text: Home 
-  url: /index.html
+  url: https://ashirazist.github.io/stat305.github.io/index.html
 - text: Schedule
-  url: /schedule.html
+  url: https://ashirazist.github.io/stat305.github.io/schedule.html
 - text: Syllabus
   url: /syllabus.html
 - text: Homework

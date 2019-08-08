@@ -1,0 +1,21 @@
+# Site settings
+name: Stat 305 at ISU
+title: Engineering Statisitcs
+email: ashirazi@iastate.edu
+description: All models are wrong, but some are useful. (George E. P. Box)
+# Build settings
+markdown: kramdown
+url: http://localhost:4000
+markdown: kramdown
+navigation:
+
+- text: Home 
+  url: /index.html
+- text: Schedule
+  url: /schedule.html
+- text: Syllabus
+  url: /syllabus.html
+- text: Homework
+  url: /homework.html
+- text: Exam Material
+  url: /exam_material.html

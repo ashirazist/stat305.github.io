@@ -6,7 +6,7 @@ class: center, middle, inverse
 ## Why Engineers Study Statistics
 ### Chapter 1: Introduction, Continued
 ### Chapter 2: Data Collection
-.footnote[Course page: [imouzon.github.io/stat305](https://imouzon.github.io/stat305)]
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io/)]
 ---
 # Section 1.2
 ## Basic Terminology, Continued

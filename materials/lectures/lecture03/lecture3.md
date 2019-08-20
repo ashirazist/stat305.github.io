@@ -1,10 +1,15 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 name: inverse
 layout: true
 class: center, middle, inverse
 ---
 # STAT 305: Lecture 3
 ## Chapter 2: Data Collection
-.footnote[Course page: [imouzon.github.io/stat305](https://imouzon.github.io/stat305)]
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io)]
 ---
 layout: true
 class: center, middle, inverse
@@ -258,7 +263,7 @@ For a simple random sample of size \(n\) from a population of size \(N\),
    3. continue until you have selected \\(n\\) items
 
 <center>
-   <img src="figs/table2.2.png" alt="dmc logo" height="125"> 
+  <img src="table2.2.png" alt="dmc logo" height="125">
 </center>
 
 ]

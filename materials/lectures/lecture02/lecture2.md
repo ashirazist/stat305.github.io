@@ -1,7 +1,12 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 name: inverse
 layout: true
 class: center, middle, inverse
----
+---  
 # STAT 305: Lecture 2
 ## Why Engineers Study Statistics
 ### Chapter 1: Introduction, Continued

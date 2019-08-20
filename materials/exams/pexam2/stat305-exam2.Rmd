@@ -1,0 +1,174 @@
+---
+course: STAT 305
+section: B
+semester: Spring 2019
+date: April 11, 2019
+number: II
+output:
+  pdf_document:
+    keep_tex: true
+    template: ../../templates/exam-template.tex
+    latex_engine: pdflatex
+...
+
+```{r echo=FALSE, cache=FALSE, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(gridExtra)
+knitr::opts_chunk$set(
+   cache=FALSE,
+   fig.width=4,
+   fig.height=4,
+   fig.align='center',
+   out.width='.4\\linewidth',
+   out.height='.4\\linewidth',
+   echo=FALSE
+)
+```
+
+\question[2] For discrete distributions, the probability function is \fillin\ and the cumulative probability function is \fillin.
+\begin{oneparchoices}
+\choice discontinuous and discontinuous
+\choice discontinuous and continuous
+\choice continuous and continuous
+\choice continuous and discontinuous
+\end{oneparchoices}
+\vspace{1cm}
+
+\question[3]
+Circle the name of the distribution which best matches the plot of the probability density function:
+
+```{r}
+x <- seq(-3, 3, by=0.1)
+ggplot() + geom_path(aes(x=x, y=dnorm(x, 0, 1))) + theme_bw() + xlab('x') + ylab('f(x)')
+```
+\begin{oneparchoices}
+\choice exponential 
+\choice normal 
+\choice uniform
+\choice binomial
+\end{oneparchoices}
+\vspace{1cm}
+
+\question[3]
+Circle the name of the distribution which best matches the plot of the cumulative density function:
+
+```{r}
+x <- seq(-3, 3, by=0.1)
+ggplot() + 
+   geom_path(aes(x=c(x[x<0], 0), y=c(dexp(x[x<0], 1), 0))) + 
+   geom_path(aes(x=x[x>=0], y=dexp(x[x>=0], 1))) + 
+   theme_bw() + xlab('x') + ylab('F(x)')
+```
+\begin{oneparchoices}
+\choice exponential 
+\choice normal 
+\choice uniform
+\choice binomial
+\end{oneparchoices}
+
+\newpage
+\question[4] The left plot depicts the probability density function of a step-uniform random variable. In the plot on the right, sketch the corresponding cumulative density function.
+```{r, fig.width=9, out.width='0.9\\linewidth'}
+x <- seq(-3, 3, by=0.1)
+p0 <- ggplot() + 
+   geom_path(aes(x=c(-3, -2), y=c(0, 0))) + 
+   geom_path(aes(x=c(-2, 0), y=c(.2, .2))) + 
+   geom_path(aes(x=c(0, 2), y=c(.3, .3))) + 
+   geom_path(aes(x=c(2, 3), y=c(0, 0))) + 
+   theme_bw() + xlab('x') + ylab('f(x)')
+p1 <- ggplot(data=NULL, aes(x=c(-3, 3), y=c(0, 1))) + 
+   theme_bw() + xlab('x') + ylab('F(x)') +
+   geom_blank()
+grid.arrange(p0, p1, ncol=2)
+```
+
+\vspace{1cm}
+
+\question Suppose $X$ is a discrete random variable with following probability function:
+$$ f(x) = \begin{cases} 0.1 & x = -2, 0, 2 \\ 0.35 & x = -1, 1 \\ 0 & o.w. \end{cases} $$
+
+\qparts{
+\part[2] Find $P(X = 0)$ \vspace{2.5cm}
+\part[2] Find $P(X \le 0)$ \vspace{2.5cm}
+\part[2] Find $P(X \ne 0)$ \vspace{2.5cm}
+}
+
+\newpage
+
+\question 
+Two manufacturers (A and B) of the same electrical circuit board are being used by a company. 
+The boards have five circuit connectors which can either be defective or non-defective (meaning that each circuit board could have 0, 1, 2, 3, 4, or 5 nondefective connectors).
+The company knows that the manufacturer matters when it comes to the chance that the connectors are defective.
+Unfortunately, all the circuit boards have been placed in the same container and there is no clear way to tell them apart.
+We do know the following though:
+$$P(\text{``There are }k\text{ defective connectors on the board"} | \text{``The board is manufacturer A"}) = \frac{5!}{(5-k)! k!} \left(\frac{1}{4}\right)^k \left(\frac{3}{4}\right)^{5 - k} $$  
+$$P(\text{``There are }k\text{ defective connectors on the board"} | \text{``The board is manufacturer B"}) = \frac{5!}{(5-k)! k!} \left(\frac{1}{2}\right)^k \left(\frac{1}{2}\right)^{5 - k} $$  
+Suppose that we also know that there were 300 boards of manufacturer A and 200 boards of manufacturer B.
+
+\qparts{
+\part[2] Find the probability that a randomly chosen board is from manufacturer A. \vspace{3cm}
+\part[2] Find the probability that a randomly chosen board has no defective connectors \textit{given} that it is from manufacturer A. \vspace{3cm}
+\part[2] Find the probability that a randomly chosen board is from manufacturer A and has 0 defective connectors. \vspace{3cm}
+\part[2] Find the probability that a randomly chosen board is from manufacturer B and has 0 defective connectors. \vspace{3cm}
+\part[2] Find the probability that a randomly chosen board has 0 defective connectors. \vspace{3cm}
+\part[2] Find the probability that a randomly chosen board is from manufacturer A \textit{given} that it has 0 defective connectors. \vspace{5cm}
+\part[2] Find the probability that a randomly chosen board is from manufacturer B \textit{given} that it has 2 defective connectors. \vspace{5cm}
+}
+
+\newpage
+
+\question 
+Let $X$ be a poisson random variable with $\lambda = 6$. 
+\qparts{
+\part[2] Find $P(X = 3)$ \vspace{2cm}
+\part[2] Find $P(X < 2)$ \vspace{2cm}
+\part[2] Find $E(X)$ \vspace{2cm}
+\part[2] Find $Var(X)$ \vspace{2cm}
+}
+
+\question 
+Let $Y$ be an exponential random variable with mean 2.
+\qparts{
+\part[2] Find $P(Y \le 3)$ \vspace{2cm}
+\part[2] Find $P(1 \le Y \le 3)$ \vspace{3cm}
+\part[2] Find $E(Y)$ \vspace{2cm}
+\part[2] Find $Var(Y)$ \vspace{2cm}
+}
+
+\newpage
+
+\question
+
+Let $X$ be a normal random variable with a mean of 2 and a varaince of 9 (i.e., $X \sim N(2,9)$) and let $Z$ be a random variable following a standard normal distribution. Find the following probabilities (note: Table B-3 will be helpful): \vspace{1cm}
+\qparts{
+  \part[2] $P(Z \le 2)$ \vspace{2cm}
+  \part[2] $P(|Z| \ge 1)$ \vspace{2cm}
+  \part[2] $P(0 \le Z < 3)$ \vspace{2cm}
+  \part[2] $P(X < 3)$ \vspace{3cm}
+  \part[2] $P(|X-2| \le 2.5)$ \vspace{3cm}
+  \part[5] Find the value $a$ so that $P(X < a) = .95$ (hint: start with a standard normal)
+}
+
+\newpage
+
+\question 
+
+Suppose that $X$ is a continuous random variable with probability density function (pdf):
+$$ f(x) = \begin{cases} 0.25 + c x^2 &  -1 < x < 1 \\ 0 & \text{otherwise} \end{cases} $$
+where $c$ is a constant (not necessarily positive).
+
+\qparts{
+\part[2] What is the value of $c$ if $f(x)$ is a valid probability density function? \vspace{2cm}
+\part[5] Sketch the probability density function using the grid below (including the points $(-1, f(1))$, $(0, f(0))$, and $(1, f(1))$).
+
+```{r, fig.width=9, out.width='0.9\\linewidth'}
+ggplot(data=NULL, aes(x=c(-1, 1.5), y=c(1.5, 1.5))) + 
+   theme_bw() + xlab('x') + ylab('f(x)') +
+   geom_blank()
+```
+\part[4] What is the cumulative density function, $F(x)$? \vspace{3cm}
+\part[2] What is the probability that $X$ takes a value greater than 1? \vspace{2cm}
+\part[2] What is the probability that $X$ takes a value between 0 and 1? \vspace{2cm}
+}

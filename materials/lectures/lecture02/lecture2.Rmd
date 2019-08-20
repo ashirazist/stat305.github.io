@@ -1,9 +1,20 @@
 ---
+title: "STAT 305: Lecture 2"
+author: "Amin Shirazi"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
 class: center, middle, inverse
 layout: yes
 name: inverse
----  
-# STAT 305: Lecture 2
+
 ## Why Engineers Study Statistics
 ### Chapter 1: Introduction, Continued
 ### Chapter 2: Data Collection

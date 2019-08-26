@@ -45,7 +45,7 @@ Each column in the table represents a value for some observed characterstic obse
 
 A single brand and model of lightbulb is being examined for average failure time.
 Five bulbs were run until they burned out and their lifetime was recorded in hours.
-The first bult lasted 521.4 hours, the second bulb lasted 501.2 hours, 
+The first bulb lasted 521.4 hours, the second bulb lasted 501.2 hours, 
 the third bulb lasted 541.8 hours,
 the fourth bulb lasted 498.1 hours,
 and the fifth bulb lasted 528.2 hours.
@@ -216,30 +216,9 @@ part    measurement    value
 .       .                  .
 100     functioning      yes
 ```
-When data is arranged like this, with each sampling unit on its own row, the data is said to be in **long format**. Long format matches each recorded value to a unique set of identifiers called **keys** - in this case, for example, the first row matches the recorded value 3.2 uniquely to the measurement Rockwell hardness and the first part in our sample.
+When data is arranged like this, with each sampling unit on its own row, the data is said to be in **long format**. 
 ]
 
-
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-## Data Structures
-]
-.right-column[
-## Types of Data Structures
-
-The complexity of our data we gather changes based on our objective.  Consider the following scenarios:
-
-**Scenario 1: Simple Data Structure**
-We have designed a less expensive method for cleaning the byproduct of our production process. We wish to get an estimate of how well it works by using it to clean multiple samples of the byproduct.
-- Our data will consist of a identifier to distinguish one sample from another and a measure of cleanliness after treatment with the new method.
-
-**Scenario 2: Complex Data Structure**
-Synthesis of a certain chemical can be done in a number of ways. We are considering two sets of substrates, three environments where production can occur, and three chemists to perform the synthesis. Our goal is to get the purest end product.
--  We must gather data on substrate, environment, the chemist's identity, and the resulting purity.
-]
 ---
 layout:false
 .left-column[
@@ -254,9 +233,9 @@ layout:false
 
 >  We call the process variables **factors** and the possible settings for a process variable its **levels**
 
->  **Complete Factorial Studies** are factorial studies where data is collected from each possible combination of the levels of the factors.
+>  **Complete Factorial Studies** are factorial studies where data is collected from each possible combination of the levels of the factors (also known as **Full Factorial Studies**).
 
->  **Partial Factorial Studies** are factorial studies where data is collected from some (but not all) possible combinations of the levels of the factors.
+>  **Partial(Fractional) Factorial Studies** are factorial studies where data is collected from some (but not all) possible combinations of the levels of the factors.
 
 ]
 ---
@@ -271,7 +250,7 @@ layout:false
 ## Factorial Studies Example 
 
 > A pair of chemists, Walter and Jessie, are attempting to synthesize a chemical product and consider purity to be the most important quality.
-There are three environments available to them (a winnebago, a basement, and a laboratory) and two precursors (pseudoephedrine/methylamine). They are both willing to take the role of "lead cook" and will try all their options in order to get the best results.
+There are three environments available to them ( RV, a basement, and a laboratory) and two precursors (Chemical compound) (pseudoephedrine/methylamine). They are both willing to try all their options in order to get the best results.
 
 -  What parts of this synthesis are being treated as variables which can be controlled at the start of the experiment?
 
@@ -283,7 +262,7 @@ There are three environments available to them (a winnebago, a basement, and a l
 ???
 
 lead cook - Walter, Jessie
-environment - winnebago, basement, lab
+environment - RV, basement, lab
 precursor - pseudo, methylamine
 
 2 x 3 x 2 = 12
@@ -315,14 +294,14 @@ $$
 
 ```text
          cook     environment    precursor
-         walter   winnebago      psuedoephedrine
-         walter   winnebago      methylamine
+         walter   RV             psuedoephedrine
+         walter   RV             methylamine
          walter   basement       psuedoephedrine
          walter   basement       methylamine
          walter   lab            psuedoephedrine
          walter   lab            methylamine
-         jessie   winnebago      psuedoephedrine
-         jessie   winnebago      methylamine
+         jessie   RV             psuedoephedrine
+         jessie   RV             methylamine
          jessie   basement       psuedoephedrine
          jessie   basement       methylamine
          jessie   lab            psuedoephedrine
@@ -348,11 +327,26 @@ layout:false
 
 After testing each scenario, Walter and Jessie decide that the best combination to use is Walt as cook in the lab with methylamine.
 However, a new "chemist" Victor has joined the group and is going to try to be the cook and "follow the recipe" in the lab.
-Jessie also tries a new environment, South America, where only methylamine is available.
+Jessie also tries a new environment, South America.
 
 -  If we consider the all the past combinations to be part of this new study, how many combinations of factor levels are now possible?
 
--  Victor never works in the Winnebago, the basement, or South America. Walter never works in South America.
+
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Data Structures
+]
+.right-column[
+
+-  Victor never works in the RV, the basement, or South America. 
+
+
+
+-  Walter never works in South America.
 ]
 ---
 layout:false
@@ -370,14 +364,14 @@ layout:false
 
 ```
      cook     env         precursor
-1.   walt     winne       pseudo
-2.   walt     winne       methylamine
+1.   walt     RV          pseudo
+2.   walt     RV          methylamine
 3.   walt     basement    pseudo
 4.   walt     basement    methylamine
 5.   walt     lab         pseudo
 6.   walt     lab         methylamine
-7.   jessie   winne       pseudo
-8.   jessie   winne       methylamine
+7.   jessie   RV          pseudo
+8.   jessie   RV          methylamine
 9.   jessie   basement    pseudo
 10.  jessie   basement    methylamine
 11.  jessie   lab         pseudo
@@ -410,9 +404,9 @@ layout:false
 ## If You Can't Measure, You Can't Do Statistics
 ### Or Engineering For That Matter
 
--  **Validity**: faithfully representing the aspect of interest
+-  **Validity**: faithfully representing the feature of interest
 -  **Precision**: the amount of variation in repeated measures
--  **Accuracy**: aka "unbiasedness"; how close a measurement is to the true value "on average"
+-  **Accuracy**:  "unbiasedness"; how close a measurement is to the true value "on average"
 
 We **calibrate** to improve accuracy
 ]

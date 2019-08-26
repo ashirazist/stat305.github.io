@@ -3,7 +3,7 @@ title: "STAT 305: Lecture 2"
 author: "Amin Shirazi"
 date: "`r Sys.Date()`"
 
-output:
+output: 
   xaringan::moon_reader:
     lib_dir: libs
     nature:

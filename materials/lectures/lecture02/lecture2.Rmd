@@ -1,7 +1,4 @@
 ---
-title: "STAT 305: Lecture 2"
-author: "Amin Shirazi"
-date: "`r Sys.Date()`"
 
 output: 
   xaringan::moon_reader:
@@ -12,7 +9,14 @@ output:
       countIncrementalSlides: false
 
 ---
+class: center, middle, inverse
+layout: yes
+name: inverse
 
+## STAT 305: Lecture 2
+### Amin Shirazi
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io/)]   
+---
 class: center, middle, inverse
 layout: yes
 name: inverse
@@ -20,7 +24,7 @@ name: inverse
 ## Why Engineers Study Statistics
 ### Chapter 1: Introduction, Continued
 ### Chapter 2: Data Collection
-.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io/)]   
+   
 ---
 # Section 1.2
 ## Basic Terminology, Continued
@@ -115,7 +119,7 @@ Notice:
 
 -  Type of bill is is a **Qualitative** variable.
 -  Amount paid is **quantitative discrete**.
--  Date is ...
+
 ]
 ---
 layout:false
@@ -322,6 +326,25 @@ layout:false
 
 <center>
    <h2> Factorial Studies Example, cont </h2>
+   <img src="figs/being_chemists_trim.jpg" alt="dmc logo" height="125"> 
+</center>
+
+
+If we collect data from each of these combinations, we have performed a **A Complete Factorial Study**
+
+]
+
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Data Structures
+]
+.right-column[
+
+<center>
+   <h2> Factorial Studies Example, cont </h2>
    <img src="figs/new_chemists_trim.jpg" alt="dmc logo" height="125"> 
 </center>
 
@@ -379,6 +402,23 @@ layout:false
 13.  jessie   so. am.     methylamine
 14.  victor   lab         methylamine
 ```
+]
+
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Data Structures
+]
+.right-column[
+
+<center>
+   <h2> Factorial Studies Example, cont </h2>
+   <img src="figs/still_chemists_trim.jpg" alt="dmc logo" height="125"> 
+</center>
+
+
 In this case, we would have a **Fractional Factorial Study** - a factorial study in which no data is collected for some possible combinations.
 ]
 

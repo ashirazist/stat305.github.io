@@ -444,15 +444,149 @@ layout:false
 ## If You Can't Measure, You Can't Do Statistics
 ### Or Engineering For That Matter
 
--  **Validity**: faithfully representing the feature of interest
--  **Precision**: the amount of variation in repeated measures
--  **Accuracy**:  "unbiasedness"; how close a measurement is to the true value "on average"
+-  Success in statistical engineering studies requires the ability to measure
+-  Methods of measurements are available for some physical properties (length, mass, temperature, ...) 
+  -  Often, the behavior of anengineering system can be adequately characterized in terms of such properties
+-  If it cannot, engineers  must carefully define what is about the system that needs observing and then create a suitable method of measurement. 
 
-We **calibrate** to improve accuracy
+
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+### Key Words
+]
+.right-column[
+
+## If You Can't Measure, You Can't Do Statistics
+### Example:
+Two students wanted to conduct a factorial study comparing joint strengths for combinations of three different woods and three glues. 
+-  Didn't know how to have access to strength-testing equipment, so invented their own.
+-  Suspend a large container from one of the pieces of wood involved and poured water into it until the weight was sufficient to break the joint. 
+-  Knowing the volume of the water poured into the container and the density of the water, they could determine the force required to break the joint. 
+
 ]
 
-???
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+### Key Words
+]
 
+.right-column[
+
+<center>
+   <h2> If You Can't Measure, You Can't Do Statistics </h2>
+   <img src="figs/funny1.JPG" alt="dmc logo" height="200"> 
+   <img src="figs/funny2.JPG" alt="dmc logo" height="200">
+      <img src="figs/funny3.JPG" alt="dmc logo" height="200"> 
+</center>
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+### Key Words
+]
+.right-column[
+
+## If You Can't Measure, You Can't Do Statistics
+### Measurement and its importance and difficulty
+
+-  **Validity**: appropriately represent the feature of interest
+    Variation is always present in collecting data. 
+    
+    -  Some come from the the objects under study as they are never alike(that might be of interest to see if the variation is due to the object) 
+    -  Some of it is due to the fact that the measurement processes have their own inherent variablity.
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+### Key Words
+]
+.right-column[
+
+## If You Can't Measure, You Can't Do Statistics
+### Measurement and its importance and difficulty
+
+-  **Precision**: the amount of variation in repeated measurement of the same object
+
+A measurement system is called **precise** if it produces small variation in repreated measurement of the same object
+  -  Precision is the internal consistency of a measurement system: typically, it can be improved only with basic changes in the configuration of the system. 
+]
+
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+### Key Words
+]
+.right-column[
+
+## If You Can't Measure, You Can't Do Statistics
+### Measurement and its importance and difficulty
+
+Precision of a measurement is important, but for many purposes it alone is not adequate. 
+-  **Accuracy**: or **Unbiasedness**; how close a measurement is to the true value "on average".
+
+Accuracy is the agreement of a measuring system with some external standard. It can be changed without extensive physical change in a measurement method. So, we **calibrate** to improve accuracy.
+
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+### Key Words
+]
+.right-column[
+
+## If You Can't Measure, You Can't Do Statistics
+### Measurement and its importance and difficulty
+
+-  **Calibration** of a system against the standard (bringing the measurement system in line with the standard) can be
+  -  As simple as comparing the measurement system to a standard
+  -  Developing an appropriate conversion scheme and then using converted values in place of recording observed measurements. 
+
+
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+### Key Words
+]
+.right-column[
+
+## If You Can't Measure, You Can't Do Statistics
+### Accuracy VS. Precision
+-  Comparing measurement to target shooting
+  -  **Accuracy**: how close a measurement is to the true value "on average"
+  -  **Precision**: the amount of variation in repeated measurement of the same object
+<center>
+   <h2></h2>
+   <img src="figs/shooting.JPG" alt="dmc logo" height="250" width= "300"> 
+
+</center>
+
+
+]
 ---
 name: inverse
 layout: true
@@ -471,16 +605,29 @@ layout:false
 .right-column[
 
 ## Mathematical Models and Data Analysis
+A discussion on the relationships of mathematics to the physical words and to engineering statistics. 
 
->  **Mathematical Model**: A description of a physical system using mathematical concepts and language.
+>  **Mathematical Model**: A description of a physical system using mathematical concepts and language (in terms of symbols, equations, numbers, and the like)
 
-Identifying mathematical relationships between parts of a system allows us to describe complexity in simple terms.  
+-  Identifying mathematical relationships between parts of a system allows us to describe complexity in simple terms.
+-  An effective mathematical model is the one which is **simple** and has **predictive ability**.
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+## Math Models
+]
+.right-column[
 
+## Mathematical Models and Data Analysis
 **Example**: Height of an Object in Projectile Motion
 
 We can describe the relationship between height of a projectile \\(y\\) and time \\(t\\) as
 \\[
-y  = h_0 + v_h \cdot t - \frac{1}{2} g t^2, \text{ } t \ge 0,
+h  = h_0 + v_h \cdot t - \frac{1}{2} g t^2, \text{ } t \ge 0,
 \\]
 where 
 - \\(h_0\\) is the initial height,
@@ -488,8 +635,6 @@ where
 and
 - \\(g\\) is the (constant) acceleration due to gravity
 ]
-
-???
 
 ---
 layout:false
@@ -501,11 +646,28 @@ layout:false
 ]
 .right-column[
 
-**Example**: Height of an Object in Projectile Motion, cont.
+## Mathematical Models and Data Analysis
+**Example**: Height of an Object in Projectile Motion
 
-\\[
-y  = h_0 + v_h \cdot t - \frac{1}{2} g t^2, \text{   } t \ge 0,
-\\]
+<center>
+   <h2></h2>
+   <img src="figs/projectile.png" alt="dmc logo" height="200"> 
+
+</center>
+]
+
+---
+
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+## Math Models
+]
+.right-column[
+
+**Example**: Height of an Object in Projectile Motion, cont.
 
 However, this is not what we see in real life for a variety of reasons. This model assumes
 
@@ -519,4 +681,22 @@ However, this is not what we see in real life for a variety of reasons. This mod
 
 We can fix these by writing a better relationship *or* we can accept that some things won't be known and use a **stochastic model** - a mathematical model that specifically allows for variation (or "randomness").
 Understanding how these **stochastic models** work is a major focus of this course.
+]
+
+---
+
+layout:false
+.left-column[
+## What and Why
+## Terms
+## Measure
+## Math Models
+]
+.right-column[
+
+## What's my point
+-  We cannot say there is no variation in the measurement or the relation under study is just affected by the components defined in the mathematical model. 
+
+-  There is always some error out of control which are stochastic (random)
+-  Statistical methods help to deal with this randomness
 ]

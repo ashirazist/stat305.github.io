@@ -53,11 +53,12 @@ layout:false
 ### Populations
 _def_: A **population** is the entire group of objects about which one wishes to gather information in a statistical study.
 
-_(Drawing: population blob)_
+
 
 **Important**: A study's population should be _clearly described_ - there should be no question about which objects are in the population and which are not. If a study's population is _not clearly described_, then regardless of how well you execute the mechanics of the study, you will be left with the following conclusion:
 > In conclusion, after performing this study we can safely say that our results can be applied to ???
 ]
+
 ---
 layout: true
 class: center, middle, inverse
@@ -65,11 +66,24 @@ class: center, middle, inverse
 # Quick question:
 ## If our goal is to make statements about a population, why don't we just study the population?
 ---
-layout: true
-class: center, middle, inverse
----
-# Quick question:
-## If our goal is to make statements about a population, why don't we just study the population?
+layout:false
+.left-column[
+## Recap
+### Making Generalizations
+### Populations
+]
+
+.right-column[
+## Recap
+### Populations
+
+-  Logistical issues
+-  Timeless
+-  Expensive
+-  Destructive to the objects under study
+-  ...
+]
+
 ---
 layout:false
 .left-column[
@@ -84,11 +98,9 @@ layout:false
 ### Samples
 _def_: A **sample** is the group of objects on which one actually gathers data.
 
-These should[*] be members of the population about which one wishes to gather information in a statistical study.
+These should be members of the population about which one wishes to gather information in a statistical study.
 
-_(Drawing: population blob + sample out of it)_
 ]
-.footnote[*Let's ignore the implication of the word _should_ for a moment]
 ---
 layout:false
 .left-column[
@@ -103,7 +115,7 @@ layout:false
 ### Getting Samples
 The purpose of the sample is to be a representation of the population that can actually be studied in depth.
 Thus, the goal when gathering the sample is to make sure that there is no question that the sample actually does represent the population.
-A good sampling tecnique gives your study a undesputable connection between the sample and the population.
+A good sampling tecnique gives your study a indisputable connection between the sample and the population.
 
 The gold standard of sampling methods is **Simple Random Sampling**. Using SRS, every possible sample of the same size has the same likelihood of being the sample used in the study.
 ]
@@ -136,7 +148,7 @@ layout:false
 ## Recap
 ### Getting Samples
 **Example**:
-In a study of lifetime of lightbulbs, we took 100 consecutive lightbulbs off the factory line and measured their effective lifetime. We found that approximately 95% of lightbulbs survived 2,000 hours of strenuous use. We determine that 95% of the lightbulbs produced by our plant will survive 2,000 of strenuous use.
+In a study of lifetime of lightbulbs, we took 100 consecutive lightbulbs off the factory line and measured their effective lifetime. We found that approximately 95% of lightbulbs survived 2,000 hours of  use. We determine that 95% of the lightbulbs produced by our plant will survive 2,000 of  use.
 
 - population:
 - sample:
@@ -180,7 +192,7 @@ layout:false
 ### Getting Samples
 
 **Example**:
-As part of a study of the health of animals on campus, a field worker set baited traps and captured 200 squirrels. Once captured, a squirrel was measured and weighed, had it's age estimated, and blood was drawn to test for disease. After being held for a day, the squirrel was chipped and returned to the wild. The researchers reported that squirrels on campus were underweight.
+As part of a study of the health of animals on campus, a field worker set  traps and captured 200 squirrels. Once captured, a squirrel was measured and weighed, had it's age estimated, and blood was drawn to test for disease. After being held for a day, the squirrel was chipped and returned to the wild. The researchers reported that squirrels on campus were underweight.
 - population:
 - sample:
 - hidden assumption connecting the sample and the population:
@@ -196,7 +208,8 @@ class: center, middle, inverse
 ## What We Need To Know
 ---
 # Section 2.1: 
-## Read Independently
+## General Principles in the Collection of Engineering Data
+### (Read on Your Own)
 ---
 name: inverse
 layout: true
@@ -212,10 +225,6 @@ layout:false
 ### General Principles
 ]
 .right-column[
-
-**Section 2.1**: General Principles of Data Collection
-
--  Read on your own
 
 **Section 2.2**: Data Collection in Enumerative Studies
 
@@ -301,16 +310,38 @@ Take a simple random sample of size 3 from a set of 25 microprocessors using Tab
 </center>
 3. **Result**: select the microprocessors labeled 12, 15, and 05
 
+]
+---
+layout:false
+.left-column[
+## Recap
+## Data Collection
+### General Principles
+### Get a SRS
+### Ex: SRS tools
+]
+.right-column[
 ### Using pseudo-random numbers
 
 ```r
 sample(1:25,3) # some R code to get SRS of size 3 
 ```
+
+
+> ###R output
+   > sample(LETTERS,3)
+   
+      >[1] "S" "D" "Y"
+   
+   > sample(letters, 3)
+   
+      >[1] "q" "m" "i"
+      
+   > sample(1:25, 3)
+   
+      >[1] 20 19 24
 ]
 
-???
-
-Select 3 letters from RANDOM.org using this set up
 ---
 name: inverse
 layout: true
@@ -360,6 +391,40 @@ layout:false
    -  This is essentially extending the idea of control variables - we just create several environments with different controls.
    -  How to recognize - the comparisons are not made comparing results from one block to results from another but instead comparing results inside a block.
 
+-  A **block** of objects under study is a homogeneous group where different levels of experimental   variables can be applied and compared in a relatively uniform environment. 
+]
+---
+layout:false
+.left-column[
+## Recap
+## Data Collection
+## Exp. Principles
+### Taxonomy
+]
+.right-column[
+
+## The Ideal Experiment Structure, cont.
+### Example on blocking
+
+Back to machine parts testing example in lecture 2, in a shipment of 5000 parts. The goal is to verify that the parts are as strong as we anticipated. Assume the hardness of the parts are pre-specified by the seller and come in separate batches. Assume there are four levels of hardness (3.0, 3.2, 3.4, 3.6) 
+
+-  We might want to test the Rockwell Hardness test across specimens of various hardness levels. 
+   -  We then take samples from each batch
+   -  Hardness level is the blocking variable
+   
+]
+   
+---
+layout:false
+.left-column[
+## Recap
+## Data Collection
+## Exp. Principles
+### Taxonomy
+]
+.right-column[
+
+## The Ideal Experiment Structure, cont.
 -  **Concomitant variable**: characteristics that are observed but are not managed or responses. Could be influenced by either experimental variables or unobserved causes. May or may not have an influence on the response.
 
 ]
@@ -385,9 +450,7 @@ layout:false
 There are lots characteristics that could influence the response but are not of primary interest to the experimenter. For instance,
 
 -  The experimenter could be unaware of their importance,
-
 -  There may be no way to control them in the experimental setting,
-
 -  There may be no way to control them outside of the experimental setting,
 
 However, if we ignore them completely, their effect won't just disappear - it could ruin our experiment. 

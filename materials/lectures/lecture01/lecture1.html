@@ -66,21 +66,46 @@ class: center, middle, inverse
 #Option 2: Gather Some Data
 
 ## Figure Out What Really Matters in the System
+## Figure Out How a New System Is Gonna Work
+---
+layout: false
+.left-column[
+## What and Why
+### Engineers In General
+]
+.right-column[
+
+## But ...
+
+- Without specific training in data collection and analysis, engineers' attemps can be haphazhard and poorly conceived!
+
+- Valuable time and resources are wasted!
+
+
+- Ambiguous conclusions are reached!
+
+So, engineers need a good toolkit for best possible data collection and interpretation. 
+
+]
 
 ---
 layout: false
 .left-column[
 ## What and Why
 ### Engineers In General
-
 ]
 .right-column[
-## Engineering Statistics
+
+## Engineering Statistics can help!
+
 1- Collect Engineering data.
-2- summarize or describe engineering data
+
+2- Summarize or describe engineering data
+
+
 3- Draw formal inferences and practical conclusions on the basis of engineering data.
 
-
+]
 ---
 layout: false
 .left-column[
@@ -143,7 +168,7 @@ layout: false
 
 -  **Theory 2**: Hang the gears from a bar
 
--  **Complications**: No two gears exactly the same - if we test it how do we decide what was the effect of the gear and what was the effect of the loading method?
+-  **Complications**: No two gears are exactly the same - if we test it how do we decide what was the effect of the gear and what was the effect of the loading method?
 
 -  **Good engineer**: tried it both ways and collected the distortion measures from multiple attempts
 ```text
@@ -197,9 +222,7 @@ layout: false
 
 Collecting good data is part of what engineering statistics is concerned with, 
 but of course that's only the first part.
-
-Our text book defines it this way:
-
+**Recall:**
 > **Engineering Statistics** is the study of how *best* to
 >
 > 1. Collect engineering data
@@ -210,6 +233,27 @@ Our text book defines it this way:
 
 Recognizing the "reality of variation" in the distortion example led the engineer to run multiple tests.
 This helped rules out the possibility that hanging gears is better: if hanging the gears were actually the right approach, it would be astronomically unlikely that it would have led to that many comparatively large distortions.
+
+
+]
+---
+
+layout: false
+.left-column[
+## What and Why
+### Engineers In General
+### Data?
+### Example 1
+### Engineering Statistics
+]
+.right-column[
+## Example 1
+
+- If the engineer concludes that laying the gears in a stack is better in minimizing the distortion, but more expensive!
+- Now, the question is if it is really worth it to use the results based on that experiment.
+- How sure are we to use laying method?
+
+Statistics can help to reach reliable conclusions.
 
 ]
 ---
@@ -262,7 +306,24 @@ layout:false
 
 > A **sample** is a group of objects on which one actually gathers data. In the case of an enumerative investigation, the sample is a subset of the population (and can in some cases include the entire population).
 
--  Example: If I am ordering 5000 microprocessors from Intel, I may test a few to see how well they actually work. In this case, the shipment is my population and the ones I test make the sample. I hope to use the sample to make a judgement about the entire shipment (so if 3/4 don't work, I should probably send the shipment back). 
+]
+
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+### Types of Studies
+]
+.right-column[
+
+## Extent to Which Results Can be Applied
+
+
+**Example:** 
+If I am ordering 5000 microprocessors from Intel, I may test a few to see how well they actually work. In this case, the shipment is my population and the ones I test make the sample. I hope to use the sample to make a judgement about the entire shipment (so if 3/4 don't work, I should probably send the shipment back). 
+
+
 ]
 ---
 layout:false
@@ -277,30 +338,11 @@ layout:false
 
 > An **analytical study** is one in which a process or phenonmeon is investigated at one point in space and time with the hope that the data collected will be representative of a system behavior at other places and times under similar conditions. In this kind of study, there is rarely, if ever, a particular well-defined group of objects to which conclusions are thought to be limited.
 
-- **Analytical studies** tend to be the most important in engineering.
+- **Analytical studies** tend to be the most important in engineering.The population is not well defined.
 
 -  Ex: Stock prices are dropping. I may determine if something doesn't change in the trading environment, they will continue dropping.
 
--  Ex: The gear distortion example (Chapter 1, Example 1).
-]
----
-layout:false
-.left-column[
-## What and Why
-## Terms
-### Types of Studies
-]
-.right-column[
-
-# Telling the Difference
-
-## Observation vs. Experiment
--  If things are being manipulated by the researcher, it's more of an experiment than an observational study.
-
-## Enmerative vs. Analytical
--  We generally frown on people discussing **conceptual populations** - populations consisting of "all widgets that have heretofore existed or could one day exist in this universe or some other" type stuff 
-
--  Basically, if the population isn't well described, concrete thing, it's an analytical study.
+-  Ex: The reliability test for a critical component to be used in a space shuttle
 ]
 ---
 layout:false
@@ -354,6 +396,26 @@ layout:false
 > Suppose we get a shipment of 5000 machine parts and would like to verify that the shipment meets the standards the machinist agreed to.  We take out 100 parts and examine them carefully.  To verify that the parts are as strong as we anticipated, we measure the "Rockwell hardness" with a machine that is accurate to the first decimal place. We also examine each part for scratches and record it weight.  Further, we run the part in a test machine to determine if it works correctly.
 
 **Question**: How many data values are we collecting from each part and what type of data values are they?
+]
+---
+layout:false
+.left-column[
+## What and Why
+## Terms
+### Types of Studies
+### Types of Data
+### Ex: Machine Parts
+]
+.right-column[
+# Example: Machine Parts
+
+- **Hardness**
+
+- **Scratches**
+
+- **Weight**
+
+- **Working Test**
 ]
 ---
 layout:false

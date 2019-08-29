@@ -576,13 +576,12 @@ layout:false
 
 ## If You Can't Measure, You Can't Do Statistics
 ### Accuracy VS. Precision
--  Comparing measurement to target shooting
-  -  **Accuracy**: how close a measurement is to the true value "on average"
-  -  **Precision**: the amount of variation in repeated measurement of the same object
-<center>
-   <h2></h2>
-   <img src="figs/shooting.png" alt="dmc logo" height="250" width= "300"> 
+-  **Accuracy**: how close a measurement is to the true value "on average"
+-  **Precision**: the amount of variation in repeated measurement of the same object
+-  Comparing measurement to target shooting  
 
+<center>
+   <img src="figs/shooting.png" alt="dmc logo" height="250" > 
 </center>
 
 

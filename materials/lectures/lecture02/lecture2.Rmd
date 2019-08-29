@@ -581,7 +581,7 @@ layout:false
   -  **Precision**: the amount of variation in repeated measurement of the same object
 <center>
    <h2></h2>
-   <img src="figs/shooting.JPG" alt="dmc logo" height="250" width= "300"> 
+   <img src="figs/shooting.png" alt="dmc logo" height="250" width= "300"> 
 
 </center>
 

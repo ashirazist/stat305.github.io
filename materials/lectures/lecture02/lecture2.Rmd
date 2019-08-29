@@ -382,9 +382,8 @@ layout:false
 
 <center>
    <h2> Factorial Studies Example, cont </h2>
-   <img src="figs/still_chemists_trim.jpg" alt="dmc logo" height="125"> 
+   <img src="figs/still_chemists_trim.jpg" alt="dmc logo" height="95"> 
 </center>
-
 ```
      cook     env         precursor
 1.   walt     RV          pseudo
@@ -400,7 +399,10 @@ layout:false
 11.  jessie   lab         pseudo
 12.  jessie   lab         methylamine
 13.  jessie   so. am.     methylamine
-14.  victor   lab         methylamine
+14.  jessie   so. am.     pseudo
+15.  victor   lab         methylamine
+16.  victor   lab         pseudo
+
 ```
 ]
 
@@ -501,7 +503,8 @@ layout:false
 ## If You Can't Measure, You Can't Do Statistics
 ### Measurement and its importance and difficulty
 
--  **Validity**: appropriately represent the feature of interest
+-  **Validity**: appropriately represent the feature of interest.
+
     Variation is always present in collecting data. 
     
     -  Some come from the the objects under study as they are never alike(that might be of interest to see if the variation is due to the object) 
@@ -624,7 +627,7 @@ layout:false
 ## Mathematical Models and Data Analysis
 **Example**: Height of an Object in Projectile Motion
 
-We can describe the relationship between height of a projectile \\(y\\) and time \\(t\\) as
+We can describe the relationship between height of a projectile \\(h\\) and time \\(t\\) as
 \\[
 h  = h_0 + v_h \cdot t - \frac{1}{2} g t^2, \text{ } t \ge 0,
 \\]
@@ -696,6 +699,9 @@ layout:false
 ## What's my point
 -  We cannot say there is no variation in the measurement or the relation under study is just affected by the components defined in the mathematical model. 
 
+-  We can control some parts of the variation by planning the data collection process
+
 -  There is always some error out of control which are stochastic (random)
+
 -  Statistical methods help to deal with this randomness
 ]

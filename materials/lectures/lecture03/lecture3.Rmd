@@ -480,8 +480,31 @@ There are two common ways to attempt to account for these effects:
 2. **Randomization**: assign runs of the experiment to the different levels of the extraneous variables randomly, with the hope that it balances out in the end.
 
    - Ex: Strength of two types of metal bar measured - but both bars are being produced by the same machine. 
+   
+
+
+]
+
+---
+layout:false
+.left-column[
+## Recap
+## Data Collection
+## Exp. Principles
+### Taxonomy
+### Extraneous Vars
+]
+.right-column[
+
+## The Ideal Experiment Structure, cont.
+
+<center>
+   <img src="figs/schemeit-project.svg" alt="ideal exp" height="125"> 
+</center>
+
 
 **Common Advice**: Block what you can control and randomize the rest (common, not necessarily good though - what can be controlled not universal).
+
 ]
 ---
 layout:false

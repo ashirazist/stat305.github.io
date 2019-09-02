@@ -1,8 +1,8 @@
 ---
 title: Homework 2
 course: Stat 305
-semester: Spring 2019
-due-date: Due Thursday, January 31
+semester: Fall 2019
+due-date: Due Thursday, September 12
 ...
 
 You will want to understand Exercise 1 from Section 2.1 before attempting the following questions.  

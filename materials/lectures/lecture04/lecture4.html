@@ -4,7 +4,7 @@
     <title>STAT 305: Lecture 4</title>
     <meta charset="utf-8" />
     <meta name="author" content="Amin Shirazi" />
-    <meta name="date" content="2019-08-27" />
+    <meta name="date" content="2019-09-02" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # STAT 305: Lecture 4
 ### Amin Shirazi
-### 2019-08-27
+### 2019-09-02
 
 ---
 
@@ -26,7 +26,7 @@ class: center, middle, inverse
 ## Chapter 2: Data Collection
 ### and 
 ## Chapter 3: Elementary Descriptive Statistics
-.footnote[Course page: [imouzon.github.io/stat305](https://imouzon.github.io/stat305)]
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io)]
 ---
 # Recap
 ##Section 2.3: Principles of Effective Experimentation
@@ -205,15 +205,13 @@ Some of these combinations have become so useful that we named them to make expl
 
 - Randomization used at every possible point where we choose how to treat the experimental units
 
-**Examples**
-
+**Example**
 - Example 12 (page 51): Golf ball drive distances study by G.Gronberg
-
-   - 10 balls each at 3 different compressions (80, 90, and 100)
-
+   - 30 balls in total. 10 balls each at 3 different compressions (80, 90, and 100)
    - How would you design an experiment to determine which type can be driven the furthest?
+   
+The levels of the experimental factor (compressions) are an intrinsic property of the balls. There is no way to randomly divide the 30 balls into three groups and "apply" the treatment levels 80, 90 and 100. Instead, the randomization could be the choice of an order for hitting the 30 test balls. 
 
-- Example 13 (page 51-52): Pelletizing experiment
 ]
 ---
 layout:false
@@ -230,20 +228,15 @@ layout:false
 **Description**
 
 - At least on factor is a blocking variable 
-
 - "Blocks" are created by combinations of the levels of the blocking variables
-
 - Within each block, every combination of the primary experimental variables are used at least once
-
 - Randomization is used where possible
 
 **Examples**
-
 - Example 12 (page 51): Golf ball drive distances study by G.Gronberg
-
    - Gronberg didn't drive the golf balls all at the same time 
-
    - instead, he personally drove 10 golf balls from each compression each night, 6 nights a week, for 3 weeks.
+   - The block (days) account for possible changes over time in his physical condition and skill level and environmental conditions. 
 ]
 ---
 layout:false
@@ -401,6 +394,69 @@ Producing good graphs is an [art](http://www.edwardtufte.com/tufte/graphics/post
 - Stem and Leaf Diagrams
 
 - Dot Diagrams 
+
+]
+---
+layout:false
+.left-column[
+## Summarizing
+### Intro
+### Purpose
+### Simple Graphs
+]
+.right-column[
+
+### Simple Graphical Summaries
+
+```
+              Group 1             Group 2
+            74 79 77 81         65 77 78 74
+            68 79 81 76         76 73 71 71
+            81 80 80 78         86 81 76 89
+            88 83 79 91         79 78 77 76
+            79 75 74 73         72 76 75 79    
+```
+**Stem and Leaf Diagrams**
+&lt;center&gt;
+&lt;h3&gt;&lt;/h3&gt;
+   &lt;img src="g1.png" alt="dmc logo" height="250"&gt; 
+
+   &lt;img src="g2.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
+
+
+
+]
+
+---
+layout:false
+.left-column[
+## Summarizing
+### Intro
+### Purpose
+### Simple Graphs
+]
+.right-column[
+
+### Simple Graphical Summaries
+
+```
+              Group 1             Group 2
+            74 79 77 81         65 77 78 74
+            68 79 81 76         76 73 71 71
+            81 80 80 78         86 81 76 89
+            88 83 79 91         79 78 77 76
+            79 75 74 73         72 76 75 79    
+```
+**Dot Diagrams **
+&lt;center&gt;
+&lt;h3&gt;&lt;/h3&gt;
+   &lt;img src="g1dot.png" alt="dmc logo" height="125"&gt; 
+
+   &lt;img src="g2dot.png" alt="dmc logo" height="125"&gt; 
+&lt;/center&gt;
+
+
 
 ]
 ---

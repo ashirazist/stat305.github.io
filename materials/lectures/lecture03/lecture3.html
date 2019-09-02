@@ -591,14 +591,286 @@ layout:false
 
 ]
 
-???
+---
+layout:false
+.left-column[
+## Recap
+## Data Collection
+## Exp. Principles
+### Taxonomy
+### Ch. 2, Ex. 7
+]
+.right-column[
+
+## The Ideal Experiment Structure, cont.
+
+&lt;center&gt;
+   &lt;img src="figs/schemeit-project.svg" alt="dmc logo" height="125"&gt; 
+&lt;/center&gt;
+
+**Discussion**: Example 7, pg. 39
 
 How do you measure moisture content? Cut the piece in half, record original weight and dried weight.
 
-managed variables - wood, glue, time, pressure
-   controlled - time, pressure
-   experimental - wood, glue
-concomitant - moisture
+- Supervised(Managed) variables: wood, glue, time, pressure
+   - controlled: time, pressure
+   - experimental: wood, glue
+- Concomitant:  moisture
+]
+
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Recap
+##Section 2.3: Principles of Effective Experimentation
+---
+layout:false
+.left-column[
+## Recap
+### Terminology
+]
+
+.right-column[
+## Recap
+### Terminology
+
+We described an ideal simple experiment and defined a few associated terms (2.3.1, 2.3.2) 
+
+- **Managed variable**: variables where we choose the value
+  - **Controlled variable**: a managed variable that only takes one value throughout our experiment. 
+  - **Experimental variable**: a managed variable taking different values for different runs.
+- **Response variable**: the output value; the variables whose values we wish to effect using our experimental variables
+- **Concomitant variable**: Variables that we record but are not of interest.
+- **Extraneous variable**: All other changes in our system.
+
+]
+---
+layout:false
+.left-column[
+## Recap
+### Terminology
+### Comparative Studies
+]
+.right-column[
+### Comparitive Studies
+We discussed the importance of **Comparative studies** (2.3.3)
+- def: a study in which the goal is to compare two or more approaches/methods/ideas/etc.
+
+- As always, there are many things that we can not control when we make measurements and collect data
+
+- When we want to compare a new method to a old method, we need to be aware that the uncontrolled circumstances that existed when we first studied the old method do not exist anymore
+
+- Take away: in order to *know* that difference in results are due to the difference in the method used (and not the difference in the uncontrolled circumstances) we must collect new data on both methods - this way, both methods be studied under the same uncontrolled circumstances.
+]
+---
+layout:false
+.left-column[
+## Recap
+### Terms
+### Comparative Studies
+### Techniques
+]
+.right-column[
+
+### Techniques for Dealing with Extraneous Variables
+
+Some aspects of the environment can not be controlled, even though they may effect the results we see. We call those aspects **extraneous variables**.
+
+Though we can not *control* extraneous variables, we can plan our experiment to minimize their impact (2.3.2, 2.3.4)
+
+**Note**: These techniques are part of how the experiment is *designed* - we decide this before any data is collected.
+
+**Technique 1: Blocking**
+- Designing the experiment with homogeneous mini-environments. 
+- In this way, regardless of the random/uncontrolled events that occur in the mini-environment, we know every observation experienced the same event.
+- When collecting the data, we record the identity of the block used. Since the block used will have different values depending on the observational unit, we call the block identifier a "blocking variable"
+
+]
+---
+layout:false
+.left-column[
+## Recap
+### Terms
+### Comparative Studies
+### Techniques
+]
+.right-column[
+
+### Techniques for Dealing with Extraneous Variables
+
+**Technique 2: Randomization**
+- Using random assignment at all possible chances to "average out" the systematic changes that occur as we perform each run of our experiment.
+- Used to choose the assignment of order, location, worker, partners, etc.
+
+]
+---
+layout:false
+.left-column[
+## Recap
+### Terms
+### Comparative Studies
+### Techniques
+]
+.right-column[
+
+### Techniques for Dealing with Extraneous Variables
+
+**Technique 2: Randomization, continued**
+
+Example: A chemist performs 20 runs of a synthesis, 10 using substrate A and 10 using substrate B. It is believed that the chemist could become more adept with each run.
+
+_Attempt 1_: No randomization on order: 
+- **Plan**: the chemist performs all 10 syntheses using A and then performs all 10 syntheses using B.
+- **Impact**: we have a changing extraneous variable ("adeptness") that will benefit the last runs
+- **Result**: we can't tell the difference between whether our results change based adeptness or substrate choice
+
+_Attempt 2_: Order chosen using randomization
+- **Plan**: the chemist using a system to randomize the order of the 20 runs
+- **Impact**: the chemist's change in adeptness will not benefit only one substrate
+- **Result**: everything's ok!
+]
+---
+layout:false
+.left-column[
+## Recap
+### Terms
+### Comparative Studies
+### Techniques
+]
+.right-column[
+
+### Dealing With Extraneous Variables, cont.
+
+**Technique 3: Replication** 
+
+- def: the process of repeating a run of the experiment more than once for each combination of experimental variables.
+- results on the first run should be similar to the results on the second run if no experimental variables are changed - changes are the result of run-specific extraneous variables.
+- after repeating multiple times, impact of run-specific effects average out
+- neat: replication is strongly connected to the concept of reproducibility - the results I get should be similar to the results you get
+
+### In Summary
+
+The main point is this: an effective experiment is **designed** to account for the environmental conditions that could influence our response.
+Doing this takes a lot of planning.
+
+]
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Section 2.4
+## Some Common Experimental Plans
+---
+layout:false
+.left-column[
+## Recap
+## Common Plans
+### Designing Experiments
+]
+.right-column[
+
+## Common Experimental Plans
+
+### Designing Experiments
+
+Experiments don't just happen, they have to be planned out ahead of time. 
+
+With **replication**, **randomization**, **blocking** we have introduced some common techniques used in planning (or **designing**) an experiment. 
+
+Common combinations of these techniques can be used as frameworks around which we can build our real-life experiments.
+
+Some of these combinations have become so useful that we named them to make explaining the experimental design easier.
+]
+---
+.left-column[
+## Recap
+## Common Plans
+### Designing Experiments
+### Completely Randomized
+]
+.right-column[
+
+### Design 1: Completely Randomized Experiments
+
+**Description**
+
+- All experimental variables are of primary interest (no controls, no blocking)
+
+- Randomization used at every possible point where we choose how to treat the experimental units
+
+**Example**
+- Example 12 (page 51): Golf ball drive distances study by G.Gronberg
+   - 30 balls in total. 10 balls each at 3 different compressions (80, 90, and 100)
+   - How would you design an experiment to determine which type can be driven the furthest?
+   
+The levels of the experimental factor (compressions) are an intrinsic property of the balls. There is no way to randomly divide the 30 balls into three groups and "apply" the treatment levels 80, 90 and 100. Instead, the randomization could be the choice of an order for hitting the 30 test balls. 
+
+]
+---
+layout:false
+.left-column[
+## Recap
+## Common Plans
+### Designing Experiments
+### Completely Randomized
+### RCB
+]
+.right-column[
+### Design 2: Randomized Complete Block Experiments
+
+**Description**
+
+- At least on factor is a blocking variable 
+- "Blocks" are created by combinations of the levels of the blocking variables
+- Within each block, every combination of the primary experimental variables are used at least once
+- Randomization is used where possible
+
+**Examples**
+- Example 12 (page 51): Golf ball drive distances study by G.Gronberg
+   - Gronberg didn't drive the golf balls all at the same time 
+   - instead, he personally drove 10 golf balls from each compression each night, 6 nights a week, for 3 weeks.
+   - The block (days) account for possible changes over time in his physical condition and skill level and environmental conditions. 
+]
+---
+layout:false
+.left-column[
+## Recap
+## Common Plans
+### Designing Experiments
+### Completely Randomized
+### RCB
+### RIB
+]
+.right-column[
+### Design 3: Randomized Incomplete Block Experiments
+
+**Description**
+
+- At least one factor is a blocking variable 
+
+- "Blocks" are created by combinations of the levels of the blocking variables
+
+- Within each block, some combinations (but not all) of the primary experimental variables are used at least once while others are not used at all
+
+- Randomization is used where possible
+
+**How does this work??**
+
+- There are some clever ways to assign the combinations of the primary experimental variable levels to the blocks that allow us to get "more" out of the data we collect.
+
+- How these block assignments come about gets explained in Chapter 8.
+]
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Section 2.5
+## Preparing to Collect Engineering Data
+### Read Independently
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

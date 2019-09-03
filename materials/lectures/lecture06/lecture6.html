@@ -82,12 +82,12 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 
 **Variance/Standard Deviation**: Uses squared distance from the mean.
 
-|                 | &amp;nbsp;&amp;nbsp;&amp;nbsp;   | Variance                                                      | &amp;nbsp;&amp;nbsp;&amp;nbsp;   | Standard Deviation                                                  |
+|                 |    | Variance                                                      |   | Standard Deviation                                                  |
 |:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
-| &amp;nbsp           |                      |                                                               |                      |                                                                     |
+|          |                      |                                                               |                      |                                                                     |
 | **Population**  |                      | `\(\sigma^2 =  \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`   |
-| &amp;nbsp           |                      |                                                               |                      |                                                                     |
-| &amp;nbsp           |                      |                                                               |                      |                                                                     |
+|            |                      |                                                               |                      |                                                                     |
+|            |                      |                                                               |                      |                                                                     |
 | **Sample**      |                      | `\( s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)`    |                      | `\(s =  \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`     |
 ]
 ---
@@ -104,7 +104,7 @@ layout:false
 
 
 &lt;center&gt;
-70, 63, 69, 53, 54
+56, 52, 63, 60, 51
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -115,15 +115,15 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 70, 63, 69, 53, 54 is 61.8
+The mean of 56, 52, 63, 60, 51 is 56.4
 `\[
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((70 - 61.8)^2 + (63 - 61.8)^2 + (69 - 61.8)^2 + (53 - 61.8)^2 + (54 - 61.8)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (8.2)^2 + (1.2)^2 + (7.2)^2 + (-8.8)^2 + (-7.8)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 67.24 + 1.44 + 51.84 + 77.44 + 60.84 \right) \\\\
-    &amp;=  64.7 \\\\
+    &amp;= \frac{1}{5-1} \left((56 - 56.4)^2 + (52 - 56.4)^2 + (63 - 56.4)^2 + (60 - 56.4)^2 + (51 - 56.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (-0.4)^2 + (-4.4)^2 + (6.6)^2 + (3.6)^2 + (-5.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 0.16 + 19.36 + 43.56 + 12.96 + 29.16 \right) \\\\
+    &amp;=  26.3 \\\\
 \end{align}`
 \]`
 
@@ -135,8 +135,8 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 `\[
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{64.7} \\\\
-     &amp;= 8.043631 \\\\
+     &amp;= \sqrt{26.3} \\\\
+     &amp;= 5.1283526 \\\\
 \end{align}`
 \]`
 

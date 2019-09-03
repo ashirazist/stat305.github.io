@@ -119,12 +119,12 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 
 **Variance/Standard Deviation**: Uses squared distance from the mean.
 
-|                 | &nbsp;&nbsp;&nbsp;   | Variance                                                      | &nbsp;&nbsp;&nbsp;   | Standard Deviation                                                  |
+|                 |    | Variance                                                      |   | Standard Deviation                                                  |
 |:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
-| &nbsp           |                      |                                                               |                      |                                                                     |
+|          |                      |                                                               |                      |                                                                     |
 | **Population**  |                      | `\(\sigma^2 =  \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`   |
-| &nbsp           |                      |                                                               |                      |                                                                     |
-| &nbsp           |                      |                                                               |                      |                                                                     |
+|            |                      |                                                               |                      |                                                                     |
+|            |                      |                                                               |                      |                                                                     |
 | **Sample**      |                      | `\( s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)`    |                      | `\(s =  \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`     |
 ]
 ---

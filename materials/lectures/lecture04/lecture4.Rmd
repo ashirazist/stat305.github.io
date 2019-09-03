@@ -353,9 +353,11 @@ Motivated by asking what is *normal/common/expected* for this data. There are th
 |                 | &nbsp;&nbsp;&nbsp;   | Mean                                 |
 |:----------------|----------------------|--------------------------------------|
 |                 |                      |                                      |
-| **Population**  |                      | `\(\mu =  \sum_1^N x_i \)`           |
+| **Population**  |                      | `\(\mu = \frac{1}{N} \sum_1^N x_i \)`           |
 |                 |                      |                                      |
-| **Sample**      |                      | `\(\bar{x} =  \sum_1^n x_i \)`       |
+| **Sample**      |                      | `\(\bar{x} = \frac{1}{n} \sum_1^n x_i \)`       |
+
+**N** is the population size and **n** is the sample size. 
 
 **Mode**: The most commonly occurring data value in set.
 

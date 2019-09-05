@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>STAT 305: Lecture 6</title>
+    <title>STAT 305: Lecture 5</title>
     <meta charset="utf-8" />
     <meta name="author" content="Amin Shirazi" />
     <meta name="date" content="2019-09-05" />
@@ -12,155 +12,25 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# STAT 305: Lecture 6
+# STAT 305: Lecture 5
 ### Amin Shirazi
 ### 2019-09-05
 
 ---
 
+
 name: inverse
 layout: true
 class: center, middle, inverse
 ---
-# STAT 305: Lecture 7
-## Wrapping Up Descriptive Statistics
-### and
+# STAT 305: Lecture 5
+## Chapter 4: Describing Relationships Between Variables
 ## Introduction to Models
-.footnote[Course page: [imouzon.github.io/stat305](https://imouzon.github.io/stat305)]
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io)]
 ---
-layout:false
-.left-column[
-## Summaries
-### Boxplots
-]
-.right-column[
-### Anatomy of a Boxplot
-To create a boxplot with the following data:
-```
-              Group 1             Group 2
-            74 79 77 81         65 77 78 74
-            68 79 81 76         76 73 71 71
-            81 80 80 78         86 81 76 89
-            88 83 79 91         79 78 77 76
-            79 75 74 73         72 76 75 79    
-```
 
-We need the following statistics to draw the body of the boxplot
-
-|         |  Q1  | median  |  Q3   |
-|---------|------|---------|-------|
-| Group 1 | 75.5 |   79    |  81   |
-| Group 2 | 73.5 |   76    |  78.5 |
-
-And we need to calculate the maximum length for the whiskers:
-
-Group 1: $ 1.5 \cdot (Q3 - Q1) = 1.5 \cdot 5.5 = 8.25 $
-
-Group 2: $ 1.5 \cdot (Q3 - Q1) = 1.5 \cdot 5.0 = 7.5 $
-
-]
----
-layout:false
-.left-column[
-## Summaries
-### Boxplots
-]
-.right-column[
-### Anatomy of a Boxplot
-]
----
-.left-column[
-## Summaries
-### Boxplots
-### Quantile Plots
-]
-.right-column[
-### Quantile Plots 
-
-**Scatterplots using quatiles and their corresponding values**
-
-For each `\(x_i\)` in the data set, we plot `\(\left(\frac{i - .5}{n}, x_i\right)\)` - meaning we are plotting `\( (p, Q(p)) \)`.
-We connect the points with a straight line, which follows the values of `\(Q(p)\)` exactly.
-
-Consider the sample: 13, 15, 18, 19, 21, 34, 35, 35, 36, 39.
-
-Notice that we have `\(n = 10\)` observations which means that `\(Q(0.05) = x_1 = 13\)`. We can get the quantile for each of our observations and create this table:
-
-|            |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |
-|------------|------|------|------|------|------|------|------|------|------|------|
-| `\(p\)`    | 0.05 | 0.15 | 0.25 | 0.35 | 0.45 | 0.55 | 0.65 | 0.75 | 0.85 | 0.95 |
-| `\(Q(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
-
-]
----
-.left-column[
-## Summaries
-### Boxplots
-### Quantile Plots
-]
-.right-column[
-### Quantile Plots 
-
-We can then use this information to create a quantile plot:
-
-|            |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |
-|------------|------|------|------|------|------|------|------|------|------|------|
-| `\(p\)`    | 0.05 | 0.15 | 0.25 | 0.35 | 0.45 | 0.55 | 0.65 | 0.75 | 0.85 | 0.95 |
-| `\(Q(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
-
-]
----
-.left-column[
-## Summaries
-### Boxplots
-### Quantile Plots
-### QQ Plots
-]
-.right-column[
-### Quantile-Quantile Plots: 
-
-**QQ plots** are created by plotting the values of `\(Q(p)\)` for a data set against values of `\(Q(p)\)` coming from some other source.
-
--  Empirical QQ plots: the other source are quantiles from another actual data set.
--  Theoretical QQ plots: the other source are quantiles from a theoretical set - we know the quantiles without having any data.
-
-**Example**
-
--  Set 1: 36, 15, 35, 34, 18, 13, 19, 21, 39, 35 
--  Set 2: 37, 39, 79, 31, 69, 71, 43, 27, 73, 71 
-
-|                  |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |
-|------------------|------|------|------|------|------|------|------|------|------|------|
-| `\(p\)`          | 0.05 | 0.15 | 0.25 | 0.35 | 0.45 | 0.55 | 0.65 | 0.75 | 0.85 | 0.95 |
-| Set 1 `\(Q(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
-| Set 2 `\(Q(p)\)` |  27  |  31  |  37  |  39  |  43  |  69  |  71  |  71  |  73  |  79  |
-
-]
----
-.left-column[
-## Summaries
-### Boxplots
-### Quantile Plots
-### QQ Plots
-]
-.right-column[
-### Quantile-Quantile Plots: 
-
-A QQ plot can then be created by plotting one group's quantiles against the others:
-
-|                  |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |
-|------------------|------|------|------|------|------|------|------|------|------|------|
-| `\(p\)`          | 0.05 | 0.15 | 0.25 | 0.35 | 0.45 | 0.55 | 0.65 | 0.75 | 0.85 | 0.95 |
-| Set 1 `\(Q(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
-| Set 2 `\(Q(p)\)` |  27  |  31  |  37  |  39  |  43  |  69  |  71  |  71  |  73  |  79  |
-
-]
----
 layout: true
 class: center, middle, inverse
----
-# Chapter 4: Describing Relationships Between Variables
-## First Steps in Statistical Modeling
 ---
 # Chapter 4, Section 1
 ## Linear Relationships Between Variables
@@ -512,6 +382,7 @@ b\_1 &amp;= \frac{\sum\_{i = 1}^n y\_i x\_i - n \bar{x} \bar{y}}{\sum\_{i = 1}^n
 -  This is one rule - there are others, but **Least Squares Estimates** have some useful properties that will make them the obvious best choice as we continue the course.
 
 ]
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

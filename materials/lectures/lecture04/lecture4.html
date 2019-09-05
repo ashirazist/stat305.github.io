@@ -878,8 +878,8 @@ Notice that we have `\(n = 10\)` observations which means that `\(Q(0.05) = x_1 
 |                  |  1   |  2   |  3   |  4   |  5   |  6   |  7   |  8   |  9   |  10  |
 |------------------|------|------|------|------|------|------|------|------|------|------|
 | `\(p\)`          | 0.05 | 0.15 | 0.25 | 0.35 | 0.45 | 0.55 | 0.65 | 0.75 | 0.85 | 0.95 |
-| Set 1 `\(Q(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
-| Set 2 `\(Q(p)\)` |  27  |  31  |  37  |  39  |  43  |  69  |  71  |  71  |  73  |  79  |
+| `\(Q_1(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
+| `\(Q_2(p)\)` |  27  |  31  |  37  |  39  |  43  |  69  |  71  |  71  |  73  |  79  |
 
 &lt;img src="lecture4_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
 
@@ -1148,7 +1148,7 @@ layout:false
 
 
 &lt;center&gt;
-54, 67, 60, 56, 62
+61, 59, 54, 64, 57
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -1159,17 +1159,17 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 54, 67, 60, 56, 62 is 59.8
+The mean of 61, 59, 54, 64, 57 is 59
 
 
 `\[
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((54 - 59.8)^2 + (67 - 59.8)^2 + (60 - 59.8)^2 + (56 - 59.8)^2 + (62 - 59.8)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (-5.8)^2 + (7.2)^2 + (0.2)^2 + (-3.8)^2 + (2.2)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 33.64 + 51.84 + 0.04 + 14.44 + 4.84 \right) \\\\
-    &amp;=  26.2\\\\
+    &amp;= \frac{1}{5-1} \left((61 - 59)^2 + (59 - 59)^2 + (54 - 59)^2 + (64 - 59)^2 + (57 - 59)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (2)^2 + (0)^2 + (-5)^2 + (5)^2 + (-2)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 4 + 0 + 25 + 25 + 4 \right) \\\\
+    &amp;=  14.5\\\\
 \end{align}`
 
 \]`
@@ -1183,8 +1183,8 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 `\[
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{26.2} \\\\
-     &amp;= 5.1185936\\\\
+     &amp;= \sqrt{14.5} \\\\
+     &amp;= 3.8078866\\\\
 \end{align}`
 \]`
 ---

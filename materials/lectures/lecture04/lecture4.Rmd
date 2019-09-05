@@ -838,7 +838,7 @@ Notice that we have $n = 10$ observations which means that $Q(0.05) = x_1 = 13$.
 | `\(Q(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
 
 
-```{r, warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE} 
+```{r, warning=FALSE,message=FALSE, fig.height= 4 , fig.width= 6, fig.align='center', error=FALSE, echo= FALSE} 
 
 p<-seq(from= 0.05, to= 0.95, by= 0.10)
 qp<-c(13, 15, 18, 19, 21, 34, 35, 35, 36, 39)
@@ -871,7 +871,7 @@ scale_y_continuous(breaks = c(13, 15, 18, 19, 21, 34, 35, 35, 36, 39))
 | `\(Q(p)\)` |  13  |  15  |  18  |  19  |  21  |  34  |  35  |  35  |  36  |  39  |
 
 
-```{r, warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE} 
+```{r, warning=FALSE,message=FALSE, fig.height= 4.5 , fig.width= 6, fig.align='center', error=FALSE, echo= FALSE} 
 
 p<-seq(from= 0.05, to= 0.95, by= 0.10)
 qp<-c(13, 15, 18, 19, 21, 34, 35, 35, 36, 39)

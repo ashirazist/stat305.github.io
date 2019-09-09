@@ -1,8 +1,0 @@
-### Chapter 4, Ex 1
-
-The first part asks them to calculate the slope and intercept by hand. You have the following formula:
-
-$$
-b1 = \dfrac{\sum_{i=1}^n x_i \cdot y_i - n \bar{x} \bar{y}}{\sum_{i=1}^n x_i^2 - n \bar{x}^2}
-$$;q
-;wq

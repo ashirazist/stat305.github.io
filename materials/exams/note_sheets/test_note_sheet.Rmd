@@ -1,6 +1,0 @@
----
-course: STAT 305
-name: Exam II
-...
-
-This is a test

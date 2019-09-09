@@ -17,9 +17,94 @@ layout: true
 class: center, middle, inverse
 ---
 # STAT 305: Lecture 5
+## Recap on Numerical Summaries
+### Summaries of Variablity (Measures of Spread)
 ## Chapter 4: Describing Relationships Between Variables
 ## Introduction to Models
 .footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io)]
+---
+layout:false
+.left-column[
+## Recap
+### Spread
+]
+.right-column[
+###Summaries of Variablity (Measures of Spread)
+
+Motivated by asking what kind of *variability is seen in the data* or *how spread out* the data is.
+
+**Range**: The difference between the highest and lowest values (Range = max - min)
+
+**IQR**: The Interquartile Range, how spread out is the middle 50% (IQR =  Q3 - Q1)
+
+**Variance/Standard Deviation**: Uses squared distance from the mean.
+
+|                 |    | Variance                                                      |   | Standard Deviation                                                  |
+|:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
+|          |                      |                                                               |                      |                                                                     |
+| **Population**  |                      | `\(\sigma^2 =  \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2} \)`   |
+|            |                      |                                                               |                      |                                                                     |
+|            |                      |                                                               |                      |                                                                     |
+| **Sample**      |                      | `\( s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)`    |                      | `\(s =  \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`     |
+]
+
+---
+layout:false
+.left-column[
+## Recap
+### Spread
+]
+.right-column[
+## Summarizing Data Numerically
+**Example**: Taking a sample of size 5 from a population we record the following values:
+
+```{r echo = FALSE}
+   samp <- sample(50:70,5)
+   samp_bar <- round(mean(samp),2)
+```
+
+<center>
+`r samp`
+</center>
+
+Find the variance and standard deviation of this sample.
+]
+
+---
+layout:false
+## Example: Finding the Variance
+
+Since we are told it is a sample, we need to use **sample variance**.
+The mean of `r samp` is `r mean(samp)`
+
+
+`\[
+\begin{align}
+s^2 &= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
+    &= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
+    &= \frac{1}{`r length(samp)`-1} \left((`r samp[1]` - `r samp_bar`)^2 + (`r samp[2]` - `r samp_bar`)^2 + (`r samp[3]` - `r samp_bar`)^2 + (`r samp[4]` - `r samp_bar`)^2 + (`r samp[5]` - `r samp_bar`)^2 \right) \\\\
+    &= \frac{1}{`r length(samp) - 1`} \left( (`r samp[1] -  samp_bar`)^2 + (`r samp[2] -  samp_bar`)^2 + (`r samp[3] -  samp_bar`)^2 + (`r samp[4] -  samp_bar`)^2 + (`r samp[5] -  samp_bar`)^2 \right) \\\\
+    &= \frac{1}{`r length(samp) - 1`} \left( `r (samp[1] -  samp_bar)^2` + `r (samp[2] -  samp_bar)^2` + `r (samp[3] -  samp_bar)^2` + `r (samp[4] -  samp_bar)^2` + `r (samp[5] -  samp_bar)^2` \right) \\\\
+    &=  `r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1) `\\\\
+\end{align}
+
+\]`
+
+
+
+---
+## Example: Finding the Standard Deviation
+
+With `\(s^2\)` known, finding `\(s\)` is simple:
+
+`\[
+\begin{align}
+   s &= \sqrt{s^2} \\\\
+     &= \sqrt{`r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1)`} \\\\
+     &= `r sqrt(((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1)) `\\\\
+\end{align}
+\]`
+
 ---
 
 layout: true
@@ -39,12 +124,47 @@ layout: false
 We have a standard idea of how our experiment works:
 
 <center>
-   <img src="figure/schemeit-project.png" alt="dmc logo" height="125"> 
+   <img src="figure/schemeit-project.png" alt="dmc logo" height="120"> 
 </center>
+Bivariate data oftern arise because a quantitative experimental variable *x* has been varied between several different setting (treatment). 
+
+It is helpful to have an equation relating *y* (the response) to *x* when the purposes are summarization, interpolation, limited extrapolation, and/or process optimization/ adjusment. 
 
 *and* we know that with an valid experiment, we can say that the changes in our experimental variables actually *cause* changes in our response.
 
 But how do we describe those response when we know that random error would make each result different...
+]
+---
+.left-column[
+## Describing Relationships
+### Idea
+]
+.right-column[
+### Types of relationships
+
+```{r,  warning=FALSE,message=FALSE, fig.height= 6 , fig.width= 8, fig.align='center', error=FALSE, echo= FALSE}
+library(tidyverse)
+library(ggplot2)
+library(magrittr)
+x1<-rnorm(n = 100, 0,10)
+y1<-rnorm(n = 100, 0,10)
+
+df<-data.frame(x1, y1)
+p1<-df %>% ggplot(aes(x1, y1))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
+
+df2<- df %>% mutate(y2= -10+ x1*2+ rnorm(100, 0, 10))
+p2<-df2 %>% ggplot(aes(x1, y2))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
+df3<- df %>% mutate(y3= 10- 1.56*x1^2+ rnorm(100, 0, 25))
+p3<-df3 %>% ggplot(aes(x1, y3))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
+
+df4<- df %>% mutate(y4= 10+ x1*0.25- 1.75*x1^2+ 4.345* x1^3 + rnorm(100, 0, 100))
+p4<-df4 %>% ggplot(aes(x1, y4))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
+
+gridExtra::grid.arrange(p1, p2, p3, p4 , nrow=2)
+
+```
+
+
 ]
 ---
 .left-column[
@@ -82,7 +202,7 @@ In this case,
 
 ## Example: Stress on Bars
 
-An experiment examining the effects of **stress** on **time until fracture** is performe by taking a sample of 10 stainless steel rods immersed in 40% CaCl solution at 100 degrees Celsius and applying different amounts of uniaxial stress.
+An experiment examining the effects of **stress** on **time until fracture** is performed by taking a sample of 10 stainless steel rods immersed in 40% CaCl solution at 100 degrees Celsius and applying different amounts of uniaxial stress.
 
 The results are recorded below:
 
@@ -265,30 +385,23 @@ In other words, we need to minimize something with respect to two values we get 
 
 ]
 ---
-.left-column[
-## Describing Relationships
-### Idea
-### Ex: Bars
-### Fitting Lines
-### Best Estimate
-]
-.right-column[
 
-### Deriving the Least Squares Estimates
+### Deriving the Least Squares Estimates(Optional reading)
 
 We can rewrite the target we want to minimize so that the variables are less tangled together:
 
-<span style = "font-size: 70%">
+<span style = "font-size: 65%">
 \begin{align}
-\sum\_{i = 1}^n (y\_i - \hat{y}\_i)^2 &= \sum\_{i = 1}^n \left(y\_i - (b\_0 + b\_1 x\_i ) \right)^2 \\\\
-                                      &= \sum\_{i = 1}^n \left(y\_i^2 - 2 y\_i (b\_0 + b\_1 x\_i ) + (b\_0 + b\_1 x\_i )^2\right) \\\\
-                                      &= \sum\_{i = 1}^n y\_i^2 - \sum\_{i = 1}^n 2 y\_i (b\_0 + b\_1 x\_i ) + \sum\_{i = 1}^n (b\_0 + b\_1 x\_i )^2 \\\\
-                                      &= \sum\_{i = 1}^n y\_i^2 - \sum\_{i = 1}^n (2 y\_i b\_0 + 2 y\_i b\_1 x\_i ) + \sum\_{i = 1}^n \left(b\_0^2 + 2 b\_0 b\_1 x\_i + (b\_1 x\_i )^2 \right) \\\\
-                                      &= \sum\_{i = 1}^n y\_i^2 - \sum\_{i = 1}^n 2 y\_i b\_0 - \sum\_{i = 1}^n 2 y\_i b\_1 x\_i + \sum\_{i = 1}^n b\_0^2 + \sum\_{i = 1}^n 2 b\_0 b\_1 x\_i + \sum\_{i = 1}^n b\_1^2 x\_i^2  \\\\
-                                      &= \sum\_{i = 1}^n y\_i^2 - 2 b\_0 \sum\_{i = 1}^n y\_i - 2 b\_1 \sum\_{i = 1}^n y\_i x\_i + n b\_0^2 + 2 b\_0 b\_1 \sum\_{i = 1}^n x\_i + b\_1^2 \sum\_{i = 1}^n x\_i^2  \\\\
+\sum_{i = 1}^n (y_i - \hat{y}_i)^2 &= \sum_{i = 1}^n \left(y_i - (b_0 + b_1 x_i ) \right)^2 \\\\
+                                      &= \sum_{i = 1}^n \left(y_i^2 - 2 y_i (b_0 + b_1 x_i ) + (b_0 + b_1 x_i )^2\right) \\\\
+                                      &= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n 2 y_i (b_0 + b_1 x_i ) + \sum_{i = 1}^n (b_0 + b_1 x_i )^2 \\\\
+                                      &= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n (2 y_i b_0 + 2 y_i b_1 x_i ) + \sum_{i = 1}^n \left(b_0^2 + 2 b_0 b_1 x_i + (b_1 x_i )^2 \right) \\\\
+                                      &= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n 2 y_i b_0 - \sum_{i = 1}^n 2 y_i b_1 x_i + \sum_{i = 1}^n b_0^2 + \sum_{i = 1}^n 2 b_0 b_1 x_i + \sum_{i = 1}^n b_1^2 x_i^2  \\\\
+                                      &= \sum_{i = 1}^n y_i^2 - 2 b_0 \sum_{i = 1}^n y_i - 2 b_1 \sum_{i = 1}^n y_i x_i + n b_0^2 + 2 b_0 b_1 \sum_{i = 1}^n x_i + b_1^2 \sum_{i = 1}^n x_i^2  \\\\
 \end{align}
 </span>
-]
+
+
 ---
 .left-column[
 ## Describing Relationships
@@ -307,15 +420,15 @@ How do we minimize it?
 
 -  Remember we have our data so we know every value of \\(x_i\\) and \\(y_i\\) and can treat those parts as constants.
 
-**The derivative with respect to \\(\mathbf{b\_0}\\)**:
-\\[
--2 \sum\_{i = 1}^n y\_i + 2 n b\_0 + 2 b\_1 \sum\_{i = 1}^n x\_i 
-\\]
+**The derivative with respect to \\(\mathbf{b_0}\\)**:
+`\[
+-2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i 
+\]`
 
-**The derivative with respect to \\(\mathbf{b\_0}\\)**:
-\\[
--2 b\_0 \sum\_{i = 1}^n y\_i x\_i + 2 b\_0 \sum\_{i = 1}^n x\_i + 2 b\_1 \sum\_{i = 1}^n x\_i^2
-\\]
+**The derivative with respect to \\(\mathbf{b_0}\\)**:
+`\[
+-2 b_0 \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2
+\]`
 <span style = "font-size: 70%">
 </span>
 
@@ -335,17 +448,17 @@ How do we minimize it?
 We set both equal to 0 and solve them at the same time:
 
 \begin{align}
--2 \sum\_{i = 1}^n y\_i + 2 n b\_0 + 2 b\_1 \sum\_{i = 1}^n x\_i &= 0 \\\\
--2 b\_0 \sum\_{i = 1}^n y\_i x\_i + 2 b\_0 \sum\_{i = 1}^n x\_i + 2 b\_1 \sum\_{i = 1}^n x\_i^2 &=0 \\\\
+-2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i &= 0 \\\\
+-2 b_0 \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2 &=0 \\\\
 \end{align}
 
 We can rewrite the first equation as:
 \begin{align}
-b\_0 &= \frac{1}{n} \sum\_{i = 1}^n y\_i - b\_1 \frac{1}{n} \sum\_{i = 1}^n x\_i  \\\\
-     &= \bar{y} - b\_1 \bar{x}
+b_0 &= \frac{1}{n} \sum_{i = 1}^n y_i - b_1 \frac{1}{n} \sum_{i = 1}^n x_i  \\\\
+     &= \bar{y} - b_1 \bar{x}
 \end{align}
 
-and then replace all \\(b\_0\\) in the second equation (there is some algebra type stuff along the way, of course)
+and then replace all \\(b_0\\) in the second equation (there is some algebra type stuff along the way, of course)
 ]
 ---
 .left-column[
@@ -364,9 +477,9 @@ After a little simplification we arrive at our estimates:
 **Least Squares Estimates for Linear Fit**
 
 \begin{align}
-b\_0 &= \bar{y}- b\_1 \bar{x} \\\\
-b\_1 &= \frac{\sum\_{i = 1}^n y\_i x\_i - n \bar{x} \bar{y}}{\sum\_{i = 1}^n x\_i^2 - n \bar{x}^2} \\\\
-     &= \frac{\sum\_{i = 1}^n (x\_i - \bar{x})(y\_i - \bar{y})}{\sum\_{i = 1}^n (x\_i - \bar{x})^2}
+b_0 &= \bar{y}- b_1 \bar{x} \\\\
+b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
+     &= \frac{\sum_{i = 1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i = 1}^n (x_i - \bar{x})^2}
 \end{align}
 
 **Wrap Up**
@@ -376,3 +489,164 @@ b\_1 &= \frac{\sum\_{i = 1}^n y\_i x\_i - n \bar{x} \bar{y}}{\sum\_{i = 1}^n x\_
 
 ]
 ---
+.left-column[
+## Describing Relationships
+### Recap
+
+]
+.right-column[
+
+** Last lecture example: Strain on Bars **
+
+|                                      |      |      |      |      |      |      |      |      |      |      |
+|--------------------------------------|------|------|------|------|------|------|------|------|------|------|
+| **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
+| **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
+
+Estimating the best slope and intercept using least squares:
+
+<span style = "font-size: 70%">
+
+\begin{align}
+b_0 &= \bar{y}- b_1 \bar{x} \\\\
+b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
+     &= \frac{\sum_{i = 1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i = 1}^n (x_i - \bar{x})^2}
+\end{align}
+</span>
+
+In our case we have the following:
+
+
+<span style = "font-size: 65%">
+\begin{align}
+\sum_{i = 1}^{10} y_i = 484,  
+\sum_{i = 1}^{10} x_i = 200,  
+\sum_{i = 1}^{10} x_i y_i = 8407.5,  
+\sum_{i = 1}^{10} x_i^2 = 5412.5, 
+\end{align}
+</span>
+
+
+]
+---
+.left-column[
+## Describing Relationships
+### Recap
+
+]
+.right-column[
+
+** Last lecture example: Strain on Bars **
+
+
+|                                      |      |      |      |      |      |      |      |      |      |      |
+|--------------------------------------|------|------|------|------|------|------|------|------|------|------|
+| **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
+| **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
+
+
+
+<span style = "font-size: 65%">
+\begin{align}
+\sum_{i = 1}^{10} y_i = 484, 
+\sum_{i = 1}^{10} x_i = 200, 
+\sum_{i = 1}^{10} x_i y_i = 8407.5, 
+\sum_{i = 1}^{10} x_i^2 = 5412.5, 
+\end{align}
+</span>
+
+Using this we can estimate \\(b_1\\):
+
+<span style = "font-size: 80%">
+\begin{align}
+b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
+     &= \frac{8407.5 - 10 \left(\frac{200}{10}\right) \left(\frac{484}{10}\right)}{5412.5 - 10 \left(\frac{200}{10}\right)^2} \\\\
+     &= \frac{-1272.5}{1412.5} \\\\
+     &\approx -0.9009
+\end{align}
+</span>
+
+]
+---
+.left-column[
+## Describing Relationships
+### Recap
+]
+.right-column[
+
+** Last lecture example: Strain on Bars **
+
+
+|                                      |      |      |      |      |      |      |      |      |      |      |
+|--------------------------------------|------|------|------|------|------|------|------|------|------|------|
+| **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
+| **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
+
+
+
+<span style = "font-size: 70%">
+\begin{align}
+\sum_{i = 1}^{10} y_i = 484, 
+\sum_{i = 1}^{10} x_i = 200, 
+\sum_{i = 1}^{10} x_i y_i = 8407.5, 
+\sum_{i = 1}^{10} x_i^2 = 5412.5, 
+\end{align}
+</span>
+
+And using \\(b_1\\) we can estimate \\(b_0\\):
+
+<span style = "font-size: 80%">
+\begin{align}
+b_0 &= \bar{y} - b_1 \bar{x} \\\\
+     &= \left(\frac{484}{10}\right) - b_1 \left(\frac{200}{10}\right) \\\\
+     &= 48.4 - \left(\frac{-1272.5}{1412.5}\right) 20.0\\\\
+     &= 66.4177
+\end{align}
+</span>
+
+Which gives us the **Fitted Relationship**:
+
+\\[
+\hat{y} = 66.4177 - 0.9009 x
+\\]
+]
+---
+.left-column[
+## Describing Relationships
+### Recap
+### Using JMP
+]
+.right-column[
+
+**Topics to be covered in JMP**
+
+-  Fitting linear relationships
+-  Describing quality of fit (correlation, \\(R^2\\))
+-  Fitting relationships using multiple variables
+-  Fitting non-linear relationships
+
+]
+---
+## Example: Manufacturing Ball Bearings
+
+Controlling surface roughness is an important part of the manufacture of bearing balls. 
+The key step in this smoothing the balls involves the use of a spinning weighted disc.
+Two important aspects of this are the rotation speed of the disc and the weight applied to the disc.
+Since higher weights and higher rotation speed are all known to cause shorter lifetimes for the discs (which requires halts in production, costs of new discs, and so on), a team of engineers are attempting to better understand the relationship between the rotation speed, the weight, and the resulting surface roughness of the balls produced.
+---
+## Experiment 1: Constant speed, changing applied weight
+With the disc rotation speed locked at 50 rotations/second, the team of engineers created 60 batches of balls using differently weighted discs (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g) and randomly selected one ball from each batch. 
+The results are recorded in the dataset "balls-001.csv" on the course page.
+---
+## Experiment 2: Changing speed, constant applied weight
+With an better understanding of the relationship between weight and surface roughness, the team turned their attention to rotation speed.
+This time the produced 3 batches for each of 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second). 
+The results are recorded in the dataset "balls-002.csv" on the course page.
+---
+## Experiment 3: Changing speed changing applied weight
+
+With a better understanding of the relationship between weight and surface roughness, the team turned their attention to rotation speed.
+This time the produced 3 batches for each combination of 20 weights 
+(0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g)
+and 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second).
+The results are recorded in the dataset "balls-003.csv"

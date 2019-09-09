@@ -686,19 +686,19 @@ layout:false
 
 
 
-<!-- -  `\( n p + .5 = 10 \cdot 0.5 + 0.5 = 5.5 \)`.  -->
+-  `\( n p + .5 = 10 \cdot 0.5 + 0.5 = 5.5 \)`.
 
-<!-- -  since `\(\lfloor 5.5 \rfloor = 5 \)` then `\(i = 5\)` and -->
+-  since `\(\lfloor 5.5 \rfloor = 5 \)` then `\(i = 5\)` and
 
-<!-- `\[ -->
-<!--   \begin{align} -->
-<!--   Q(.5) &= x_i + (n \cdot p - i + .5) \cdot \left( x_{i+1} - x_i \right)  \\\\ -->
-<!--          &= x_5 + (10 \cdot 0.5 - 5 + .5) \cdot \left( x_{5+1} - x_5 \right)  \\\\ -->
-<!--          &= x_5 + (.5) \cdot \left( x_{6} - x_5 \right)  \\\\ -->
-<!--          &= 61 + (.5) \cdot \left( 64 - 61 \right)  \\\\ -->
-<!--          &= 62.5  -->
-<!--   \end{align} -->
-<!-- \]` -->
+`\[
+  \begin{align}
+  Q(.5) &= x_i + (n \cdot p - i + .5) \cdot \left( x_{i+1} - x_i \right)  \\\\
+         &= x_5 + (10 \cdot 0.5 - 5 + .5) \cdot \left( x_{5+1} - x_5 \right)  \\\\
+         &= x_5 + (.5) \cdot \left( x_{6} - x_5 \right)  \\\\
+         &= 61 + (.5) \cdot \left( 64 - 61 \right)  \\\\
+         &= 62.5
+  \end{align}
+\]`
 
 ]
 ---
@@ -1280,7 +1280,8 @@ Since we are told it is a sample, we need to use **sample variance**.
 The mean of `r samp` is `r mean(samp)`
 
 
-`\[
+<span style = "font-size: 65%">
+
 \begin{align}
 s^2 &= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
@@ -1290,15 +1291,15 @@ s^2 &= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &=  `r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1) `\\\\
 \end{align}
 
-\]`
-
+<span>
 
 ---
 ## Example: Finding the Standard Deviation
 
 With `\(s^2\)` known, finding `\(s\)` is simple:
 
-`\[
+<span style = "font-size: 65%">
+
 \begin{align}
    s &= \sqrt{s^2} \\\\
      &= \sqrt{`r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1)`} \\\\

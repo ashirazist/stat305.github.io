@@ -46,7 +46,7 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 
 **Variance/Standard Deviation**: Uses squared distance from the mean.
 
-|                 |    | Variance                                                      |   | Standard Deviation                                                  |
+|                 |    | Variance                                                      |&amp;nbsp;&amp;nbsp;&amp;nbsp;    | Standard Deviation                                                  |
 |:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
 |          |                      |                                                               |                      |                                                                     |
 | **Population**  |                      | `\(\sigma^2 =  \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2} \)`   |
@@ -68,7 +68,7 @@ layout:false
 
 
 &lt;center&gt;
-59, 62, 56, 57, 61
+68, 51, 70, 69, 55
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -79,35 +79,35 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 59, 62, 56, 57, 61 is 59
+The mean of 68, 51, 70, 69, 55 is 62.6
 
 
-`\[
+&lt;span style = "font-size: 75%"&gt;
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((59 - 59)^2 + (62 - 59)^2 + (56 - 59)^2 + (57 - 59)^2 + (61 - 59)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (0)^2 + (3)^2 + (-3)^2 + (-2)^2 + (2)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 0 + 9 + 9 + 4 + 4 \right) \\\\
-    &amp;=  6.5\\\\
+    &amp;= \frac{1}{5-1} \left((68 - 62.6)^2 + (51 - 62.6)^2 + (70 - 62.6)^2 + (69 - 62.6)^2 + (55 - 62.6)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (5.4)^2 + (-11.6)^2 + (7.4)^2 + (6.4)^2 + (-7.6)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 29.16 + 134.56 + 54.76 + 40.96 + 57.76 \right) \\\\
+    &amp;=  79.3\\\\
 \end{align}`
 
-\]`
-
+&lt;span&gt;
 
 
 ---
 ## Example: Finding the Standard Deviation
 
 With `\(s^2\)` known, finding `\(s\)` is simple:
+&lt;span style = "font-size: 100%"&gt;
 
-`\[
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{6.5} \\\\
-     &amp;= 2.5495098\\\\
+     &amp;= \sqrt{79.3} \\\\
+     &amp;= 8.9050547\\\\
 \end{align}`
-\]`
+
+&lt;span&gt;
 
 ---
 
@@ -374,7 +374,7 @@ In other words, we need to minimize something with respect to two values we get 
 
 We can rewrite the target we want to minimize so that the variables are less tangled together:
 
-&lt;span style = "font-size: 65%"&gt;
+&lt;span style = "font-size: 60%"&gt;
 `\begin{align}
 \sum_{i = 1}^n (y_i - \hat{y}_i)^2 &amp;= \sum_{i = 1}^n \left(y_i - (b_0 + b_1 x_i ) \right)^2 \\\\
                                       &amp;= \sum_{i = 1}^n \left(y_i^2 - 2 y_i (b_0 + b_1 x_i ) + (b_0 + b_1 x_i )^2\right) \\\\
@@ -528,8 +528,6 @@ In our case we have the following:
 | **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
 | **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
 
-
-
 &lt;span style = "font-size: 65%"&gt;
 `\begin{align}
 \sum_{i = 1}^{10} y_i = 484, 
@@ -541,7 +539,7 @@ In our case we have the following:
 
 Using this we can estimate \\(b_1\\):
 
-&lt;span style = "font-size: 80%"&gt;
+&lt;span style = "font-size: 75%"&gt;
 `\begin{align}
 b_1 &amp;= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
      &amp;= \frac{8407.5 - 10 \left(\frac{200}{10}\right) \left(\frac{484}{10}\right)}{5412.5 - 10 \left(\frac{200}{10}\right)^2} \\\\
@@ -634,6 +632,7 @@ This time the produced 3 batches for each combination of 20 weights
 (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g)
 and 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second).
 The results are recorded in the dataset "balls-003.csv"
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

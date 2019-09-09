@@ -4,7 +4,7 @@
     <title>STAT 305: Lecture 4</title>
     <meta charset="utf-8" />
     <meta name="author" content="Amin Shirazi" />
-    <meta name="date" content="2019-09-05" />
+    <meta name="date" content="2019-09-09" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # STAT 305: Lecture 4
 ### Amin Shirazi
-### 2019-09-05
+### 2019-09-09
 
 ---
 
@@ -647,19 +647,19 @@ layout:false
 
 
 
-&lt;!-- -  `\( n p + .5 = 10 \cdot 0.5 + 0.5 = 5.5 \)`.  --&gt;
+-  `\( n p + .5 = 10 \cdot 0.5 + 0.5 = 5.5 \)`.
 
-&lt;!-- -  since `\(\lfloor 5.5 \rfloor = 5 \)` then `\(i = 5\)` and --&gt;
+-  since `\(\lfloor 5.5 \rfloor = 5 \)` then `\(i = 5\)` and
 
-&lt;!-- `\[ --&gt;
-&lt;!--   \begin{align} --&gt;
-&lt;!--   Q(.5) &amp;= x_i + (n \cdot p - i + .5) \cdot \left( x_{i+1} - x_i \right)  \\\\ --&gt;
-&lt;!--          &amp;= x_5 + (10 \cdot 0.5 - 5 + .5) \cdot \left( x_{5+1} - x_5 \right)  \\\\ --&gt;
-&lt;!--          &amp;= x_5 + (.5) \cdot \left( x_{6} - x_5 \right)  \\\\ --&gt;
-&lt;!--          &amp;= 61 + (.5) \cdot \left( 64 - 61 \right)  \\\\ --&gt;
-&lt;!--          &amp;= 62.5  --&gt;
-&lt;!--   \end{align} --&gt;
-&lt;!-- \]` --&gt;
+`\[
+  \begin{align}
+  Q(.5) &amp;= x_i + (n \cdot p - i + .5) \cdot \left( x_{i+1} - x_i \right)  \\\\
+         &amp;= x_5 + (10 \cdot 0.5 - 5 + .5) \cdot \left( x_{5+1} - x_5 \right)  \\\\
+         &amp;= x_5 + (.5) \cdot \left( x_{6} - x_5 \right)  \\\\
+         &amp;= 61 + (.5) \cdot \left( 64 - 61 \right)  \\\\
+         &amp;= 62.5
+  \end{align}
+\]`
 
 ]
 ---
@@ -1148,7 +1148,7 @@ layout:false
 
 
 &lt;center&gt;
-61, 59, 54, 64, 57
+61, 69, 62, 67, 63
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -1159,32 +1159,33 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 61, 59, 54, 64, 57 is 59
+The mean of 61, 69, 62, 67, 63 is 64.4
 
 
-`\[
+&lt;span style = "font-size: 65%"&gt;
+
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((61 - 59)^2 + (59 - 59)^2 + (54 - 59)^2 + (64 - 59)^2 + (57 - 59)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (2)^2 + (0)^2 + (-5)^2 + (5)^2 + (-2)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 4 + 0 + 25 + 25 + 4 \right) \\\\
-    &amp;=  14.5\\\\
+    &amp;= \frac{1}{5-1} \left((61 - 64.4)^2 + (69 - 64.4)^2 + (62 - 64.4)^2 + (67 - 64.4)^2 + (63 - 64.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (-3.4)^2 + (4.6)^2 + (-2.4)^2 + (2.6)^2 + (-1.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 11.56 + 21.16 + 5.76 + 6.76 + 1.96 \right) \\\\
+    &amp;=  11.8\\\\
 \end{align}`
 
-\]`
-
+&lt;span&gt;
 
 ---
 ## Example: Finding the Standard Deviation
 
 With `\(s^2\)` known, finding `\(s\)` is simple:
 
-`\[
+&lt;span style = "font-size: 65%"&gt;
+
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{14.5} \\\\
-     &amp;= 3.8078866\\\\
+     &amp;= \sqrt{11.8} \\\\
+     &amp;= 3.4351128\\\\
 \end{align}`
 \]`
 ---

@@ -39,7 +39,7 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 
 **Variance/Standard Deviation**: Uses squared distance from the mean.
 
-|                 |    | Variance                                                      |   | Standard Deviation                                                  |
+|                 |    | Variance                                                      |&nbsp;&nbsp;&nbsp;    | Standard Deviation                                                  |
 |:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
 |          |                      |                                                               |                      |                                                                     |
 | **Population**  |                      | `\(\sigma^2 =  \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2} \)`   |
@@ -78,7 +78,7 @@ Since we are told it is a sample, we need to use **sample variance**.
 The mean of `r samp` is `r mean(samp)`
 
 
-`\[
+<span style = "font-size: 75%">
 \begin{align}
 s^2 &= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
@@ -88,22 +88,22 @@ s^2 &= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &=  `r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1) `\\\\
 \end{align}
 
-\]`
-
+<span>
 
 
 ---
 ## Example: Finding the Standard Deviation
 
 With `\(s^2\)` known, finding `\(s\)` is simple:
+<span style = "font-size: 100%">
 
-`\[
 \begin{align}
    s &= \sqrt{s^2} \\\\
      &= \sqrt{`r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1)`} \\\\
      &= `r sqrt(((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1)) `\\\\
 \end{align}
-\]`
+
+<span>
 
 ---
 
@@ -390,7 +390,7 @@ In other words, we need to minimize something with respect to two values we get 
 
 We can rewrite the target we want to minimize so that the variables are less tangled together:
 
-<span style = "font-size: 65%">
+<span style = "font-size: 60%">
 \begin{align}
 \sum_{i = 1}^n (y_i - \hat{y}_i)^2 &= \sum_{i = 1}^n \left(y_i - (b_0 + b_1 x_i ) \right)^2 \\\\
                                       &= \sum_{i = 1}^n \left(y_i^2 - 2 y_i (b_0 + b_1 x_i ) + (b_0 + b_1 x_i )^2\right) \\\\
@@ -544,8 +544,6 @@ In our case we have the following:
 | **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
 | **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
 
-
-
 <span style = "font-size: 65%">
 \begin{align}
 \sum_{i = 1}^{10} y_i = 484, 
@@ -557,7 +555,7 @@ In our case we have the following:
 
 Using this we can estimate \\(b_1\\):
 
-<span style = "font-size: 80%">
+<span style = "font-size: 75%">
 \begin{align}
 b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
      &= \frac{8407.5 - 10 \left(\frac{200}{10}\right) \left(\frac{484}{10}\right)}{5412.5 - 10 \left(\frac{200}{10}\right)^2} \\\\
@@ -650,3 +648,4 @@ This time the produced 3 batches for each combination of 20 weights
 (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g)
 and 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second).
 The results are recorded in the dataset "balls-003.csv"
+---

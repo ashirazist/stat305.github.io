@@ -68,7 +68,7 @@ layout:false
 
 
 &lt;center&gt;
-68, 51, 70, 69, 55
+55, 54, 62, 56, 60
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -79,17 +79,17 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 68, 51, 70, 69, 55 is 62.6
+The mean of 55, 54, 62, 56, 60 is 57.4
 
 
 &lt;span style = "font-size: 75%"&gt;
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((68 - 62.6)^2 + (51 - 62.6)^2 + (70 - 62.6)^2 + (69 - 62.6)^2 + (55 - 62.6)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (5.4)^2 + (-11.6)^2 + (7.4)^2 + (6.4)^2 + (-7.6)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 29.16 + 134.56 + 54.76 + 40.96 + 57.76 \right) \\\\
-    &amp;=  79.3\\\\
+    &amp;= \frac{1}{5-1} \left((55 - 57.4)^2 + (54 - 57.4)^2 + (62 - 57.4)^2 + (56 - 57.4)^2 + (60 - 57.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (-2.4)^2 + (-3.4)^2 + (4.6)^2 + (-1.4)^2 + (2.6)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 5.76 + 11.56 + 21.16 + 1.96 + 6.76 \right) \\\\
+    &amp;=  11.8\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -103,8 +103,8 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{79.3} \\\\
-     &amp;= 8.9050547\\\\
+     &amp;= \sqrt{11.8} \\\\
+     &amp;= 3.4351128\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -475,12 +475,15 @@ b_1 &amp;= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^
 ---
 .left-column[
 ## Describing Relationships
-### Recap
+### Idea
+### Ex: Bars
+### Fitting Lines
+### Best Estimate
 
 ]
 .right-column[
 
-** Last lecture example: Strain on Bars **
+**Example: Strain on Bars **
 
 |                                      |      |      |      |      |      |      |      |      |      |      |
 |--------------------------------------|------|------|------|------|------|------|------|------|------|------|
@@ -515,12 +518,15 @@ In our case we have the following:
 ---
 .left-column[
 ## Describing Relationships
-### Recap
+### Idea
+### Ex: Bars
+### Fitting Lines
+### Best Estimate
 
 ]
 .right-column[
 
-** Last lecture example: Strain on Bars **
+** Example: Strain on Bars **
 
 
 |                                      |      |      |      |      |      |      |      |      |      |      |
@@ -552,17 +558,21 @@ b_1 &amp;= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^
 ---
 .left-column[
 ## Describing Relationships
-### Recap
+### Idea
+### Ex: Bars
+### Fitting Lines
+### Best Estimate
 ]
 .right-column[
 
-** Last lecture example: Strain on Bars **
+** Example: Strain on Bars **
 
 
 |                                      |      |      |      |      |      |      |      |      |      |      |
 |--------------------------------------|------|------|------|------|------|------|------|------|------|------|
 | **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
 | **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
+
 
 
 
@@ -595,20 +605,84 @@ Which gives us the **Fitted Relationship**:
 ---
 .left-column[
 ## Describing Relationships
+### Idea
+### Ex: Bars
+### Fitting Lines
+### Best Estimate
+]
+.right-column[
+
+** Example: Strain on Bars **
+
+
+|                                      |      |      |      |      |      |      |      |      |      |      |
+|--------------------------------------|------|------|------|------|------|------|------|------|------|------|
+| **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
+| **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
+
+\\[
+\hat{y} = 66.4177 - 0.9009 x
+\\]
+
+
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+.left-column[
+## Describing Relationships
+### Idea
+### Ex: Bars
+### Fitting Lines
+### Best Estimate
+]
+.right-column[
+
+**Example: Strain on Bars **
+
+
+|                                      |      |      |      |      |      |      |      |      |      |      |
+|--------------------------------------|------|------|------|------|------|------|------|------|------|------|
+| **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
+| **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
+
+
+**Fitted line**
+
+
+&lt;img src="lecture7_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+---
+.left-column[
+## Describing Relationships
 ### Recap
 ### Using JMP
 ]
 .right-column[
 
-**Topics to be covered in JMP**
+##Topics to be covered in JMP
 
 -  Fitting linear relationships
+
 -  Describing quality of fit (correlation, \\(R^2\\))
+
 -  Fitting relationships using multiple variables
+
 -  Fitting non-linear relationships
 
 ]
 ---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+### An example 
+---
+layout: false
 ## Example: Manufacturing Ball Bearings
 
 Controlling surface roughness is an important part of the manufacture of bearing balls. 
@@ -632,7 +706,399 @@ This time the produced 3 batches for each combination of 20 weights
 (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g)
 and 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second).
 The results are recorded in the dataset "balls-003.csv"
+
 ---
+## Experiment 4: Changing categorical speed changing applied weight
+
+Now that they have a complete model, what if they had attempted this experiment with a machine in which rotation speed only consisted of "low, medium, and high"?
+
+Again, time the produced 3 batches for each combination of 20 weights 
+(0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g)
+and three rotation speeds: low (encoded as 1), medium (encoded as 2), high (encoded as 3).
+The results are recorded in the dataset "balls-004.csv"
+---
+layout:false
+.left-column[
+## Recap
+### Residuals
+]
+.right-column[
+
+###Residuals
+
+-  The "residue" left over from fitting a line
+
+&lt;center&gt;
+   &lt;img src="residual_plpt.gif" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
+
+-  Each point represents some \\((x_i, y_i)\\) pair from our data
+
+-  We use the Least Squares approach to find the best fit line, \\(\hat{y} = b_0 + b_1 x\\)
+
+-  For any value \\(x_i\\) in our data set, we can get a fitted (or predicted) value \\(\hat{y}_i = b_0 + b_1 x_i \\)
+
+]
+---
+.left-column[
+## Recap
+### Residuals
+]
+.right-column[
+
+###Residuals
+
+&lt;center&gt;
+   &lt;img src="residual_plpt.gif" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
+
+
+-  The residual is the difference between the observed data point and the fitted prediction:
+\\[
+e_i = y_i - \hat{y}_i
+\\]
+
+-  **In the linear case**, using \\(\hat{y} = b_0 + b_1 x\\), we can also write
+\\[
+e_i = y_i - \hat{y}_i = y_i - (b_0  + b_1 x_i)
+\\]
+for each pair \\((x_i, y_i)\\).
+
+]
+---
+.left-column[
+## Recap
+### Residuals
+]
+.right-column[
+
+###Residuals
+
+&lt;center&gt;
+   &lt;img src="residual_plpt.gif" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
+
+
+**ROPe**: **R**esiduals = **O**bserved - **P**redicted (using symbol \\(e_i\\))
+
+-  If \\(e\_i &gt; 0\\) then \\(y_i - \hat{y}\_i &gt; 0\\) and \\(y\_i &gt; \hat{y}\_i\\) meaning the observed is larger than the predicted - we are "underpredicting"
+
+-  If \\(e\_i &lt; 0\\) then \\(y_i - \hat{y}\_i &lt; 0\\) and \\(y\_i &lt; \hat{y}\_i\\) meaning the observed is smaller than the predicted - we are "overpredicting"
+
+Obviously, we would like our residuals to be small compared to the size of response values.
+
+]
+---
+.left-column[
+## Recap
+## Good Fit
+]
+.right-column[
+
+&lt;center&gt;
+   &lt;h3&gt;Knowing when a relationship fits the data well&lt;/h3&gt;
+&lt;/center&gt;
+
+So far we have been fitting lines to describe our data. A first question to ask may be something like:
+
+-  **Q**: What kind of situations can a linear fit be used to describe the relationship between an expreimental variable and a response?
+
+-  **A**: Any time both the experimental variable and the response variable are numeric.
+
+**However** all fits are not created the same: 
+
+&lt;center&gt;
+   &lt;img src="line_fits.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
+
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+&lt;center&gt;
+   &lt;h3&gt;Describing Fit Numerically&lt;/h3&gt;
+&lt;/center&gt;
+
+**1. Sample correlation (aka, sample linear correlation)**
+
+For a sample consisting of data pairs 
+\\((x_1, y_1)\\), 
+\\((x_2, y_2)\\), 
+\\((x_3, y_3)\\), 
+...
+\\((x_n, y_n)\\), the sample linear correlation, \\(r\\), is defined by 
+
+`\[
+r = \frac{ \sum_{i = 1}^{n} (x_i - \bar{x}) (y_i - \bar{y}) }{ 
+\sqrt{ \left(\sum_{i = 1}^{n} (x_i - \bar{x})^2 \right) \left(\sum_{i = 1}^{n} (y_i - \bar{y})^2 \right) } }
+\]`
+
+which can also be written as
+
+`\[
+r = \frac{ \sum_{i = 1}^{n} x_i y_i - n \bar{x}\bar{y} }{ 
+\sqrt{ \left(\sum_{i = 1}^{n} x_i^2 - n\bar{x}^2 \right) \left(\sum_{i = 1}^{n} y_i^2 - n \bar{y}^2 \right) } }
+\]`
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+**1. Sample correlation (aka, sample linear correlation)**
+
+The value of \\(r\\) is always between -1 and +1.
+
+-  The closer the value is to -1 or +1 the stronger the linear relationship.
+
+-  Negative values of \\(r\\) indicate a negative relationship (as \\(x\\) increases, \\(y\\) decreases).
+
+-  Positive values of \\(r\\) indicate a positive relationship (as \\(x\\) increases, \\(y\\) increases).
+
+-  One possible rule of thumb:
+
+| Range of \\(r\\)  | Strength      | Direction |
+|-------------------|---------------|-----------|
+| 0.9 to 1.0        | Very Strong   | Positive  |
+| 0.7 to 0.9        |      Strong   | Positive  |
+| 0.5 to 0.7        |      Moderate | Positive  |
+| 0.3 to 0.5        |      Weak     | Positive  |
+| -0.3 to 0.3       | Very Weak/No Relationship |  |
+| -0.5 to -0.3      |      Weak     | Negative  |
+| -0.7 to -0.5      |      Moderate | Negative  |
+| -0.9 to -0.7      |      Strong   | Negative  |
+| -1.0 to -0.9      | Very Strong   | Negative  |
+
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+&lt;center&gt;
+   &lt;img src="line_fits.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
+
+The values of \\(r\\) from left to right are in the plot above are:
+```
+          r=0.9998782       r=-0.8523543    r=-0.1347395
+```
+
+-  In there first case the linear relationship is almost perfect, and we would happily refer to this as a **very strong**, **positive** relationship between \\(x\\) and \\(y\\).
+
+-  In there second case the linear relationship is seems appropriate - we could safely call it a **strong**, **negative** linear relationship between \\(x\\) and \\(y\\).
+
+-  In there third case the value of \\(r\\) indicates that there is **no linear relationship** between the value of \\(x\\) and the value of \\(y\\).
+
+In each case we *can* fit a linear model. However,
+
+-  a line is clearly a good choice for the data on the left
+-  the middle data could be described well by a line, but the relationship is not as obvious as the case on the left.
+-  a linear relationship is clearly clearly inappropriate for the data on the right (something like \\(x^2\\) would be better).
+
+We need a way to identify the quality of the fit **concretely** 
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+**1. Sample correlation (aka, sample linear correlation)**
+
+**Example**: Stress and Lifetime of Bars
+
+We can use it to calculate the following values:
+
+&lt;center&gt;
+&lt;span style = "font-size: 60%"&gt;
+\\[
+\sum\_{i = 1}^{10} x\_i = 200, 
+\sum\_{i = 1}^{10} x\_i^2 = 5412.5, 
+\\]
+
+\\[
+\sum\_{i = 1}^{10} y\_i = 484, 
+\sum\_{i = 1}^{10} y\_i^2 = 25238, 
+\sum\_{i = 1}^{10} x\_i y\_i = 8407.5, 
+\\]
+&lt;/span&gt;
+&lt;/center&gt;
+and we can write:
+&lt;span style = "font-size: 80%"&gt;
+
+`\begin{align}
+r &amp;= \frac{ \sum_{i = 1}^{n} x_i y_i - n \bar{x}\bar{y} }{ \sqrt{ \left(\sum_{i = 1}^{n} x_i^2 - n\bar{x}^2 \right) \left(\sum_{i = 1}^{n} y_i^2 - n \bar{y}^2 \right) } } \\\\
+  &amp;= \frac{ 8407.5 - 10 (20) (48.5) }{ \sqrt{ \left(5412.5 - 10 (20)^2 \right) \left(25238 - 10 (48.4)^2 \right) } } \\\\
+  &amp;= -0.795
+\end{align}`
+
+&lt;/span&gt;
+So we would say that stress applied and lifetime of the bar have a **strong, negative, linear relationship**.
+
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+**2. Coeffecient of Determination (\\(R^2\\))**
+
+We know that our responses have variability - they are not always the same. We hope that the relationship between our response and our explanatory variables explains some of the variability in our responses.
+
+\\(R^2\\) is the fraction of the total variability in the response (\\(y\\)) accounted for by the fitted relationship.
+
+-  When \\(R^2\\) is close to 1 we have explained **almost all** of the variability in our response using the fitted relationship (i.e., the fitted relationship is good).
+
+-  When \\(R^2\\) is close to 0 we have explained **almost none** of the variability in our response using the fitted relationship (i.e., the fitted relationship is bad).
+
+There are a number of ways we can calculate \\(R^2\\). 
+Some require you to know more than others or do more work by hand.
+
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+**2. Calculating Coeffecient of Determination (\\(R^2\\))**
+
+**Method a**. Using the data and our fitted relationship:
+
+For an experiment with response values \\(y_1, y_2, \ldots, y_3\\) 
+and fitted values \\(\hat{y}_1, \hat{y}_2, \ldots, \hat{y}_3\\) we calcuate the following:
+
+`\[
+R^2 = \frac{
+\sum_{i=1}^n (y_i - \bar{y})^2 -  \sum_{i=1}^n (y_i - \hat{y}_i)^2 
+}{
+\sum_{i=1}^n (y_i - \bar{y})^2
+}
+\]`
+
+-  This is the longest way to calculate \\(R^2\\) by hand.
+
+-  It requires you to know every response value in the data (\\(y_i\\)) and every fitted value (\\(\hat{y}_i\\))
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+**2. Calculating Coeffecient of Determination (\\(R^2\\))**
+
+**Method b**. Using Sums of Squares
+
+For an experiment with response values \\(y_1, y_2, \ldots, y_3\\) 
+and fitted values \\(\hat{y}_1, \hat{y}_2, \ldots, \hat{y}_3\\) we calcuate the following:
+
+-  Total Sum of Squares (SSTO): a baseline for the variability in our response.
+
+\\[
+SSTO  = \sum_{i=1}^n (y_i - \bar{y})^2
+\\]
+
+-  Error Sum of Squares (SSE): The variability in the data after fitting the line
+
+\\[
+SSE = \sum_{i=1}^n (y_i - \hat{y}_i)^2
+\\]
+
+
+-  Regression Sum of Squares (SSR): The variability in the data accounted for by the fitted relationship
+
+\\[
+SSR = SSTO - SSE
+\\]
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+**2. Calculating Coeffecient of Determination (\\(R^2\\))**
+
+**Method b**. Using Sums of Squares, continued
+
+We can write the \\(R^2\\) using these sums of squares:
+
+\\[
+R^2 = \frac{SSR}{SSTO} = \frac{SSTO - SSE}{SSTO} = 1 - \frac{SSE}{SSTO}
+\\]
+
+-  **Q**: What's the advantage of using the sums of squares?
+
+-  **A**: The values of SSTO, SSE, and SSR are used in many statistical calculations. Because of this, they are commonly reported by statistical software. For instance, fitting a model in JMP produces these as part of the output.
+
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+**2. Calculating Coeffecient of Determination (\\(R^2\\))**
+
+**Method c**. A special case when the relationship is linear
+
+If the relationship we fit between \\(y\\) and \\(x\\) is linear, 
+then we can use the sample correlation, \\(r\\) to get:
+
+\\[
+R^2 =(r)^2
+\\]
+
+**NOTE**: Please, please, please, understand that this is only true for linear relationships.
+
+]
+---
+.left-column[
+## Recap
+## Good Fit
+### Numeric Desc.
+]
+.right-column[
+
+**Example**: Stress and Lifetime of Bars
+
+The data can be found in Lecture 9. 
+
+Earlier, we found \\(r = -0.795\\).
+
+Since we are describing the relationship using a line, then we can use the special case:
+
+\\[
+R^2 = (r)^2 = (-0.795)^2 = 0.633
+\\]
+
+In other words, 63.3% of the variability in the lifetime of the bars can be explained by the stress the bars were placed under.
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

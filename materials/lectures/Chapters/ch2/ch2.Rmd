@@ -1,23 +1,25 @@
 ---
-title: "STAT 305: Lecture 3"
-author: "Amin Shirazi"
-date: "`r Sys.Date()`"
 
-output:
+output: 
   xaringan::moon_reader:
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+
+---
+class: center, middle, inverse
+layout: yes
+name: inverse
+
+## STAT 305: Chapter 2
+##Data Collection
+### Amin Shirazi
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io)]
+
 ---
 name: inverse
-layout: true
-class: center, middle, inverse
----
-## Chapter 2: Data Collection
-.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io)]
----
 layout: true
 class: center, middle, inverse
 ---

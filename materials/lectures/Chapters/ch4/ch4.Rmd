@@ -430,9 +430,9 @@ How do we minimize it?
 -2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i 
 \]`
 
-**The derivative with respect to \\(\mathbf{b_0}\\)**:
+**The derivative with respect to \\(\mathbf{b_1}\\)**:
 `\[
--2 b_0 \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2
+-2  \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2
 \]`
 <span style = "font-size: 70%">
 </span>
@@ -454,7 +454,7 @@ We set both equal to 0 and solve them at the same time:
 
 \begin{align}
 -2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i &= 0 \\\\
--2 b_0 \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2 &=0 \\\\
+-2  \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2 &=0 \\\\
 \end{align}
 
 We can rewrite the first equation as:

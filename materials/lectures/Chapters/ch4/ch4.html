@@ -44,10 +44,10 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 
 **Variance/Standard Deviation**: Uses squared distance from the mean.
 
-|                 |    | Variance                                                      |&amp;nbsp;&amp;nbsp;&amp;nbsp;    | Standard Deviation                                                  |
+|                 |    | Variance                                                      |   | Standard Deviation                                                  |
 |:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
 |          |                      |                                                               |                      |                                                                     |
-| **Population**  |                      | `\(\sigma^2 =  \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2} \)`   |
+| **Population**  |                      | `\(\sigma^2 =  \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`   |
 |            |                      |                                                               |                      |                                                                     |
 |            |                      |                                                               |                      |                                                                     |
 | **Sample**      |                      | `\( s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)`    |                      | `\(s =  \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`     |
@@ -66,7 +66,7 @@ layout:false
 
 
 &lt;center&gt;
-68, 60, 59, 66, 57
+67, 66, 65, 55, 57
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -77,17 +77,17 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 68, 60, 59, 66, 57 is 62
+The mean of 67, 66, 65, 55, 57 is 62
 
 
 &lt;span style = "font-size: 75%"&gt;
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((68 - 62)^2 + (60 - 62)^2 + (59 - 62)^2 + (66 - 62)^2 + (57 - 62)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (6)^2 + (-2)^2 + (-3)^2 + (4)^2 + (-5)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 36 + 4 + 9 + 16 + 25 \right) \\\\
-    &amp;=  22.5\\\\
+    &amp;= \frac{1}{5-1} \left((67 - 62)^2 + (66 - 62)^2 + (65 - 62)^2 + (55 - 62)^2 + (57 - 62)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (5)^2 + (4)^2 + (3)^2 + (-7)^2 + (-5)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 25 + 16 + 9 + 49 + 25 \right) \\\\
+    &amp;=  31\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -101,8 +101,8 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{22.5} \\\\
-     &amp;= 4.7434165\\\\
+     &amp;= \sqrt{31} \\\\
+     &amp;= 5.5677644\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -216,7 +216,7 @@ Our data:
 -  Plotting stress along the \\(x\\)-axis and plotting lifetime along the \\(y\\)-axis we get
 
 &lt;center&gt;
-   &lt;img src="figure/stress_lifetime_plot.png" alt="dmc logo" height="300"&gt; 
+   &lt;img src="figure/stress_lifetime_plot.png" alt="dmc logo" height="250"&gt; 
 &lt;/center&gt;
 
 ]
@@ -240,7 +240,7 @@ Our data:
 -  Examining the plot, we might determine that there could be a linear relationship between the two.  The red line looks like it fits the data pretty well.
 
 &lt;center&gt;
-   &lt;img src="figure/stress_lifetime_plot_line1.png" alt="dmc logo" height="290"&gt; 
+   &lt;img src="figure/stress_lifetime_plot_line1.png" alt="dmc logo" height="250"&gt; 
 &lt;/center&gt;
 
 ]
@@ -1086,8 +1086,6 @@ R^2 = (r)^2 = (-0.795)^2 = 0.633
 \\]
 
 In other words, 63.3% of the variability in the lifetime of the bars can be explained by the stress the bars were placed under.
-
-]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

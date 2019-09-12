@@ -1139,7 +1139,7 @@ layout:false
 
 
 &lt;center&gt;
-50, 58, 59, 51, 70
+58, 60, 53, 61, 68
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -1150,7 +1150,7 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 50, 58, 59, 51, 70 is 57.6
+The mean of 58, 60, 53, 61, 68 is 60
 
 
 &lt;span style = "font-size: 65%"&gt;
@@ -1158,10 +1158,10 @@ The mean of 50, 58, 59, 51, 70 is 57.6
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((50 - 57.6)^2 + (58 - 57.6)^2 + (59 - 57.6)^2 + (51 - 57.6)^2 + (70 - 57.6)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (-7.6)^2 + (0.4)^2 + (1.4)^2 + (-6.6)^2 + (12.4)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 57.76 + 0.16 + 1.96 + 43.56 + 153.76 \right) \\\\
-    &amp;=  64.3\\\\
+    &amp;= \frac{1}{5-1} \left((58 - 60)^2 + (60 - 60)^2 + (53 - 60)^2 + (61 - 60)^2 + (68 - 60)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (-2)^2 + (0)^2 + (-7)^2 + (1)^2 + (8)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 4 + 0 + 49 + 1 + 64 \right) \\\\
+    &amp;=  29.5\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -1175,10 +1175,101 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{64.3} \\\\
-     &amp;= 8.0187281\\\\
+     &amp;= \sqrt{29.5} \\\\
+     &amp;= 5.4313902\\\\
 \end{align}`
 &lt;span&gt;
+
+---
+class: center, middle, inverse
+layout: yes
+name: inverse
+
+## Recap on Numerical Summaries (Chapter 3)
+### Summaries of Variablity (Measures of Spread)
+## Chapter 4: Describing Relationships Between Variables
+## Introduction to Models
+---
+layout:false
+.left-column[
+## Recap
+### Spread
+]
+.right-column[
+###Summaries of Variablity (Measures of Spread)
+
+Motivated by asking what kind of *variability is seen in the data* or *how spread out* the data is.
+
+**Range**: The difference between the highest and lowest values (Range = max - min)
+
+**IQR**: The Interquartile Range, how spread out is the middle 50% (IQR =  Q3 - Q1)
+
+**Variance/Standard Deviation**: Uses squared distance from the mean.
+
+|                 |    | Variance                                                      |   | Standard Deviation                                                  |
+|:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
+|          |                      |                                                               |                      |                                                                     |
+| **Population**  |                      | `\(\sigma^2 =  \frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2 \)` |                      | `\(\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \bar{x})^2} \)`   |
+|            |                      |                                                               |                      |                                                                     |
+|            |                      |                                                               |                      |                                                                     |
+| **Sample**      |                      | `\( s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)`    |                      | `\(s =  \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`     |
+]
+
+---
+layout:false
+.left-column[
+## Recap
+### Spread
+]
+.right-column[
+## Summarizing Data Numerically
+**Example**: Taking a sample of size 5 from a population we record the following values:
+
+
+
+&lt;center&gt;
+58, 56, 57, 63, 68
+&lt;/center&gt;
+
+Find the variance and standard deviation of this sample.
+]
+
+---
+layout:false
+## Example: Finding the Variance
+
+Since we are told it is a sample, we need to use **sample variance**.
+The mean of 58, 56, 57, 63, 68 is 60.4
+
+
+&lt;span style = "font-size: 75%"&gt;
+`\begin{align}
+s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
+    &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
+    &amp;= \frac{1}{5-1} \left((58 - 60.4)^2 + (56 - 60.4)^2 + (57 - 60.4)^2 + (63 - 60.4)^2 + (68 - 60.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (-2.4)^2 + (-4.4)^2 + (-3.4)^2 + (2.6)^2 + (7.6)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 5.76 + 19.36 + 11.56 + 6.76 + 57.76 \right) \\\\
+    &amp;=  25.3\\\\
+\end{align}`
+
+&lt;span&gt;
+
+
+---
+## Example: Finding the Standard Deviation
+
+With `\(s^2\)` known, finding `\(s\)` is simple:
+&lt;span style = "font-size: 100%"&gt;
+
+`\begin{align}
+   s &amp;= \sqrt{s^2} \\\\
+     &amp;= \sqrt{25.3} \\\\
+     &amp;= 5.0299105\\\\
+\end{align}`
+
+&lt;span&gt;
+
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

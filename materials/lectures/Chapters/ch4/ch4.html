@@ -66,7 +66,7 @@ layout:false
 
 
 &lt;center&gt;
-68, 63, 51, 59, 61
+52, 67, 68, 61, 64
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -77,17 +77,17 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 68, 63, 51, 59, 61 is 60.4
+The mean of 52, 67, 68, 61, 64 is 62.4
 
 
 &lt;span style = "font-size: 75%"&gt;
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((68 - 60.4)^2 + (63 - 60.4)^2 + (51 - 60.4)^2 + (59 - 60.4)^2 + (61 - 60.4)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (7.6)^2 + (2.6)^2 + (-9.4)^2 + (-1.4)^2 + (0.6)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 57.76 + 6.76 + 88.36 + 1.96 + 0.36 \right) \\\\
-    &amp;=  38.8\\\\
+    &amp;= \frac{1}{5-1} \left((52 - 62.4)^2 + (67 - 62.4)^2 + (68 - 62.4)^2 + (61 - 62.4)^2 + (64 - 62.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (-10.4)^2 + (4.6)^2 + (5.6)^2 + (-1.4)^2 + (1.6)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 108.16 + 21.16 + 31.36 + 1.96 + 2.56 \right) \\\\
+    &amp;=  41.3\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -101,8 +101,8 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{38.8} \\\\
-     &amp;= 6.2289646\\\\
+     &amp;= \sqrt{41.3} \\\\
+     &amp;= 6.4265076\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -737,7 +737,7 @@ The results are recorded in the dataset "balls-004.csv"
 ## Experiment 4: Changing categorical speed changing applied weight
 
 &lt;img src="ch4_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
----
+
 
 
 ---
@@ -1107,6 +1107,8 @@ R^2 = (r)^2 = (-0.795)^2 = 0.633
 \\]
 
 In other words, 63.3% of the variability in the lifetime of the bars can be explained by the stress the bars were placed under.
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

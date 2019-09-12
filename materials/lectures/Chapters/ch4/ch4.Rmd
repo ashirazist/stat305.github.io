@@ -743,7 +743,7 @@ Since higher weights and higher rotation speed are all known to cause shorter li
 With the disc rotation speed locked at 50 rotations/second, the team of engineers created 60 batches of balls using differently weighted discs (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g) and randomly selected one ball from each batch. 
 The results are recorded in the dataset "balls-001.csv" on the course page.
 
-```{r, warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE}
+```{r, warning=FALSE,message=FALSE, fig.height= 4 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE}
 library('ggplot2')
 library('dplyr')
 library('tidyr')
@@ -763,7 +763,7 @@ With an better understanding of the relationship between weight and surface roug
 This time the produced 3 batches for each of 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second). 
 The results are recorded in the dataset "balls-002.csv" on the course page.
 
-```{r, warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 8, fig.align='center', error=FALSE, echo= FALSE}
+```{r, warning=FALSE,message=FALSE, fig.height= 4 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE}
 library('ggplot2')
 library('dplyr')
 library('tidyr')
@@ -835,7 +835,7 @@ gridExtra::grid.arrange(p3, p4, nrow=1)
 
 
 ```
----
+
 
 
 ---
@@ -1206,4 +1206,4 @@ R^2 = (r)^2 = (-0.795)^2 = 0.633
 
 In other words, 63.3% of the variability in the lifetime of the bars can be explained by the stress the bars were placed under.
 
-
+]

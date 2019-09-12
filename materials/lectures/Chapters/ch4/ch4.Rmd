@@ -29,12 +29,7 @@ name: inverse
 ## Introduction to Models
 ---
 layout:false
-.left-column[
-## Recap
-### Spread
-]
-.right-column[
-###Summaries of Variablity (Measures of Spread)
+###Recap: Summaries of Variablity (Measures of Spread)
 
 Motivated by asking what kind of *variability is seen in the data* or *how spread out* the data is.
 
@@ -44,6 +39,7 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 
 **Variance/Standard Deviation**: Uses squared distance from the mean.
 
+
 |                 |    | Variance                                                      |   | Standard Deviation                                                  |
 |:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
 |          |                      |                                                               |                      |                                                                     |
@@ -51,7 +47,7 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 |            |                      |                                                               |                      |                                                                     |
 |            |                      |                                                               |                      |                                                                     |
 | **Sample**      |                      | `\( s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)`    |                      | `\(s =  \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`     |
-]
+
 
 ---
 layout:false

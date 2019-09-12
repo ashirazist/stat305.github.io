@@ -29,12 +29,7 @@ name: inverse
 ## Introduction to Models
 ---
 layout:false
-.left-column[
-## Recap
-### Spread
-]
-.right-column[
-###Summaries of Variablity (Measures of Spread)
+###Recap: Summaries of Variablity (Measures of Spread)
 
 Motivated by asking what kind of *variability is seen in the data* or *how spread out* the data is.
 
@@ -44,6 +39,7 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 
 **Variance/Standard Deviation**: Uses squared distance from the mean.
 
+
 |                 |    | Variance                                                      |   | Standard Deviation                                                  |
 |:----------------|----------------------|---------------------------------------------------------------|----------------------|---------------------------------------------------------------------|
 |          |                      |                                                               |                      |                                                                     |
@@ -51,7 +47,7 @@ Motivated by asking what kind of *variability is seen in the data* or *how sprea
 |            |                      |                                                               |                      |                                                                     |
 |            |                      |                                                               |                      |                                                                     |
 | **Sample**      |                      | `\( s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2 \)`    |                      | `\(s =  \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2} \)`     |
-]
+
 
 ---
 layout:false
@@ -66,7 +62,7 @@ layout:false
 
 
 &lt;center&gt;
-67, 70, 58, 53, 66
+65, 63, 50, 67, 55
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -77,17 +73,17 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 67, 70, 58, 53, 66 is 62.8
+The mean of 65, 63, 50, 67, 55 is 60
 
 
 &lt;span style = "font-size: 75%"&gt;
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((67 - 62.8)^2 + (70 - 62.8)^2 + (58 - 62.8)^2 + (53 - 62.8)^2 + (66 - 62.8)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (4.2)^2 + (7.2)^2 + (-4.8)^2 + (-9.8)^2 + (3.2)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 17.64 + 51.84 + 23.04 + 96.04 + 10.24 \right) \\\\
-    &amp;=  49.7\\\\
+    &amp;= \frac{1}{5-1} \left((65 - 60)^2 + (63 - 60)^2 + (50 - 60)^2 + (67 - 60)^2 + (55 - 60)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (5)^2 + (3)^2 + (-10)^2 + (7)^2 + (-5)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 25 + 9 + 100 + 49 + 25 \right) \\\\
+    &amp;=  52\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -101,8 +97,8 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{49.7} \\\\
-     &amp;= 7.0498227\\\\
+     &amp;= \sqrt{52} \\\\
+     &amp;= 7.2111026\\\\
 \end{align}`
 
 &lt;span&gt;

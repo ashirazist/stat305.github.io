@@ -1,14 +1,14 @@
----
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>ch4.utf8.md</title>
+    <meta charset="utf-8" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
 
-output: 
-  xaringan::moon_reader:
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-
----
 class: center, middle, inverse
 layout: yes
 name: inverse
@@ -63,14 +63,11 @@ layout:false
 ## Summarizing Data Numerically
 **Example**: Taking a sample of size 5 from a population we record the following values:
 
-```{r echo = FALSE}
-   samp <- sample(50:70,5)
-   samp_bar <- round(mean(samp),2)
-```
 
-<center>
-`r samp`
-</center>
+
+&lt;center&gt;
+69, 70, 51, 50, 63
+&lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
 ]
@@ -80,35 +77,35 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of `r samp` is `r mean(samp)`
+The mean of 69, 70, 51, 50, 63 is 60.6
 
 
-<span style = "font-size: 75%">
-\begin{align}
-s^2 &= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
-    &= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &= \frac{1}{`r length(samp)`-1} \left((`r samp[1]` - `r samp_bar`)^2 + (`r samp[2]` - `r samp_bar`)^2 + (`r samp[3]` - `r samp_bar`)^2 + (`r samp[4]` - `r samp_bar`)^2 + (`r samp[5]` - `r samp_bar`)^2 \right) \\\\
-    &= \frac{1}{`r length(samp) - 1`} \left( (`r samp[1] -  samp_bar`)^2 + (`r samp[2] -  samp_bar`)^2 + (`r samp[3] -  samp_bar`)^2 + (`r samp[4] -  samp_bar`)^2 + (`r samp[5] -  samp_bar`)^2 \right) \\\\
-    &= \frac{1}{`r length(samp) - 1`} \left( `r (samp[1] -  samp_bar)^2` + `r (samp[2] -  samp_bar)^2` + `r (samp[3] -  samp_bar)^2` + `r (samp[4] -  samp_bar)^2` + `r (samp[5] -  samp_bar)^2` \right) \\\\
-    &=  `r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1) `\\\\
-\end{align}
+&lt;span style = "font-size: 75%"&gt;
+`\begin{align}
+s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
+    &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
+    &amp;= \frac{1}{5-1} \left((69 - 60.6)^2 + (70 - 60.6)^2 + (51 - 60.6)^2 + (50 - 60.6)^2 + (63 - 60.6)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (8.4)^2 + (9.4)^2 + (-9.6)^2 + (-10.6)^2 + (2.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 70.56 + 88.36 + 92.16 + 112.36 + 5.76 \right) \\\\
+    &amp;=  92.3\\\\
+\end{align}`
 
-<span>
+&lt;span&gt;
 
 
 ---
 ## Example: Finding the Standard Deviation
 
 With `\(s^2\)` known, finding `\(s\)` is simple:
-<span style = "font-size: 100%">
+&lt;span style = "font-size: 100%"&gt;
 
-\begin{align}
-   s &= \sqrt{s^2} \\\\
-     &= \sqrt{`r ((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1)`} \\\\
-     &= `r sqrt(((samp[1] -  samp_bar)^2 +  (samp[2] -  samp_bar)^2 +  (samp[3] -  samp_bar)^2 +  (samp[4] -  samp_bar)^2 +  (samp[5] -  samp_bar)^2)/(length(samp) -1)) `\\\\
-\end{align}
+`\begin{align}
+   s &amp;= \sqrt{s^2} \\\\
+     &amp;= \sqrt{92.3} \\\\
+     &amp;= 9.6072889\\\\
+\end{align}`
 
-<span>
+&lt;span&gt;
 
 ---
 
@@ -128,9 +125,9 @@ layout: false
 
 We have a standard idea of how our experiment works:
 
-<center>
-   <img src="figure/schemeit-project.png" alt="dmc logo" height="120"> 
-</center>
+&lt;center&gt;
+   &lt;img src="figure/schemeit-project.png" alt="dmc logo" height="120"&gt; 
+&lt;/center&gt;
 Bivariate data oftern arise because a quantitative experimental variable *x* has been varied between several different setting (treatment). 
 
 It is helpful to have an equation relating *y* (the response) to *x* when the purposes are summarization, interpolation, limited extrapolation, and/or process optimization/ adjusment. 
@@ -147,27 +144,7 @@ But how do we describe those response when we know that random error would make 
 .right-column[
 ### Types of relationships
 
-```{r,  warning=FALSE,message=FALSE, fig.height= 6 , fig.width= 8, fig.align='center', error=FALSE, echo= FALSE}
-library(tidyverse)
-library(ggplot2)
-library(magrittr)
-x1<-rnorm(n = 100, 0,10)
-y1<-rnorm(n = 100, 0,10)
-
-df<-data.frame(x1, y1)
-p1<-df %>% ggplot(aes(x1, y1))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
-
-df2<- df %>% mutate(y2= -10+ x1*2+ rnorm(100, 0, 10))
-p2<-df2 %>% ggplot(aes(x1, y2))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
-df3<- df %>% mutate(y3= 10- 1.56*x1^2+ rnorm(100, 0, 25))
-p3<-df3 %>% ggplot(aes(x1, y3))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
-
-df4<- df %>% mutate(y4= 10+ x1*0.25- 1.75*x1^2+ 4.345* x1^3 + rnorm(100, 0, 100))
-p4<-df4 %>% ggplot(aes(x1, y4))+geom_point(size=0.5)+ xlab("X")+ ylab("Y")+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
-
-gridExtra::grid.arrange(p1, p2, p3, p4 , nrow=2)
-
-```
+&lt;img src="ch4_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
 
 
 ]
@@ -180,9 +157,9 @@ gridExtra::grid.arrange(p1, p2, p3, p4 , nrow=2)
 
 ## The Underlying Idea
 
-<center>
-   <img src="figure/schemeit-project.png" alt="dmc logo" height="125"> 
-</center>
+&lt;center&gt;
+   &lt;img src="figure/schemeit-project.png" alt="dmc logo" height="125"&gt; 
+&lt;/center&gt;
 
 We start with a valid mathematical model, for instance a line:
 
@@ -238,9 +215,9 @@ Our data:
 
 -  Plotting stress along the \\(x\\)-axis and plotting lifetime along the \\(y\\)-axis we get
 
-<center>
-   <img src="figure/stress_lifetime_plot.png" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="figure/stress_lifetime_plot.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 ]
 ---
@@ -262,9 +239,9 @@ Our data:
 
 -  Examining the plot, we might determine that there could be a linear relationship between the two.  The red line looks like it fits the data pretty well.
 
-<center>
-   <img src="figure/stress_lifetime_plot_line1.png" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="figure/stress_lifetime_plot_line1.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 ]
 ---
@@ -286,9 +263,9 @@ Our data:
 
 -  But there are several other lines that fit the data pretty well, too.
 
-<center>
-   <img src="figure/stress_lifetime_plot_line2.png" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="figure/stress_lifetime_plot_line2.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 -  How do we decide which is best?
 
@@ -314,10 +291,10 @@ When we are trying to find a line that fits our data what we are _really_ doing 
 However, the response we observe is also effected by random noise:
 
 **Observed Relationship**
-\begin{align}
-y &= \beta_0 + \beta_1 \cdot x + \text{errors} \\\\
-  &= \text{signal} + \text{noise} 
-\end{align}
+`\begin{align}
+y &amp;= \beta_0 + \beta_1 \cdot x + \text{errors} \\\\
+  &amp;= \text{signal} + \text{noise} 
+\end{align}`
 
 If we did a good job, hopefully we will have small enough errors so that we can say
 \\[
@@ -395,16 +372,16 @@ In other words, we need to minimize something with respect to two values we get 
 
 We can rewrite the target we want to minimize so that the variables are less tangled together:
 
-<span style = "font-size: 60%">
-\begin{align}
-\sum_{i = 1}^n (y_i - \hat{y}_i)^2 &= \sum_{i = 1}^n \left(y_i - (b_0 + b_1 x_i ) \right)^2 \\\\
-                                      &= \sum_{i = 1}^n \left(y_i^2 - 2 y_i (b_0 + b_1 x_i ) + (b_0 + b_1 x_i )^2\right) \\\\
-                                      &= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n 2 y_i (b_0 + b_1 x_i ) + \sum_{i = 1}^n (b_0 + b_1 x_i )^2 \\\\
-                                      &= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n (2 y_i b_0 + 2 y_i b_1 x_i ) + \sum_{i = 1}^n \left(b_0^2 + 2 b_0 b_1 x_i + (b_1 x_i )^2 \right) \\\\
-                                      &= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n 2 y_i b_0 - \sum_{i = 1}^n 2 y_i b_1 x_i + \sum_{i = 1}^n b_0^2 + \sum_{i = 1}^n 2 b_0 b_1 x_i + \sum_{i = 1}^n b_1^2 x_i^2  \\\\
-                                      &= \sum_{i = 1}^n y_i^2 - 2 b_0 \sum_{i = 1}^n y_i - 2 b_1 \sum_{i = 1}^n y_i x_i + n b_0^2 + 2 b_0 b_1 \sum_{i = 1}^n x_i + b_1^2 \sum_{i = 1}^n x_i^2  \\\\
-\end{align}
-</span>
+&lt;span style = "font-size: 60%"&gt;
+`\begin{align}
+\sum_{i = 1}^n (y_i - \hat{y}_i)^2 &amp;= \sum_{i = 1}^n \left(y_i - (b_0 + b_1 x_i ) \right)^2 \\\\
+                                      &amp;= \sum_{i = 1}^n \left(y_i^2 - 2 y_i (b_0 + b_1 x_i ) + (b_0 + b_1 x_i )^2\right) \\\\
+                                      &amp;= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n 2 y_i (b_0 + b_1 x_i ) + \sum_{i = 1}^n (b_0 + b_1 x_i )^2 \\\\
+                                      &amp;= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n (2 y_i b_0 + 2 y_i b_1 x_i ) + \sum_{i = 1}^n \left(b_0^2 + 2 b_0 b_1 x_i + (b_1 x_i )^2 \right) \\\\
+                                      &amp;= \sum_{i = 1}^n y_i^2 - \sum_{i = 1}^n 2 y_i b_0 - \sum_{i = 1}^n 2 y_i b_1 x_i + \sum_{i = 1}^n b_0^2 + \sum_{i = 1}^n 2 b_0 b_1 x_i + \sum_{i = 1}^n b_1^2 x_i^2  \\\\
+                                      &amp;= \sum_{i = 1}^n y_i^2 - 2 b_0 \sum_{i = 1}^n y_i - 2 b_1 \sum_{i = 1}^n y_i x_i + n b_0^2 + 2 b_0 b_1 \sum_{i = 1}^n x_i + b_1^2 \sum_{i = 1}^n x_i^2  \\\\
+\end{align}`
+&lt;/span&gt;
 
 
 ---
@@ -434,8 +411,8 @@ How do we minimize it?
 `\[
 -2  \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2
 \]`
-<span style = "font-size: 70%">
-</span>
+&lt;span style = "font-size: 70%"&gt;
+&lt;/span&gt;
 
 ]
 ---
@@ -452,16 +429,16 @@ How do we minimize it?
 
 We set both equal to 0 and solve them at the same time:
 
-\begin{align}
--2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i &= 0 \\\\
--2  \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2 &=0 \\\\
-\end{align}
+`\begin{align}
+-2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i &amp;= 0 \\\\
+-2  \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2 &amp;=0 \\\\
+\end{align}`
 
 We can rewrite the first equation as:
-\begin{align}
-b_0 &= \frac{1}{n} \sum_{i = 1}^n y_i - b_1 \frac{1}{n} \sum_{i = 1}^n x_i  \\\\
-     &= \bar{y} - b_1 \bar{x}
-\end{align}
+`\begin{align}
+b_0 &amp;= \frac{1}{n} \sum_{i = 1}^n y_i - b_1 \frac{1}{n} \sum_{i = 1}^n x_i  \\\\
+     &amp;= \bar{y} - b_1 \bar{x}
+\end{align}`
 
 and then replace all \\(b_0\\) in the second equation (there is some algebra type stuff along the way, of course)
 ]
@@ -481,11 +458,11 @@ After a little simplification we arrive at our estimates:
 
 **Least Squares Estimates for Linear Fit**
 
-\begin{align}
-b_0 &= \bar{y}- b_1 \bar{x} \\\\
-b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
-     &= \frac{\sum_{i = 1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i = 1}^n (x_i - \bar{x})^2}
-\end{align}
+`\begin{align}
+b_0 &amp;= \bar{y}- b_1 \bar{x} \\\\
+b_1 &amp;= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
+     &amp;= \frac{\sum_{i = 1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i = 1}^n (x_i - \bar{x})^2}
+\end{align}`
 
 **Wrap Up**
 -  Don't try to memorize the derivation. I will never ask you to do that on an exam.
@@ -513,26 +490,26 @@ b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - 
 
 Estimating the best slope and intercept using least squares:
 
-<span style = "font-size: 70%">
+&lt;span style = "font-size: 70%"&gt;
 
-\begin{align}
-b_0 &= \bar{y}- b_1 \bar{x} \\\\
-b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
-     &= \frac{\sum_{i = 1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i = 1}^n (x_i - \bar{x})^2}
-\end{align}
-</span>
+`\begin{align}
+b_0 &amp;= \bar{y}- b_1 \bar{x} \\\\
+b_1 &amp;= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
+     &amp;= \frac{\sum_{i = 1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i = 1}^n (x_i - \bar{x})^2}
+\end{align}`
+&lt;/span&gt;
 
 In our case we have the following:
 
 
-<span style = "font-size: 65%">
-\begin{align}
+&lt;span style = "font-size: 65%"&gt;
+`\begin{align}
 \sum_{i = 1}^{10} y_i = 484,  
 \sum_{i = 1}^{10} x_i = 200,  
 \sum_{i = 1}^{10} x_i y_i = 8407.5,  
 \sum_{i = 1}^{10} x_i^2 = 5412.5, 
-\end{align}
-</span>
+\end{align}`
+&lt;/span&gt;
 
 
 ]
@@ -555,25 +532,25 @@ In our case we have the following:
 | **stress** \\((\text{kg/mm}^2)\\)    |  2.5 |  5.0 | 10.0 | 15.0 | 17.5 | 20.0 | 25.0 | 30.0 | 35.0 | 40.0 |
 | **lifetime** (hours)                 |  63  |  58  |  55  |  61  |  62  |  37  |  38  |  45  |  46  |  19  |
 
-<span style = "font-size: 65%">
-\begin{align}
+&lt;span style = "font-size: 65%"&gt;
+`\begin{align}
 \sum_{i = 1}^{10} y_i = 484, 
 \sum_{i = 1}^{10} x_i = 200, 
 \sum_{i = 1}^{10} x_i y_i = 8407.5, 
 \sum_{i = 1}^{10} x_i^2 = 5412.5, 
-\end{align}
-</span>
+\end{align}`
+&lt;/span&gt;
 
 Using this we can estimate \\(b_1\\):
 
-<span style = "font-size: 75%">
-\begin{align}
-b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
-     &= \frac{8407.5 - 10 \left(\frac{200}{10}\right) \left(\frac{484}{10}\right)}{5412.5 - 10 \left(\frac{200}{10}\right)^2} \\\\
-     &= \frac{-1272.5}{1412.5} \\\\
-     &\approx -0.9009
-\end{align}
-</span>
+&lt;span style = "font-size: 75%"&gt;
+`\begin{align}
+b_1 &amp;= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - n \bar{x}^2} \\\\
+     &amp;= \frac{8407.5 - 10 \left(\frac{200}{10}\right) \left(\frac{484}{10}\right)}{5412.5 - 10 \left(\frac{200}{10}\right)^2} \\\\
+     &amp;= \frac{-1272.5}{1412.5} \\\\
+     &amp;\approx -0.9009
+\end{align}`
+&lt;/span&gt;
 
 ]
 ---
@@ -597,25 +574,25 @@ b_1 &= \frac{\sum_{i = 1}^n y_i x_i - n \bar{x} \bar{y}}{\sum_{i = 1}^n x_i^2 - 
 
 
 
-<span style = "font-size: 70%">
-\begin{align}
+&lt;span style = "font-size: 70%"&gt;
+`\begin{align}
 \sum_{i = 1}^{10} y_i = 484, 
 \sum_{i = 1}^{10} x_i = 200, 
 \sum_{i = 1}^{10} x_i y_i = 8407.5, 
 \sum_{i = 1}^{10} x_i^2 = 5412.5, 
-\end{align}
-</span>
+\end{align}`
+&lt;/span&gt;
 
 And using \\(b_1\\) we can estimate \\(b_0\\):
 
-<span style = "font-size: 80%">
-\begin{align}
-b_0 &= \bar{y} - b_1 \bar{x} \\\\
-     &= \left(\frac{484}{10}\right) - b_1 \left(\frac{200}{10}\right) \\\\
-     &= 48.4 - \left(\frac{-1272.5}{1412.5}\right) 20.0\\\\
-     &= 66.4177
-\end{align}
-</span>
+&lt;span style = "font-size: 80%"&gt;
+`\begin{align}
+b_0 &amp;= \bar{y} - b_1 \bar{x} \\\\
+     &amp;= \left(\frac{484}{10}\right) - b_1 \left(\frac{200}{10}\right) \\\\
+     &amp;= 48.4 - \left(\frac{-1272.5}{1412.5}\right) 20.0\\\\
+     &amp;= 66.4177
+\end{align}`
+&lt;/span&gt;
 
 Which gives us the **Fitted Relationship**:
 
@@ -646,14 +623,7 @@ Which gives us the **Fitted Relationship**:
 \\]
 
 
-```{r,  warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE}
-library(tidyverse)
-stress<- c( 2.5 ,  5.0 , 10.0 , 15.0 , 17.5 , 20.0 , 25.0 , 30.0 , 35.0 , 40.0 )
-lifetime<- c(63  ,  58  ,  55  ,  61  ,  62  ,  37  ,  38  ,  45  ,  46  ,  19  )
-df<-data.frame(stress, lifetime)
-df %>% ggplot(aes(x = stress, y = lifetime))+geom_point()+ xlim(0, 50)+ ylim(15, 80)+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))
-
-```
+&lt;img src="ch4_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -679,18 +649,7 @@ df %>% ggplot(aes(x = stress, y = lifetime))+geom_point()+ xlim(0, 50)+ ylim(15,
 **Fitted line**
 
 
-```{r,  warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE}
-library(ggpmisc)
-library(tidyverse)
-my.formula <- y ~ x
-
-df %>% ggplot(aes(x = stress, y = lifetime))+ geom_point() + geom_smooth(method = "lm")+ xlim(0, 50)+ ylim(15, 80)+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))+
-   stat_poly_eq(formula = my.formula,
-                eq.with.lhs = "italic(hat(y))~`=`~",
-                aes(label = paste(..eq.label.., sep = "~~~")), 
-                parse = TRUE)
-
-```
+&lt;img src="ch4_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
 ]
 ---
 name: inverse
@@ -743,19 +702,7 @@ Since higher weights and higher rotation speed are all known to cause shorter li
 With the disc rotation speed locked at 50 rotations/second, the team of engineers created 60 batches of balls using differently weighted discs (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g) and randomly selected one ball from each batch. 
 The results are recorded in the dataset "balls-001.csv" on the course page.
 
-```{r, warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE}
-library('ggplot2')
-library('dplyr')
-library('tidyr')
-weight <- seq(0.025, 0.500, by=0.025)
-speed <- 50
-d <- expand.grid(replication=1:3, weight=weight, speed=speed)
-d$surface_roughness <- 650 -120*d$weight - .1*d$speed - .05*d$speed*d$speed + rnorm(nrow(d), 0, 8)
-write.csv(d, file='balls-001.csv', row.names=FALSE)
-qplot(weight, surface_roughness, data=d)+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))+ ggtitle(label =  "Experiment 1")
-
-
-```
+&lt;img src="ch4_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 ## Experiment 2: Changing speed, constant applied weight
@@ -763,19 +710,7 @@ With an better understanding of the relationship between weight and surface roug
 This time the produced 3 batches for each of 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second). 
 The results are recorded in the dataset "balls-002.csv" on the course page.
 
-```{r, warning=FALSE,message=FALSE, fig.height= 5 , fig.width= 8, fig.align='center', error=FALSE, echo= FALSE}
-library('ggplot2')
-library('dplyr')
-library('tidyr')
-weight <- 0.500
-speed <- seq(25,100,by=5)
-d <- expand.grid(replication=1:3, weight=weight, speed=speed)
-d$surface_roughness <- 650 -120*d$weight - .1*d$speed - .05*d$speed*d$speed + rnorm(nrow(d), 0, 8)
-write.csv(d, file='balls-002.csv', row.names=FALSE)
-qplot(speed, surface_roughness, data=d)+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))+ ggtitle(label =  "Experiment 2")
-
-
-```
+&lt;img src="ch4_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 ## Experiment 3: Changing speed changing applied weight
@@ -786,19 +721,7 @@ This time the produced 3 batches for each combination of 20 weights
 and 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second).
 The results are recorded in the dataset "balls-003.csv"
 
-```{r, warning=FALSE,message=FALSE, fig.height= 4.8 , fig.width= 11, fig.align='center', error=FALSE, echo= FALSE}
-weight <- seq(0.025, 0.500, by=0.025)
-speed <- seq(25,100,by=5)
-d <- expand.grid(replication=1:3, weight=weight, speed=speed)
-d$surface_roughness <- 650 -120*d$weight - .1*d$speed - .05*d$speed*d$speed + rnorm(nrow(d), 0, 8)
-write.csv(d, file='balls-003.csv', row.names=FALSE)
-p1<-qplot(speed, surface_roughness, data=d, color=as.factor(weight))+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))+ ggtitle(label =  "Experiment 3")
-
-p2<-qplot(weight, surface_roughness, data=d, color=as.factor(speed))+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))+ ggtitle(label =  "Experiment 3")
-
-gridExtra::grid.arrange(p1, p2, nrow=1)
-
-```
+&lt;img src="ch4_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -813,29 +736,8 @@ The results are recorded in the dataset "balls-004.csv"
 ---
 ## Experiment 4: Changing categorical speed changing applied weight
 
-```{r, warning=FALSE,message=FALSE, fig.height= 6 , fig.width= 14, fig.align='center', error=FALSE, echo= FALSE}
-weight <- seq(0.025, 0.500, by=0.025)
-speed <- c(25,50, 100)
-d <- expand.grid(replication=1:3, weight=weight, speed=speed)
-d$surface_roughness <- 650 -120*d$weight - .1*d$speed - .05*d$speed*d$speed + rnorm(nrow(d), 0, 8)
-d$cspeed <- 1
-d$cspeed[d$speed == 50] <- 2
-d$cspeed[d$speed == 100] <- 3
-d$speed <- d$cspeed
-d$cspeed <- factor('low', levels=c('low', 'medium', 'high'))
-d$cspeed[d$speed == 2] <- 'medium'
-d$cspeed[d$speed == 3] <- 'high'
+&lt;img src="ch4_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
 
-d <- d[,c("replication","weight","speed", "cspeed", "surface_roughness")]
-
-write.csv(d, file='balls-004.csv', row.names=FALSE)
-p3<-qplot(speed, surface_roughness, data=d, color=as.factor(weight))+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))+ ggtitle(label =  "Experiment 4")
-p4<-qplot(weight, surface_roughness, data=d, color=as.factor(speed))+ theme(panel.background = element_rect(fill = "lightgray", colour = "#6D9EC1", size = 2, linetype = "solid"))+ ggtitle(label =  "Experiment 4")
-gridExtra::grid.arrange(p3, p4, nrow=1)
-
-
-```
----
 
 
 ---
@@ -849,9 +751,9 @@ layout:false
 
 -  The "residue" left over from fitting a line
 
-<center>
-   <img src="residual_plpt.gif" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="residual_plpt.gif" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 -  Each point represents some \\((x_i, y_i)\\) pair from our data
 
@@ -868,9 +770,9 @@ layout:false
 
 ###Residuals
 
-<center>
-   <img src="residual_plpt.gif" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="residual_plpt.gif" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 
 -  The residual is the difference between the observed data point and the fitted prediction:
@@ -893,16 +795,16 @@ for each pair \\((x_i, y_i)\\).
 
 ###Residuals
 
-<center>
-   <img src="residual_plpt.gif" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="residual_plpt.gif" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 
 **ROPe**: **R**esiduals = **O**bserved - **P**redicted (using symbol \\(e_i\\))
 
--  If \\(e\_i > 0\\) then \\(y_i - \hat{y}\_i > 0\\) and \\(y\_i > \hat{y}\_i\\) meaning the observed is larger than the predicted - we are "underpredicting"
+-  If \\(e\_i &gt; 0\\) then \\(y_i - \hat{y}\_i &gt; 0\\) and \\(y\_i &gt; \hat{y}\_i\\) meaning the observed is larger than the predicted - we are "underpredicting"
 
--  If \\(e\_i < 0\\) then \\(y_i - \hat{y}\_i < 0\\) and \\(y\_i < \hat{y}\_i\\) meaning the observed is smaller than the predicted - we are "overpredicting"
+-  If \\(e\_i &lt; 0\\) then \\(y_i - \hat{y}\_i &lt; 0\\) and \\(y\_i &lt; \hat{y}\_i\\) meaning the observed is smaller than the predicted - we are "overpredicting"
 
 Obviously, we would like our residuals to be small compared to the size of response values.
 
@@ -913,9 +815,9 @@ Obviously, we would like our residuals to be small compared to the size of respo
 ]
 .right-column[
 
-<center>
-   <h3>Knowing when a relationship fits the data well</h3>
-</center>
+&lt;center&gt;
+   &lt;h3&gt;Knowing when a relationship fits the data well&lt;/h3&gt;
+&lt;/center&gt;
 
 So far we have been fitting lines to describe our data. A first question to ask may be something like:
 
@@ -925,9 +827,9 @@ So far we have been fitting lines to describe our data. A first question to ask 
 
 **However** all fits are not created the same: 
 
-<center>
-   <img src="line_fits.png" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="line_fits.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 ]
 ---
@@ -937,9 +839,9 @@ So far we have been fitting lines to describe our data. A first question to ask 
 ]
 .right-column[
 
-<center>
-   <h3>Describing Fit Numerically</h3>
-</center>
+&lt;center&gt;
+   &lt;h3&gt;Describing Fit Numerically&lt;/h3&gt;
+&lt;/center&gt;
 
 **1. Sample correlation (aka, sample linear correlation)**
 
@@ -1000,9 +902,9 @@ The value of \\(r\\) is always between -1 and +1.
 ### Numeric Desc.
 ]
 .right-column[
-<center>
-   <img src="line_fits.png" alt="dmc logo" height="250"> 
-</center>
+&lt;center&gt;
+   &lt;img src="line_fits.png" alt="dmc logo" height="250"&gt; 
+&lt;/center&gt;
 
 The values of \\(r\\) from left to right are in the plot above are:
 ```
@@ -1035,8 +937,8 @@ We need a way to identify the quality of the fit **concretely**
 
 We can use it to calculate the following values:
 
-<center>
-<span style = "font-size: 60%">
+&lt;center&gt;
+&lt;span style = "font-size: 60%"&gt;
 \\[
 \sum\_{i = 1}^{10} x\_i = 200, 
 \sum\_{i = 1}^{10} x\_i^2 = 5412.5, 
@@ -1047,18 +949,18 @@ We can use it to calculate the following values:
 \sum\_{i = 1}^{10} y\_i^2 = 25238, 
 \sum\_{i = 1}^{10} x\_i y\_i = 8407.5, 
 \\]
-</span>
-</center>
+&lt;/span&gt;
+&lt;/center&gt;
 and we can write:
-<span style = "font-size: 80%">
+&lt;span style = "font-size: 80%"&gt;
 
-\begin{align}
-r &= \frac{ \sum_{i = 1}^{n} x_i y_i - n \bar{x}\bar{y} }{ \sqrt{ \left(\sum_{i = 1}^{n} x_i^2 - n\bar{x}^2 \right) \left(\sum_{i = 1}^{n} y_i^2 - n \bar{y}^2 \right) } } \\\\
-  &= \frac{ 8407.5 - 10 (20) (48.5) }{ \sqrt{ \left(5412.5 - 10 (20)^2 \right) \left(25238 - 10 (48.4)^2 \right) } } \\\\
-  &= -0.795
-\end{align}
+`\begin{align}
+r &amp;= \frac{ \sum_{i = 1}^{n} x_i y_i - n \bar{x}\bar{y} }{ \sqrt{ \left(\sum_{i = 1}^{n} x_i^2 - n\bar{x}^2 \right) \left(\sum_{i = 1}^{n} y_i^2 - n \bar{y}^2 \right) } } \\\\
+  &amp;= \frac{ 8407.5 - 10 (20) (48.5) }{ \sqrt{ \left(5412.5 - 10 (20)^2 \right) \left(25238 - 10 (48.4)^2 \right) } } \\\\
+  &amp;= -0.795
+\end{align}`
 
-</span>
+&lt;/span&gt;
 So we would say that stress applied and lifetime of the bar have a **strong, negative, linear relationship**.
 
 ]
@@ -1206,4 +1108,95 @@ R^2 = (r)^2 = (-0.795)^2 = 0.633
 
 In other words, 63.3% of the variability in the lifetime of the bars can be explained by the stress the bars were placed under.
 
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
 
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

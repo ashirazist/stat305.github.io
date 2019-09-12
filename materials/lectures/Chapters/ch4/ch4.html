@@ -66,7 +66,7 @@ layout:false
 
 
 &lt;center&gt;
-61, 69, 65, 53, 60
+68, 63, 51, 59, 61
 &lt;/center&gt;
 
 Find the variance and standard deviation of this sample.
@@ -77,17 +77,17 @@ layout:false
 ## Example: Finding the Variance
 
 Since we are told it is a sample, we need to use **sample variance**.
-The mean of 61, 69, 65, 53, 60 is 61.6
+The mean of 68, 63, 51, 59, 61 is 60.4
 
 
 &lt;span style = "font-size: 75%"&gt;
 `\begin{align}
 s^2 &amp;= \frac{1}{n-1}\sum_{i=1}^5 (x_i - \bar{x})^2 \\\\
     &amp;= \frac{1}{n-1}\left( (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + (x_3 - \bar{x})^2 + (x_4 - \bar{x})^2 + (x_5 - \bar{x})^2 \right) \\\\
-    &amp;= \frac{1}{5-1} \left((61 - 61.6)^2 + (69 - 61.6)^2 + (65 - 61.6)^2 + (53 - 61.6)^2 + (60 - 61.6)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( (-0.6)^2 + (7.4)^2 + (3.4)^2 + (-8.6)^2 + (-1.6)^2 \right) \\\\
-    &amp;= \frac{1}{4} \left( 0.36 + 54.76 + 11.56 + 73.96 + 2.56 \right) \\\\
-    &amp;=  35.8\\\\
+    &amp;= \frac{1}{5-1} \left((68 - 60.4)^2 + (63 - 60.4)^2 + (51 - 60.4)^2 + (59 - 60.4)^2 + (61 - 60.4)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( (7.6)^2 + (2.6)^2 + (-9.4)^2 + (-1.4)^2 + (0.6)^2 \right) \\\\
+    &amp;= \frac{1}{4} \left( 57.76 + 6.76 + 88.36 + 1.96 + 0.36 \right) \\\\
+    &amp;=  38.8\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -101,8 +101,8 @@ With `\(s^2\)` known, finding `\(s\)` is simple:
 
 `\begin{align}
    s &amp;= \sqrt{s^2} \\\\
-     &amp;= \sqrt{35.8} \\\\
-     &amp;= 5.9833101\\\\
+     &amp;= \sqrt{38.8} \\\\
+     &amp;= 6.2289646\\\\
 \end{align}`
 
 &lt;span&gt;
@@ -407,9 +407,9 @@ How do we minimize it?
 -2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i 
 \]`
 
-**The derivative with respect to \\(\mathbf{b_0}\\)**:
+**The derivative with respect to \\(\mathbf{b_1}\\)**:
 `\[
--2 b_0 \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2
+-2  \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2
 \]`
 &lt;span style = "font-size: 70%"&gt;
 &lt;/span&gt;
@@ -431,7 +431,7 @@ We set both equal to 0 and solve them at the same time:
 
 `\begin{align}
 -2 \sum_{i = 1}^n y_i + 2 n b_0 + 2 b_1 \sum_{i = 1}^n x_i &amp;= 0 \\\\
--2 b_0 \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2 &amp;=0 \\\\
+-2  \sum_{i = 1}^n y_i x_i + 2 b_0 \sum_{i = 1}^n x_i + 2 b_1 \sum_{i = 1}^n x_i^2 &amp;=0 \\\\
 \end{align}`
 
 We can rewrite the first equation as:
@@ -692,15 +692,26 @@ Controlling surface roughness is an important part of the manufacture of bearing
 The key step in this smoothing the balls involves the use of a spinning weighted disc.
 Two important aspects of this are the rotation speed of the disc and the weight applied to the disc.
 Since higher weights and higher rotation speed are all known to cause shorter lifetimes for the discs (which requires halts in production, costs of new discs, and so on), a team of engineers are attempting to better understand the relationship between the rotation speed, the weight, and the resulting surface roughness of the balls produced.
+
+
+
+
+
 ---
 ## Experiment 1: Constant speed, changing applied weight
 With the disc rotation speed locked at 50 rotations/second, the team of engineers created 60 batches of balls using differently weighted discs (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g) and randomly selected one ball from each batch. 
 The results are recorded in the dataset "balls-001.csv" on the course page.
+
+&lt;img src="ch4_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+
 ---
 ## Experiment 2: Changing speed, constant applied weight
 With an better understanding of the relationship between weight and surface roughness, the team turned their attention to rotation speed.
 This time the produced 3 batches for each of 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second). 
 The results are recorded in the dataset "balls-002.csv" on the course page.
+
+&lt;img src="ch4_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+
 ---
 ## Experiment 3: Changing speed changing applied weight
 
@@ -709,6 +720,9 @@ This time the produced 3 batches for each combination of 20 weights
 (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g)
 and 15 rotation speeds (25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, and 95 rotations per second).
 The results are recorded in the dataset "balls-003.csv"
+
+&lt;img src="ch4_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+
 
 ---
 ## Experiment 4: Changing categorical speed changing applied weight
@@ -719,6 +733,13 @@ Again, time the produced 3 batches for each combination of 20 weights
 (0.025 g, 0.050 g, 0.075 g, 0.100 g, ..., 0.500 g)
 and three rotation speeds: low (encoded as 1), medium (encoded as 2), high (encoded as 3).
 The results are recorded in the dataset "balls-004.csv"
+---
+## Experiment 4: Changing categorical speed changing applied weight
+
+&lt;img src="ch4_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+---
+
+
 ---
 layout:false
 .left-column[

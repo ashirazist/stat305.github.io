@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-  <head>
-    <title>ch4.utf8.md</title>
-    <meta charset="utf-8" />
-    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
-  </head>
-  <body>
-    <textarea id="source">
+---
 
+output: 
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
 class: center, middle, inverse
 layout: yes
 name: inverse
@@ -30,9 +30,9 @@ layout: false
 ]
 .right-column[
 
-&lt;center&gt;
-   &lt;h3&gt;Knowing when a relationship fits the data well&lt;/h3&gt;
-&lt;/center&gt;
+<center>
+   <h3>Knowing when a relationship fits the data well</h3>
+</center>
 
 So far we have been fitting lines to describe our data. A first question to ask may be something like:
 
@@ -42,9 +42,9 @@ So far we have been fitting lines to describe our data. A first question to ask 
 
 **However** all fits are not created the same: 
 
-&lt;center&gt;
-   &lt;img src="line_fits.png" alt="dmc logo" height="250"&gt; 
-&lt;/center&gt;
+<center>
+   <img src="line_fits.png" alt="dmc logo" height="250"> 
+</center>
 
 ]
 ---
@@ -54,9 +54,9 @@ So far we have been fitting lines to describe our data. A first question to ask 
 ]
 .right-column[
 
-&lt;center&gt;
-   &lt;h3&gt;Describing Fit Numerically&lt;/h3&gt;
-&lt;/center&gt;
+<center>
+   <h3>Describing Fit Numerically</h3>
+</center>
 
 **1. Sample correlation (aka, sample linear correlation)**
 
@@ -123,9 +123,9 @@ The value of \\(r\\) is always between -1 and +1.
 ### Numeric Desc.
 ]
 .right-column[
-&lt;center&gt;
-   &lt;img src="line_fits.png" alt="dmc logo" height="250"&gt; 
-&lt;/center&gt;
+<center>
+   <img src="line_fits.png" alt="dmc logo" height="250"> 
+</center>
 
 The values of \\(r\\) from left to right are in the plot above are:
 ```
@@ -158,8 +158,8 @@ We need a way to identify the quality of the fit **concretely**
 
 We can use it to calculate the following values:
 
-&lt;center&gt;
-&lt;span style = "font-size: 60%"&gt;
+<center>
+<span style = "font-size: 60%">
 \\[
 \sum\_{i = 1}^{10} x\_i = 200, 
 \sum\_{i = 1}^{10} x\_i^2 = 5412.5, 
@@ -170,18 +170,18 @@ We can use it to calculate the following values:
 \sum\_{i = 1}^{10} y\_i^2 = 25238, 
 \sum\_{i = 1}^{10} x\_i y\_i = 8407.5, 
 \\]
-&lt;/span&gt;
-&lt;/center&gt;
+</span>
+</center>
 and we can write:
-&lt;span style = "font-size: 80%"&gt;
+<span style = "font-size: 80%">
 
-`\begin{align}
-r &amp;= \frac{ \sum_{i = 1}^{n} x_i y_i - n \bar{x}\bar{y} }{ \sqrt{ \left(\sum_{i = 1}^{n} x_i^2 - n\bar{x}^2 \right) \left(\sum_{i = 1}^{n} y_i^2 - n \bar{y}^2 \right) } } \\\\
-  &amp;= \frac{ 8407.5 - 10 (20) (48.5) }{ \sqrt{ \left(5412.5 - 10 (20)^2 \right) \left(25238 - 10 (48.4)^2 \right) } } \\\\
-  &amp;= -0.795
-\end{align}`
+\begin{align}
+r &= \frac{ \sum_{i = 1}^{n} x_i y_i - n \bar{x}\bar{y} }{ \sqrt{ \left(\sum_{i = 1}^{n} x_i^2 - n\bar{x}^2 \right) \left(\sum_{i = 1}^{n} y_i^2 - n \bar{y}^2 \right) } } \\\\
+  &= \frac{ 8407.5 - 10 (20) (48.5) }{ \sqrt{ \left(5412.5 - 10 (20)^2 \right) \left(25238 - 10 (48.4)^2 \right) } } \\\\
+  &= -0.795
+\end{align}
 
-&lt;/span&gt;
+</span>
 So we would say that stress applied and lifetime of the bar have a **strong, negative, linear relationship**.
 
 ]
@@ -359,13 +359,13 @@ layout:false
 
 - What we mean by multiple **linear** relationship is that the relation between the variables and the response is linear **in their parameters**.
 
-   - **polynomial equation of order k:** `\(y = \beta_0 + \beta_1 x + \beta_2 x^2+ + \beta_3 x^3+\cdots+ \beta_k x^k\)`
+   - **polynomial equation of order k:** $y = \beta_0 + \beta_1 x + \beta_2 x^2+ + \beta_3 x^3+\cdots+ \beta_k x^k$
 
 - And there are also **non-linear relationship** where the relationship between the variables and the response is non-linear **in their parameters**.
 
-`\begin{align}
-y &amp;=  \beta_0 + e^{\beta_1} x  \\\\
-\end{align}`
+\begin{align}
+y &=  \beta_0 + e^{\beta_1} x  \\\\
+\end{align}
 
 $$ y= \frac{\beta_0}{\beta_1 + \beta_2x} $$
 
@@ -429,10 +429,10 @@ $$
 **Observed Relationship**:
 
 In our data, the true relationship will be shrouded in error.
-`\begin{align}
-y &amp;= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \text{errors} \\\\
-  &amp;= [\ \ \ \ \ \ \ \ \text{signal}\ \ \ \ \ \ \ ] + [\text{noise}]
-\end{align}`
+\begin{align}
+y &= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \text{errors} \\\\
+  &= [\ \ \ \ \ \ \ \ \text{signal}\ \ \ \ \ \ \ ] + [\text{noise}]
+\end{align}
 ]
 
 ---
@@ -462,7 +462,7 @@ $$
 ### Example: Hardness of Alloy
 Enter the data in JMP
 
-&lt;img src="figure/alloy-data-in-jmp.png" alt="alloy" width="500"&gt;
+<img src="figure/alloy-data-in-jmp.png" alt="alloy" width="500">
 ]
 ---
 .left-column[
@@ -471,9 +471,9 @@ Enter the data in JMP
 ]
 .right-column[
 ### Example: Hardness of Alloy
-In JMP, go to `Analyze &gt; Fit Model` to define the model you are fitting:
+In JMP, go to `Analyze > Fit Model` to define the model you are fitting:
 
-&lt;img src="figure/alloy-fit-model.png" alt="alloy" width="500"&gt;
+<img src="figure/alloy-fit-model.png" alt="alloy" width="500">
 ]
 ---
 .left-column[
@@ -484,7 +484,7 @@ In JMP, go to `Analyze &gt; Fit Model` to define the model you are fitting:
 ### Example: Hardness of Alloy
 After clicking `Run` we get the following model fit results:
 
-&lt;img src="figure/alloy-fit-results.png" alt="alloy" width="400"&gt;
+<img src="figure/alloy-fit-results.png" alt="alloy" width="400">
 ]
 ---
 .left-column[
@@ -493,12 +493,12 @@ After clicking `Run` we get the following model fit results:
 ]
 .right-column[
 ### Example: Hardness of Alloy
-From this output, we can get the value of `\(R^2\)`, the coeffecient of determination:
+From this output, we can get the value of $R^2$, the coeffecient of determination:
 
-&lt;img src="figure/alloy-fit-results-detail-001.png" alt="alloy" width="400"&gt;
+<img src="figure/alloy-fit-results-detail-001.png" alt="alloy" width="400">
 
-Since `\(R^2 = 0.899073\)`, we can say 
-&gt;89.9074% of the variability in the hardness we observed can be explained by its relationship with temperature and percent copper.
+Since $R^2 = 0.899073$, we can say 
+>89.9074% of the variability in the hardness we observed can be explained by its relationship with temperature and percent copper.
 ]
 ---
 .left-column[
@@ -509,14 +509,14 @@ Since `\(R^2 = 0.899073\)`, we can say
 ### Example: Hardness of Alloy
 From this output, we can get the sum of squares.
 
-&lt;img src="figure/alloy-fit-results-detail-002.png" alt="alloy" width="400"&gt;
+<img src="figure/alloy-fit-results-detail-002.png" alt="alloy" width="400">
 
 This "Analysis of Variance" table has the same format across almost all textbooks, journals, software, etc. In our notation, 
-- `\(SSR = 1152.1888\)`
-- `\(SSE = 129.3404\)`
-- `\(SSTO = 1281.5292\)`
+- $SSR = 1152.1888$
+- $SSE = 129.3404$
+- $SSTO = 1281.5292$
 
-We can use these for lots of purposes. In this class, we have seen that we can get `\(R^2\)`:
+We can use these for lots of purposes. In this class, we have seen that we can get $R^2$:
 
 $$
 R^2 = 1 - \frac{SSE}{SSTO} = 1 - \frac{129.3404}{1281.5292} = 0.8990734
@@ -532,20 +532,20 @@ $$
 ### Example: Hardness of Alloy
 The parameter estimates give us the fitted values used in our model:
 
-&lt;img src="figure/alloy-fit-results-detail-003.png" alt="alloy" width="400"&gt;
+<img src="figure/alloy-fit-results-detail-003.png" alt="alloy" width="400">
 
-Since we defined percent copper as `\(x_1\)` earlier and temperature as `\(x_2\)` then we can write:
+Since we defined percent copper as $x_1$ earlier and temperature as $x_2$ then we can write:
 $$
 \hat{y} = 161.33646 + 32.96875 \cdot x_1 - 0.0855 \cdot x_2
 $$
 
 We can use this to get fitted values. If we use temperature of 1000 degrees and percent copper of 0.10 then we would predict a hardness of
 
-`\begin{align}
-\hat{y} &amp;= 161.33646 + 32.96875 \cdot (0.10) - 0.0855 \cdot (1000) \\\\
-        &amp;= 161.33646 + 3.296875 - 85.5 \\\\
-        &amp;= 79.13333
-\end{align}`
+\begin{align}
+\hat{y} &= 161.33646 + 32.96875 \cdot (0.10) - 0.0855 \cdot (1000) \\\\
+        &= 161.33646 + 3.296875 - 85.5 \\\\
+        &= 79.13333
+\end{align}
 
 
 ]
@@ -558,9 +558,9 @@ We can use this to get fitted values. If we use temperature of 1000 degrees and 
 ### Example: Hardness of Alloy
 While our model looks pretty good, we still need to check a few things involving residuals. We can save our residuals from the model fit drop down and analyze them.
 
-From Analyze &gt; Distribution:
+From Analyze > Distribution:
 
-&lt;img src="figure/alloy-residuals.png" alt="alloy" width="400"&gt;
+<img src="figure/alloy-residuals.png" alt="alloy" width="400">
 
 ]
 ---
@@ -573,7 +573,7 @@ From Analyze &gt; Distribution:
 
 There aren't many residuals here (just 12) but we would like to make sure that the histogram has rough bell-shape (normal residuals are good). I would call this one inconclusive.
 
-&lt;img src="figure/alloy-residuals-plot-001.png" alt="alloy" width="300"&gt;
+<img src="figure/alloy-residuals-plot-001.png" alt="alloy" width="300">
 
 ]
 ---
@@ -588,7 +588,7 @@ Another way to check if the residuals are approximately normal is to compare the
 
 From the dropdown menu, choose Normal Quantile Plot to get:
 
-&lt;img src="figure/alloy-residuals-plot-002.png" alt="alloy" width="400"&gt;
+<img src="figure/alloy-residuals-plot-002.png" alt="alloy" width="400">
 
 ]
 ---
@@ -599,7 +599,7 @@ From the dropdown menu, choose Normal Quantile Plot to get:
 .right-column[
 ### Example: Hardness of Alloy
 
-&lt;img src="figure/alloy-residuals-plot-002.png" alt="alloy" width="400"&gt;
+<img src="figure/alloy-residuals-plot-002.png" alt="alloy" width="400">
 
 - If the points all fall on the line, then the residuals have the same spread as the normal distribution (i.e., the residuals follow a bell-shape, which is what we want). 
 - If they stay within the curves, then we can say the residuals follow a rough bell shape (which is good).
@@ -622,9 +622,9 @@ layout: false
 ### Transformations: Fitting complicated relationships
 
 Consider the simulated dataset 'transform.csv' in the lecture module. Here's the scatterplot:
-&lt;center&gt;
-&lt;img src="figure/transform-plot.png" alt="alloy" width="400"&gt;
-&lt;/center&gt;
+<center>
+<img src="figure/transform-plot.png" alt="alloy" width="400">
+</center>
 
 ]
 ---
@@ -656,12 +656,12 @@ layout: false
 .right-column[
 ### Transformations: Fitting complicated relationships
 
-One possible function that could do that: `\(ln(x)\)`.
-&lt;center&gt;
-&lt;img src="figure/transform-plot2.png" alt="alloy" width="300"&gt;
-&lt;/center&gt;
+One possible function that could do that: $ln(x)$.
+<center>
+<img src="figure/transform-plot2.png" alt="alloy" width="300">
+</center>
 
-Transforming our variables can allow us to get better fits, but you need to be careful about the meaning of the relationship. For instance, the slope now means "the change in the response when *the natural log of x is increased by 1* - the relationship to `\(x\)` itself is not always easy to translate back.
+Transforming our variables can allow us to get better fits, but you need to be careful about the meaning of the relationship. For instance, the slope now means "the change in the response when *the natural log of x is increased by 1* - the relationship to $x$ itself is not always easy to translate back.
 
 ]
 ---
@@ -691,7 +691,7 @@ Consider the bars example again
 
 Here's the linear fit:
 
-&lt;img src="figure/barlife-linear-plot.png" alt="alloy" width="300"&gt;
+<img src="figure/barlife-linear-plot.png" alt="alloy" width="300">
 ]
 ---
 layout: false
@@ -706,9 +706,9 @@ layout: false
 
 **Example**: Stress and Lifetime of Bars
 
-&lt;img src="figure/barlife-linear-plot.png" alt="alloy" width="300"&gt;
+<img src="figure/barlife-linear-plot.png" alt="alloy" width="300">
 
-The fitted line doesn't touch all the points, but we can push our relationship further by adding `\((stress)^2\)`, `\((stress)^3\)`, `\((stress)^4\)`, and so on. 
+The fitted line doesn't touch all the points, but we can push our relationship further by adding $(stress)^2$, $(stress)^3$, $(stress)^4$, and so on. 
 
 Everytime we add a new term to the polynomial, we give the fitted relationship the ability to make one more turn.
 
@@ -731,9 +731,9 @@ layout: false
 
 Multicollinearity occurs when you have strongly correlated experimental variables.
 
-&lt;center&gt;
-&lt;img src="figure/multicollinearity.png" alt="alloy" width="400"&gt;
-&lt;/center&gt;
+<center>
+<img src="figure/multicollinearity.png" alt="alloy" width="400">
+</center>
 
 ]
 ---
@@ -784,94 +784,3 @@ Ultimately while it may look like a good fit on paper, the model will be inaccur
 -  Be careful of overfitting and multicollinearity (when the experimental variables are correlated).
 
 ]
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>

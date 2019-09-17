@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>ch4.utf8.md</title>
+    <title>ch4.part2.utf8.md</title>
     <meta charset="utf-8" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
@@ -359,8 +359,21 @@ layout:false
 
 - What we mean by multiple **linear** relationship is that the relation between the variables and the response is linear **in their parameters**.
 
-   - **polynomial equation of order k:** `\(y = \beta_0 + \beta_1 x + \beta_2 x^2+ + \beta_3 x^3+\cdots+ \beta_k x^k\)`
+   - **Multiple linear regression in general:** when there are more than one experimental variable in the experiment 
+`$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2+\cdots+ \beta_k x_k$$`
+   - **polynomial equation of order k:** 
+`$$y = \beta_0 + \beta_1 x + \beta_2 x^2+ + \beta_3 x^3+\cdots+ \beta_k x^k$$`
+]
+---
+layout:false
 
+.left-column[
+##Fitting Curves
+##MLR
+]
+.right-column[
+
+## Non-Linear Relationships
 - And there are also **non-linear relationship** where the relationship between the variables and the response is non-linear **in their parameters**.
 
 `\begin{align}
@@ -370,11 +383,107 @@ y &amp;=  \beta_0 + e^{\beta_1} x  \\\\
 $$ y= \frac{\beta_0}{\beta_1 + \beta_2x} $$
 
 ]
+---
+layout:false
 
+.left-column[
+##Fitting Curves
+##MLR
+]
+
+.right-column[
+
+##An issue
+
+
+- The point is that fitting curves and surfaces by the least square method needs a lot of matrix algebra concepts and it is difficult to be done by hand.
+
+- We need software to fit surfaces and curves.
+
+]
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+### Example 
+
+---
+layout: false
+.left-column[
+##Fitting Curves
+##MLR
+##Example
+]
+
+.right-column[
+####Example:  Compressive Strength of Fly Ash Cylinders as a Function of Amount of Ammonium Phoshate Additive
+
+| Ammonium Phosphate(%)  | Compressive Strength (psi)| Ammonium Phosphate(%)  | Compressive Strength (psi)| 
+|------------------------|---------------------------|------------------------|---------------------------|
+|          0             |        1221               |           3            |         1609              | 
+|          0             |        1207               |           3            |         1627              | 
+|          0             |        1187               |           3            |         1642              | 
+|          1             |        1555               |           4            |         1451              | 
+|          1             |        1562               |           4            |         1472              | 
+|          1             |        1575               |           4            |         1465              | 
+|          2             |        1827               |           5            |         1321              | 
+|          2             |        1839               |           5            |         1289              | 
+|          2             |        1802               |           3            |         1292              | 
+
+]
+---
+layout: false
+.left-column[
+##Fitting Curves
+##MLR
+##Example
+]
+
+.right-column[
+####Example:  Compressive Strength of Fly Ash Cylinders as a Function of Amount of Ammonium Phoshate Additive
+
+&lt;img src="ch4.part2_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+---
+layout: false
+.left-column[
+##Fitting Curves
+##MLR
+##Example
+]
+
+.right-column[
+####Example:  Compressive Strength of Fly Ash Cylinders as a Function of Amount of Ammonium Phoshate Additive
+
+&lt;img src="ch4.part2_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+]
+---
+layout: false
+.left-column[
+##Fitting Curves
+##MLR
+##Example
+]
+
+.right-column[
+####Example:  Compressive Strength of Fly Ash Cylinders as a Function of Amount of Ammonium Phoshate Additive
+
+&lt;img src="ch4.part2_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+### One More Example in  Fitting Surface and Curves
 ---
 layout:false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -388,7 +497,8 @@ The goal is to describe a relationship between our response, Hardness, and our t
 ---
 layout:false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -412,7 +522,8 @@ layout:false
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -437,7 +548,8 @@ y &amp;= \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \text{errors} \\\\
 
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -455,7 +567,8 @@ $$
 ---
 
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -466,7 +579,8 @@ Enter the data in JMP
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -477,7 +591,8 @@ In JMP, go to `Analyze &gt; Fit Model` to define the model you are fitting:
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -488,7 +603,8 @@ After clicking `Run` we get the following model fit results:
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -502,7 +618,8 @@ Since `\(R^2 = 0.899073\)`, we can say
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -525,7 +642,8 @@ $$
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -551,7 +669,8 @@ We can use this to get fitted values. If we use temperature of 1000 degrees and 
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -565,7 +684,8 @@ From Analyze &gt; Distribution:
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -578,7 +698,8 @@ There aren't many residuals here (just 12) but we would like to make sure that t
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -593,7 +714,8 @@ From the dropdown menu, choose Normal Quantile Plot to get:
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ]
 .right-column[
@@ -614,7 +736,8 @@ class: center, middle, inverse
 ---
 layout: false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Transformation
 ]
@@ -630,7 +753,8 @@ Consider the simulated dataset 'transform.csv' in the lecture module. Here's the
 ---
 layout: false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Transformation
 ]
@@ -649,7 +773,8 @@ We need a function that can both adjust the scale our responses and account for 
 ---
 layout: false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Transformation
 ]
@@ -672,7 +797,8 @@ class: center, middle, inverse
 ---
 layout: false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Dangers in Fits
 ### Overfitting
@@ -696,7 +822,8 @@ Here's the linear fit:
 ---
 layout: false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Dangers in Fits
 ### Overfitting
@@ -718,7 +845,8 @@ This leads to a problem called **overfitting**: our model is just following *the
 ---
 layout: false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Dangers in Fits
 ### Overfitting
@@ -739,7 +867,8 @@ Multicollinearity occurs when you have strongly correlated experimental variable
 ---
 layout: false
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Dangers in Fits
 ### Overfitting
@@ -759,7 +888,8 @@ Ultimately while it may look like a good fit on paper, the model will be inaccur
 ]
 ---
 .left-column[
-## Good Fit
+##Fitting Curves
+##MLR
 ## Ex: Hard Alloy
 ## Wrapup
 ]

@@ -1254,10 +1254,11 @@ layout:false
 
 - And there are also **non-linear relationship** where the relationship between the variables and the response is non-linear **in their parameters**.
 
-   - $y = \beta_0 +  x $
-   - $ y = \beta_0 + e^{\beta_1} x $
-   
-   - $ y= \frac{\beta_0}{\beta_1 + \beta_2x} $
+\begin{align}
+y &=  \beta_0 + e^{\beta_1} x  \\\\
+\end{align}
+
+$$ y= \frac{\beta_0}{\beta_1 + \beta_2x} $$
 
 ]
 

@@ -725,7 +725,7 @@ From Analyze > Distribution:
 
 There aren't many residuals here (just 12) but we would like to make sure that the histogram has rough bell-shape (normal residuals are good). I would call this one inconclusive.
 
-<img src="figure/alloy-residuals-plot-001.png" alt="alloy" width="300">
+<img src="figure/alloy-residuals-plot-001.png" alt="alloy" width="300", height= "350">
 
 ]
 ---

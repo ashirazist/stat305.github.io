@@ -492,7 +492,7 @@ layout: false
 ####Example:  Compressive Strength of Fly Ash Cylinders as a Function of Amount of Ammonium Phoshate Additive
 
 ```{r, warning=FALSE,message=FALSE, fig.height= 4 , fig.width= 7, fig.align='center', error=FALSE, echo= FALSE}
-my.formula <- y ~ I(x)+ I(x^2)
+my.formula <- y ~ I(x)+ I(x^2)+I(x^3)
 Ammonium<- c(rep(0:5, each=3))
 Strength<- c(1221, 1207, 1187, 1555 , 1562 , 1575, 1827, 1839, 1802, 1609, 1627, 1642, 1451, 1472, 1465, 1321, 1289, 1292 )
 df<- data.frame(Ammonium, Strength)

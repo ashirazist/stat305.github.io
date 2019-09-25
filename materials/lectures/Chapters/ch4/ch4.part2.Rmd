@@ -849,7 +849,7 @@ Consider the bars example again
 
 Here's the linear fit:
 
-<img src="figure/barlife-linear-plot.png" alt="alloy" width="300">
+<img src="figure/barlife-linear-plot.png" alt="alloy" width="300", height= "200">
 ]
 ---
 layout: false

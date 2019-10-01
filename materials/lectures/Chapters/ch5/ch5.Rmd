@@ -172,28 +172,7 @@ Find the following:
 4. $A^c \cap B$
 
 ]
----
-.left-column[
-## Probability
-### What is Probability Theory?
-### Basics
-]
-.right-column[
-### Example
 
-In our example we have the following sample space:
-
-<center>
-S = {"one dot showing up", "two dots showing up", ..., "six dots facing up"}
-</center>
-
-That's a little cumbersome to write out, but if we all agree we are talking about dots facing up (instead of, say, cows in the field), then it's OK to write this as:
-$$
-S = \\{1, 2, 3, 4, 5, 6\\}
-$$
-
-All of our existing set notation and rules work on sample spaces: union, intersection, compliment, subset, etc.
-]
 ---
 .left-column[
 ## Probability
@@ -250,7 +229,7 @@ or
 ### Basics
 ]
 .right-column[
-### Basic Terminology II
+### Basic Terminology II:  Probability and Its Axioms
 
 **Probability**: A special measurement used to describe the likelihood of a specific event. A probability of 0 means the event will not occur. A probability of 1 means the event will occur. 
 
@@ -278,7 +257,7 @@ We can translate these rules into words:
 ### Basics
 ]
 .right-column[
-### Basic Terminology II
+### Basic Terminology II:  Probability and Its Axioms
 
 By combining these three rules we get the many other rules, such as the following:
 
@@ -291,6 +270,22 @@ By combining these three rules we get the many other rules, such as the followin
 - For disjoint events $A_1$, $A_2$, ..., $A_k$, $P(A_1 \cup A_2 \cup ... \cup A_k) = P(A_1) + P(A_2) + ... + P(A_k)$.
 
 ]
+
+---
+.left-column[
+## Probability
+### What is Probability Theory?
+### Basics
+]
+.right-column[
+### Basic Terminology II:  Probability and Its Axioms
+
+
+### Example
+
+> Suppose that $A$ and $B$ are two events of a sample space $S$. Using the probability axioms, it can be shown that $$ P(A \cup B) = P(A) + P(B) - P(A \cap B) $$
+]
+
 ---
 layout: true
 class: center, middle, inverse
@@ -530,8 +525,10 @@ Here's how it works:
 .right-column[
 
 ### How Does Conditional Probability Work?
+ 
+<img src= "cond.jpg">
 
-**Drawing Showing How It Works** 
+
 ]
 ---
 .left-column[

@@ -669,6 +669,169 @@ $$
 I flip a coin. If I flip heads, I roll a six-sided die. If I flip tails, I roll a 10 sided die. I tell you the number on the die. You tell me the flip of the coin.
 
 ]
+
+---
+name: inverse
+inverse:true
+class: center, middle, inverse
+
+##Wrap Up Example
+###Who killed the  king?
+---
+inverse: false
+.left-column[
+## Conditional Probability
+### What is it?
+### How it works
+### Notation
+### Independence
+### Bayes' Theorem
+### Example
+]
+.right-column[
+
+&lt;center&gt;
+   &lt;img src="figs/02.jpg"  height="400"&gt; 
+&lt;/center&gt;
+
+&gt;“King” Joffrey dies during his wedding feast. There are multiple scenarios of his cause of death, and poison is suspected as a manner of death. The poison might have been given by any of his enemies
+
+
+
+]
+---
+
+inverse: false
+.left-column[
+## Conditional Probability
+### What is it?
+### How it works
+### Notation
+### Independence
+### Bayes' Theorem
+### Example
+]
+.right-column[
+
+&lt;center&gt;
+   &lt;img src="figs/1_joffrey_death.jpg"  height="250"&gt; 
+&lt;/center&gt;
+
+Suppose that
+
+
+- There is 70% chance that he was poisoned.
+
+- Apart form that, he could have died of internal bleeding by 15% chance. 
+
+- He could been poisoned and also had internal bleeding by 7% chance. 
+
+What is the probability that he died of poisoning OR internal bleeding?
+]
+---
+inverse: false
+.left-column[
+## Conditional Probability
+### What is it?
+### How it works
+### Notation
+### Independence
+### Bayes' Theorem
+### Example
+]
+.right-column[
+
+&gt;The maester in charge of investigating Joffrey’s death figured out that the poisoned used was made by either *Tyrion* or *lord Baelish*. 
+
+&lt;center&gt;
+   &lt;img src="figs/03.jpg" width= "400"  height="220"&gt; 
+&lt;/center&gt;
+
+&lt;center&gt;
+   &lt;img src="figs/04.png"  width= "400"  height="220"&gt; 
+&lt;/center&gt;
+]
+---
+inverse: false
+.left-column[
+## Conditional Probability
+### What is it?
+### How it works
+### Notation
+### Independence
+### Bayes' Theorem
+### Example
+]
+.right-column[
+
+
+
+&lt;center&gt;
+   &lt;img src="figs/05.jpg" width= "400"  height="350"&gt; 
+&lt;/center&gt;
+
+&gt;Tyrion was accused to poison the king by 60%.
+
+]
+---
+inverse: false
+.left-column[
+## Conditional Probability
+### What is it?
+### How it works
+### Notation
+### Independence
+### Bayes' Theorem
+### Example
+]
+.right-column[
+
+
+
+&lt;center&gt;
+   &lt;img src="figs/06.jpg" width= "400"  height="350"&gt; 
+&lt;/center&gt;
+
+&gt;Lord Baelish was accused to poison the king by 45%.
+
+]
+---
+name: inverse
+inverse: true
+class: center, middle, inverse
+
+##The quesion is that given that he was poisoned
+###who was more likely to poison the king?
+---
+inverse: false
+.left-column[
+## Conditional Probability
+### What is it?
+### How it works
+### Notation
+### Independence
+### Bayes' Theorem
+### Example
+]
+.right-column[
+
+&gt; Tyrion:
+
+&gt; $$
+P(T|P) = \frac{P(T \cap P)}{P(P)}= \frac{60\%}{70\%}= 0.85
+$$
+
+
+&gt; Lord Baelish :
+
+&gt; $$
+P(LB|P) = \frac{P(LB \cap P)}{P(P)}= \frac{45\%}{70\%}= 0.64
+$$
+
+&lt;center&gt;
+   &lt;img src="figs/07.jpg" width= "400"  height="250"&gt; 
+&lt;/center&gt;
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

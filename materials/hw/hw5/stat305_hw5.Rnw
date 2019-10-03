@@ -94,9 +94,10 @@ Show \textbf{all} of your work on this assignment and answer each question fully
 	
 
 	
-	\item Chapter 4, Exercise 12, page 208  (unless directed otherwise you may use JMP; include plots as requested) [5 pts each part, 20 pts total]
+	\item Chapter 4, Exercise 12, page 208(skip part d)  (unless directed otherwise you may use JMP; include plots as requested) [5 pts each part, 15 pts total]
 	
-	\item Chapter 4, Exercise 16 (unless directed otherwise you may use JMP; include plots as requested; parts (a) - (g) only) (page 211)[5 pts each, 35 pts total]
+	\item Chapter 4, Exercise 16 (unless directed otherwise you may use JMP; include plots as requested; parts (a) - (g) only) (page 211)[5 pts each, 35 pts total]\\
+	\textbf{Note:} Doing this by hand would take time, so you'd better use JMP for this problem eventhough the question asks you to do it by hand.
 
 
 
@@ -158,7 +159,7 @@ $$
       % \vspace{2cm}
 
 % 
-   \item The JMP output below comes from fitting a quadratic model using $x$ and $x^2$. 
+   \item[]The JMP output below comes from fitting a quadratic model using $x$ and $x^2$.  
  
     \centerline{\includegraphics[scale=.2]{FitModel}}
  
@@ -171,9 +172,8 @@ $$
 
 \end{enumerate}
 
-\end{enumerate}	
 
-Total: 70 pts
+Total: 65 pts
 
 
 

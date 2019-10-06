@@ -9,8 +9,8 @@ url: http://localhost:4000
 markdown: kramdown
 navigation:
 
-- text: Home 
-  url: "https://ashirazist.github.io/stat305.github.io/index.html"
+- text: Amin Shirazi 
+  url: "https://ashirazist.github.io/"
 - text: Schedule
   url: "https://ashirazist.github.io/stat305.github.io/schedule.html"
 - text: Syllabus

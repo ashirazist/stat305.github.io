@@ -70,7 +70,7 @@
 
 \lhead{STAT 305}
 \chead{Homework \# 4} 
-\rhead{Due Thursday, Oct. $3^{rd}$ in the class}
+\rhead{Solution}
 \lfoot{Fall 2019} 
 \cfoot{\thepage} 
 \rfoot{} 
@@ -81,8 +81,9 @@
 \def\Case#1#2#3#4{\left\{ \begin{tabular}{cc} #1 & #2 \phantom
 {\Big|} \\ #3 & #4 \phantom{\Big|} \end{tabular} \right.}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\usepackage{Sweave}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+\input{stat305-hw4-sol-concordance}
 \pagestyle{fancy} 
 
 Show \textbf{all} of your work on this assignment and answer each question fully in the given context. \\
@@ -93,13 +94,89 @@ Show \textbf{all} of your work on this assignment and answer each question fully
 \begin{enumerate}
 	
 	\item Chapter 4, Section 1, Exercise 3  (unless directed otherwise you may use JMP; include plots as requested) (page 140) [5 pts each, 25 pts total]
-	
+	\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{01.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+	\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{01-2.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+	\pagebreak
 	\item Chapter 4, Section 1, Exercise 4  (unless directed otherwise you may use JMP; include plots as requested) (page 140) [5 pts each, 15 pts total]	
-	
+		\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{02.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+		\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{03.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+\end{center}
+\pagebreak
 	\item Chapter 4, Section 2, Exercise 1  (unless directed otherwise you may use JMP; include plots as requested) (page 161) [10 pts]
 	
+	\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{04.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+		\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{04-2.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+\pagebreak
 	\item Chapter 4, Section 2, Exercise 2  (unless directed otherwise you may use JMP; include plots as requested; skip part h) (page 161) [5 pts each, 35 pts total]
 	
+	\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{05.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+	\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{06.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+
+	\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{07.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+
+	\begin{center}
+	\begin{minipage}{\linewidth}
+		\centering
+		\includegraphics[width=\textwidth]{08.JPG}
+	%	\captionof{figure}{Messung 1: Diagramm}
+	\end{minipage}
+\end{center}
+
+
+
 
 
 
@@ -114,55 +191,71 @@ The data consists of two columns, \textbf{excessive weight (in tonnes)} is the a
 \textbf{distance to failure (in tens of thousands of miles)} is the simulated distance to the axel's failure. 
 
 %-- : R code (Code in Document)
-<<echo=FALSE, cache=FALSE, include = TRUE>>=
-   options(scipen=999)
-
-   weight = 2*(.025*1:50)
-   failure_time = round(17.5 + 1.5*weight - 9*weight^2 + rnorm(50,0,5),0)
-   write.csv(file = "./axel_break.csv",data.frame(weight,failure_time), row.names=FALSE,quote=FALSE)
-
-   dw <- read.csv("axel_break.csv")
-
-   dw$failure_time <- dw$failure_time + abs(min(dw$failure_time)) + 1
-
-   weight <- dw$weight
-
-   failure_time <- dw$failure_time
-
-@
 
 \begin{center}
-<<fig.width=5, fig.height=5, out.width='.5\\linewidth', echo=FALSE, message=FALSE, warning= FALSE>>=
-  library(ggplot2)
-  p<-qplot(weight,failure_time,xlab="Weight Exceeding Guidelines (in tonnes)",ylab="Travel Distance to Failure (10,000 miles)") + coord_fixed(.05)
-   p
-@
 \end{center}
 
 Here are some summaries of the data:
 
 $$
-\sum_{i=1}^{50} x_i = \Sexpr{round(sum(weight))} \hspace{3cm} \sum_{i=1}^{50} x_i^2 = \Sexpr{round(sum(weight^2))} \\
+\sum_{i=1}^{50} x_i = 64 \hspace{3cm} \sum_{i=1}^{50} x_i^2 = 107 \\
 $$
 
 $$
-\sum_{i=1}^{50} y_i = \Sexpr{round(sum(failure_time))} \hspace{3cm} \sum_{i=1}^{50} y_i^2 = \Sexpr{round(sum(failure_time^2))} \\
+\sum_{i=1}^{50} y_i = 1847 \hspace{3cm} \sum_{i=1}^{50} y_i^2 = 81603 \\
 $$
 
 $$
-\sum_{i=1}^{50} x_i y_i = \Sexpr{round(sum(failure_time*weight))}
+\sum_{i=1}^{50} x_i y_i = 1801
 $$
 
 \begin{enumerate}
        \item  Using the summaries above, fit a linear relationship between \textbf{weight exceeding guidelines} (x) and \textbf{travel distance to failure} (y).[10 pts]
-   
+       
+      The fitted line equation is 
+      $$
+      \hat{y} = b_0 + b_1 \cdot x
+      $$
+      We can use the information above to get the value for $b_1$ and $b_0$:
+      \begin{align*}
+         b_1 &= \frac{ \sum_{i = 1}^n x_i y_i - n \bar{x} \bar{y} }{ \sum_{i = 1}^n x_i^2 - n \bar{x}^2 } \\
+             &= \frac{ (1444) - (50) (64/50) (1558/50) }{ 107 - 50  (65/50)^2 } \\
+             &= -24.4551111111111 \\
+      \end{align*} 
+      and with $b_1$ we can find the value fo $b_0$: 
+      \begin{align*}
+         b_0 &= \bar{y} - b_1 \bar{x} \\
+             &= (1558/50) - (-24.4551111111111) (64/50) \\
+             &= 62.4625422222222 \\
+      \end{align*} 
+
+      Which gives us the fitted equation of
+      $$
+      \hat{y} = 62.47 -24.46 \cdot x
+      $$
+
 
       \item Write the equation of the fitted linear relationship. [5 pts] 
-      \vspace{2cm}
-      \item Find and interpret the value of $R^2$ for the fitted linear relationship.[5 pts]
-      \vspace{2cm}
-      \item Using the fitted line, provide a predicted value of travel distance to failure when the weight exceeding the guidelines is 3.4 tonnes.[5 pts]
-      \vspace{2cm}
+
+          \begin{align*}
+          \hat{y} = 62.47 -24.46 \cdot x
+          \end{align*}
+
+      \item Find and interpret the value of $R^2$ for the fitted linear relationship.[5 pts]\\
+
+            Since we are using a linear relationship, we can get $R^2$ from $r$:
+            \begin{align*} 
+            r &= \frac{\sum_{i=1}^n x_i y_i - n \bar{x} \bar{y}}{\sqrt{\left(\sum_{i=1}^n x_i^2 - n \bar{x}^2\right)\left(\sum_{i=1}^n y_i^2 - n\bar{y}^2\right)}} \\
+              &= \frac{(1444) - (50) (64/50) (1558/50) }{\sqrt{\left(107 - 50 (64/50)^2 \right)\left(61528 - (50)(1558/50)^2\right)}} \\
+              &= -0.964359584906667 \\
+            \end{align*} 
+            So $R^2 = (r)^2 = 0.929989409001359$\\
+            
+               This means that 93.00\% of our the variablity in travel distance to failure can be explained by the linear relationship with weight exceeding guidelines.
+
+
+      \item Using the fitted line, provide a predicted value of travel distance to failure when the weight exceeding the guidelines is 3.4 tonnes.[5 pts]\\
+         $$ \hat{y} = 62.47 - 24.46(3.4) = -20.694 $$
       % \item Sketch what you believe the plot of residuals vs weight would look like. Why would this be a problem?[5 pts]
       % \vspace{2cm}
 

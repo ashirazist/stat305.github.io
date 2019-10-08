@@ -312,6 +312,35 @@ Draw the CDF
 
 ]
 ---
+.left-column[
+## General Info
+### Reminder: RVs
+### Discrete?
+### Terms &amp; Notation
+]
+.right-column[
+### Summaries
+
+Almost all of the devices for describing relative frequency (empirical) distributions in Ch. 3 have versions that can describe (theoretical) probability distributions.
+
+1. Measures of location == Mean
+
+2. Measures of spread == variance
+
+3. Histogram == probability histograms based on theoretical probabilities
+
+]
+---
+name: inverse
+inverse: true
+class: center, middle, inverse
+
+## Mean
+### and
+## Variance
+## of Discrete Random Variables
+---
+inverse: false 
 
 .left-column[
 ## General Info
@@ -360,7 +389,7 @@ $$
 which is the same as
 
 $$
-\text{Var}X = \sum\limits_x(x - \text{E}X)^2f(x) = \sum\limits_x x^2f(x) - (\text{E}X)^2.
+\text{Var}X = \sum\limits_x(x - \text{E}X)^2f(x) = \text{E}(X^2) - (\text{E}X)^2.
 $$
 ]
 ---
@@ -427,6 +456,13 @@ Find the variance and standard deviation
   - variance: a value for `\(X\)` defined by `\(VarX = \sum_{x} (x - \mu)^2 \cdot f(x)\)`
 
 ]
+---
+layout: true
+class: center, middle, inverse
+---
+##Your Turn:
+### Chapter 5 Handout 1
+
 ---
 layout: true
 class: center, middle, inverse
@@ -614,6 +650,53 @@ layout: false
 ### Binomial
 ]
 .right-column[
+### Examples of Binomial Distribution
+&gt;- Number of hexamine pallets in a batch of `\(n=50\)` total pallets made from a pollotizing machine that conform to some standard.
+
+&gt;- Number of runs of the same chemical process with percent yield above `\(80%\)` given that you run the process 1000 times. 
+
+&gt;- Number of winning lottery tickets when you buy 10 tickets of the same kind.
+
+
+]
+---
+layout: false
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+]
+.right-column[
+
+![Symmetric, Left and Right Skewed Plots](./figs/Skeweness.jpg)
+
+]
+---
+layout: false
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+]
+.right-column[
+### The Binomial Distribution
+
+Plots of Binomial distribution based on different success probabilities and sample sizes. 
+
+
+&lt;img src="ch5_part_II_discrete_rv_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
+]
+---
+layout: false
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+]
+.right-column[
 ### The Binomial Distribution
 ####Example [10 component machine]
 Suppose you have a machine with 10 independent components in series. The machine only works if all the components work. Each component succeeds with probability `\(p = 0.95\)` and fails with probability `\(1 - p = 0.05\)`.
@@ -666,22 +749,17 @@ inverse: false
 .right-column[
 ### The Binomial Distribution
 
-**Expected value**: `\(E(X) = n \cdot p\)`
+&gt; **Expected value**: `$$E(X) = n \cdot p$$`
+
+&amp;nbsp;
+
+
+
+&gt; **Variance**: `$$Var(X) = n \cdot (1-p) \cdot p$$`
+
 
 ]
----
-.left-column[
-### Common Distributions
-### Background
-### Bernoulli
-### Binomial
-]
-.right-column[
-### The Binomial Distribution
 
-**Variance**: `\(Var(X) = n \cdot (1-p) \cdot p\)`
-
-]
 ---
 layout: false
 .left-column[
@@ -757,6 +835,37 @@ $$
 ### Geometric
 ]
 .right-column[
+### Examples of Geometric Distribution
+&gt;- Number of rolls of a fair die until you land a 5
+
+&gt;- Number of shipments of raw materials you get until you get a defective one (**success** does not need to have positive meaning)
+
+&gt;- Number of car engine starts untill the battery dies. 
+]
+---
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+### Geometric
+]
+.right-column[
+### Shape  of Geometric Distribution
+&lt;img src="ch5_part_II_discrete_rv_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+&gt;The probability of observing the first success decreases as the number of trials increases(even at a faster rate as `\(p\)` increases)
+
+]
+---
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+### Geometric
+]
+.right-column[
 ### The Geometric Distribution
 
 **Cumulative probability function**: $ F(x) = 1 - (1 - p)^x $
@@ -775,6 +884,15 @@ F(x) &amp;= P(X \le x) \\\\
 \end{align}`
 ]
 ---
+layout: true
+class: center, middle, inverse
+---
+##Mean
+###and 
+## Variance 
+## of Geometric Distrbution
+---
+layout:false
 .left-column[
 ### Common Distributions
 ### Background
@@ -785,9 +903,9 @@ F(x) &amp;= P(X \le x) \\\\
 .right-column[
 ### The Geometric Distribution
 
-**Expected value**: $ E(X) = \dfrac{1}{p} $
+&gt;**Expected value**: `$$E(X) = \dfrac{1}{p}$$`
 
-**Variance**: $ Var(X) = \dfrac{1-p}{p^2} $
+&gt;**Variance**: `$$Var(X) = \dfrac{1-p}{p^2}$$`
 
 ]
 ---

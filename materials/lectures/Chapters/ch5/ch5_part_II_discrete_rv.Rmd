@@ -321,6 +321,35 @@ Draw the CDF
 
 ]
 ---
+.left-column[
+## General Info
+### Reminder: RVs
+### Discrete?
+### Terms & Notation
+]
+.right-column[
+### Summaries
+
+Almost all of the devices for describing relative frequency (empirical) distributions in Ch. 3 have versions that can describe (theoretical) probability distributions.
+
+1. Measures of location == Mean
+
+2. Measures of spread == variance
+
+3. Histogram == probability histograms based on theoretical probabilities
+
+]
+---
+name: inverse
+inverse: true
+class: center, middle, inverse
+
+## Mean
+### and
+## Variance
+## of Discrete Random Variables
+---
+inverse: false 
 
 .left-column[
 ## General Info
@@ -369,7 +398,7 @@ $$
 which is the same as
 
 $$
-\text{Var}X = \sum\limits_x(x - \text{E}X)^2f(x) = \sum\limits_x x^2f(x) - (\text{E}X)^2.
+\text{Var}X = \sum\limits_x(x - \text{E}X)^2f(x) = \text{E}(X^2) - (\text{E}X)^2.
 $$
 ]
 ---
@@ -436,6 +465,13 @@ Find the variance and standard deviation
   - variance: a value for $X$ defined by $VarX = \sum_{x} (x - \mu)^2 \cdot f(x)$
 
 ]
+---
+layout: true
+class: center, middle, inverse
+---
+##Your Turn:
+### Chapter 5 Handout 1
+
 ---
 layout: true
 class: center, middle, inverse
@@ -623,6 +659,60 @@ layout: false
 ### Binomial
 ]
 .right-column[
+### Examples of Binomial Distribution
+>- Number of hexamine pallets in a batch of $n=50$ total pallets made from a pollotizing machine that conform to some standard.
+
+>- Number of runs of the same chemical process with percent yield above $80%$ given that you run the process 1000 times. 
+
+>- Number of winning lottery tickets when you buy 10 tickets of the same kind.
+
+
+]
+---
+layout: false
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+]
+.right-column[
+
+![Symmetric, Left and Right Skewed Plots](./figs/Skeweness.jpg)
+
+]
+---
+layout: false
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+]
+.right-column[
+### The Binomial Distribution
+
+Plots of Binomial distribution based on different success probabilities and sample sizes. 
+
+
+```{r, fig.height = 4,echo=FALSE, fig.align='center', fig.height= 6, fig.width=9}
+expand.grid(n = c(5, 10, 20), p = c(.2, .5, .8)) %>%
+  group_by(n, p) %>%
+  do(data.frame(data = rbinom(200, .$n, .$p))) %>%
+  ggplot() +
+  geom_histogram(aes(data), binwidth = 1) +
+  facet_grid(n ~ p)
+```
+]
+---
+layout: false
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+]
+.right-column[
 ### The Binomial Distribution
 ####Example [10 component machine]
 Suppose you have a machine with 10 independent components in series. The machine only works if all the components work. Each component succeeds with probability $p = 0.95$ and fails with probability $1 - p = 0.05$.
@@ -675,22 +765,17 @@ inverse: false
 .right-column[
 ### The Binomial Distribution
 
-**Expected value**: $E(X) = n \cdot p$
+> **Expected value**: $$E(X) = n \cdot p$$
+
+&nbsp;
+
+
+
+> **Variance**: $$Var(X) = n \cdot (1-p) \cdot p$$
+
 
 ]
----
-.left-column[
-### Common Distributions
-### Background
-### Bernoulli
-### Binomial
-]
-.right-column[
-### The Binomial Distribution
 
-**Variance**: $Var(X) = n \cdot (1-p) \cdot p$
-
-]
 ---
 layout: false
 .left-column[
@@ -766,6 +851,44 @@ $$
 ### Geometric
 ]
 .right-column[
+### Examples of Geometric Distribution
+>- Number of rolls of a fair die until you land a 5
+
+>- Number of shipments of raw materials you get until you get a defective one (**success** does not need to have positive meaning)
+
+>- Number of car engine starts untill the battery dies. 
+]
+---
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+### Geometric
+]
+.right-column[
+### Shape  of Geometric Distribution
+```{r, fig.height = 5, echo=FALSE, fig.align='center',  fig.width=9}
+expand.grid(p = c(.2, .5, .8)) %>%
+  group_by(p) %>%
+  do(data.frame(data = rgeom(200, .$p))) %>%
+  ggplot() +
+  geom_histogram(aes(data), binwidth = 1) +
+  facet_grid(~ p)
+```
+
+>The probability of observing the first success decreases as the number of trials increases(even at a faster rate as $p$ increases)
+
+]
+---
+.left-column[
+### Common Distributions
+### Background
+### Bernoulli
+### Binomial
+### Geometric
+]
+.right-column[
 ### The Geometric Distribution
 
 **Cumulative probability function**: $ F(x) = 1 - (1 - p)^x $
@@ -784,6 +907,15 @@ F(x) &= P(X \le x) \\\\
 \end{align}
 ]
 ---
+layout: true
+class: center, middle, inverse
+---
+##Mean
+###and 
+## Variance 
+## of Geometric Distrbution
+---
+layout:false
 .left-column[
 ### Common Distributions
 ### Background
@@ -794,9 +926,9 @@ F(x) &= P(X \le x) \\\\
 .right-column[
 ### The Geometric Distribution
 
-**Expected value**: $ E(X) = \dfrac{1}{p} $
+>**Expected value**: $$E(X) = \dfrac{1}{p}$$
 
-**Variance**: $ Var(X) = \dfrac{1-p}{p^2} $
+>**Variance**: $$Var(X) = \dfrac{1-p}{p^2}$$
 
 ]
 ---

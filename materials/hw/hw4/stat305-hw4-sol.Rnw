@@ -192,7 +192,7 @@ The data consists of two columns, \textbf{excessive weight (in tonnes)} is the a
 %-- : R code (Code in Document)
 <<echo=FALSE, cache=FALSE, include = TRUE>>=
    options(scipen=999)
-
+   set.seed(50)
    weight = 2*(.025*1:50)
    failure_time = round(17.5 + 1.5*weight - 9*weight^2 + rnorm(50,0,5),0)
    write.csv(file = "./axel_break.csv",data.frame(weight,failure_time), row.names=FALSE,quote=FALSE)
@@ -208,7 +208,7 @@ The data consists of two columns, \textbf{excessive weight (in tonnes)} is the a
 @
 
 \begin{center}
-<<fig.width=5, fig.height=5, out.width='.5\\linewidth', echo=FALSE, message=FALSE, warning= FALSE>>=
+<<fig.width=5, fig.height=5, out.width='.5\\linewidth', echo=FALSE, message=FALSE, warning= FALSE, fig=TRUE>>=
   library(ggplot2)
   p<-qplot(weight,failure_time,xlab="Weight Exceeding Guidelines (in tonnes)",ylab="Travel Distance to Failure (10,000 miles)") + coord_fixed(.05)
    p
@@ -217,19 +217,6 @@ The data consists of two columns, \textbf{excessive weight (in tonnes)} is the a
 
 Here are some summaries of the data:
 
-$$
-\sum_{i=1}^{50} x_i = \Sexpr{round(sum(weight))} \hspace{3cm} \sum_{i=1}^{50} x_i^2 = \Sexpr{round(sum(weight^2))} \\
-$$
-
-$$
-\sum_{i=1}^{50} y_i = \Sexpr{round(sum(failure_time))} \hspace{3cm} \sum_{i=1}^{50} y_i^2 = \Sexpr{round(sum(failure_time^2))} \\
-$$
-
-$$
-\sum_{i=1}^{50} x_i y_i = \Sexpr{round(sum(failure_time*weight))}
-$$
-
-\begin{enumerate}
        \item  Using the summaries above, fit a linear relationship between \textbf{weight exceeding guidelines} (x) and \textbf{travel distance to failure} (y).[10 pts]
        
       The fitted line equation is 
@@ -239,26 +226,26 @@ $$
       We can use the information above to get the value for $b_1$ and $b_0$:
       \begin{align*}
          b_1 &= \frac{ \sum_{i = 1}^n x_i y_i - n \bar{x} \bar{y} }{ \sum_{i = 1}^n x_i^2 - n \bar{x}^2 } \\
-             &= \frac{ (1444) - (50) (64/50) (1558/50) }{ 107 - 50  (65/50)^2 } \\
-             &= \Sexpr{ ( (1444) - (50) * (64/50) * (1558/50) )/( 107 - 50 * (65/50)^2 ) } \\
+             &= \frac{ (1982) - (50) (64/50) (1996/50) }{ 107 - 50  (64/50)^2 } \\
+             &= \Sexpr{ ( (1982) - (50) * (64/50) * (1996/50) )/( 107 - 50 * (64/50)^2 ) } \\
       \end{align*} 
       and with $b_1$ we can find the value fo $b_0$: 
       \begin{align*}
          b_0 &= \bar{y} - b_1 \bar{x} \\
-             &= (1558/50) - (\Sexpr{ ( (1444) - (50) * (64/50) * (1558/50) )/( 107 - 50 * (65/50)^2 ) }) (64/50) \\
-             &= \Sexpr{(1558/50) - ( ( (1444) -  (50) * (64/50) * (1558/50) )/( 107 - 50 * (65/50)^2 ) )* (64/50) } \\
+             &= (1996/50) - (\Sexpr{ ( (1982) - (50) * (64/50) * (1996/50) )/( 107 - 50 * (64/50)^2 ) }) (64/50) \\
+             &= \Sexpr{(1996/50) - ( ( (1982) -  (50) * (64/50) * (1996/50) )/( 107 - 50 * (64/50)^2 ) )* (64/50) } \\
       \end{align*} 
 
       Which gives us the fitted equation of
       $$
-      \hat{y} = 62.47 -24.46 \cdot x
+      \hat{y} = 69.15 -22.84 \cdot x
       $$
 
 
       \item Write the equation of the fitted linear relationship. [5 pts] 
 
           \begin{align*}
-          \hat{y} = 62.47 -24.46 \cdot x
+          \hat{y} = 69.15 -22.84 \cdot x
           \end{align*}
 
       \item Find and interpret the value of $R^2$ for the fitted linear relationship.[5 pts]\\
@@ -266,16 +253,16 @@ $$
             Since we are using a linear relationship, we can get $R^2$ from $r$:
             \begin{align*} 
             r &= \frac{\sum_{i=1}^n x_i y_i - n \bar{x} \bar{y}}{\sqrt{\left(\sum_{i=1}^n x_i^2 - n \bar{x}^2\right)\left(\sum_{i=1}^n y_i^2 - n\bar{y}^2\right)}} \\
-              &= \frac{(1444) - (50) (64/50) (1558/50) }{\sqrt{\left(107 - 50 (64/50)^2 \right)\left(61528 - (50)(1558/50)^2\right)}} \\
-              &= \Sexpr{ ( (1444) - (50) * (64/50) * (1558/50) )/(sqrt( (107 - 50 * (64/50)^2 ) *(61528 - (50) * (1558/50)^2 ))) } \\
+              &= \frac{(1982) - (50) (64/50) (1996/50) }{\sqrt{\left(107 - 50 (64/50)^2 \right)\left(94078 - (50)(1996/50)^2\right)}} \\
+              &= \Sexpr{ ( (1982) - (50) * (64/50) * (1996/50) )/(sqrt( (107 - 50 * (64/50)^2 ) *(94078 - (50) * (1996/50)^2 ))) } \\
             \end{align*} 
-            So $R^2 = (r)^2 = \Sexpr{( ( (1444) - (50) * (64/50) * (1558/50) )/(sqrt( (107 - 50 * (64/50)^2 ) *(61528 - (50) * (1558/50)^2 ))) )^2}$\\
+            So $R^2 = (r)^2 = \Sexpr{( ( (1982) - (50) * (64/50) * (1996/50) )/(sqrt( (107 - 50 * (64/50)^2 ) *(94078 - (50) * (1996/50)^2 ))) )^2}$\\
             
                This means that 93.00\% of our the variablity in travel distance to failure can be explained by the linear relationship with weight exceeding guidelines.
 
 
       \item Using the fitted line, provide a predicted value of travel distance to failure when the weight exceeding the guidelines is 3.4 tonnes.[5 pts]\\
-         $$ \hat{y} = 62.47 - 24.46(3.4) = \Sexpr{62.47 - 24.46*(3.4)} $$
+         $$ \hat{y} = 69.15 -22.84(3.4) = \Sexpr{69.15 -22.84*(3.4)} $$
       % \item Sketch what you believe the plot of residuals vs weight would look like. Why would this be a problem?[5 pts]
       % \vspace{2cm}
 

@@ -81,9 +81,8 @@
 \def\Case#1#2#3#4{\left\{ \begin{tabular}{cc} #1 & #2 \phantom
 {\Big|} \\ #3 & #4 \phantom{\Big|} \end{tabular} \right.}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\usepackage{Sweave}
 \begin{document}
-\input{stat305_hw5-concordance}
+\SweaveOpts{concordance=TRUE}
 \pagestyle{fancy} 
 
 Show \textbf{all} of your work on this assignment and answer each question fully in the given context. \\
@@ -92,14 +91,40 @@ Show \textbf{all} of your work on this assignment and answer each question fully
 \emph{Please} staple your assignment!
 
 \begin{enumerate}
-	
 
-	
-	\item Chapter 4, Exercise 12, page 208(skip part d)  (unless directed otherwise you may use JMP; include plots as requested) [5 pts each part, 15 pts total]
-	
-	\item Chapter 4, Exercise 16 (unless directed otherwise you may use JMP; include plots as requested; parts (a) - (g) only) (page 211)[5 pts each, 35 pts total]\\
-	\textbf{Note:} Doing this by hand would take time, so you'd better use JMP for this problem eventhough the question asks you to do it by hand.
+	\item Chapter 4, Exercise 12, page 208(skip part d)   [5 pts each part, 15 pts total]
+    	\begin{center}
+    	\begin{minipage}{\linewidth}
+    		\centering
+    		\includegraphics[width=\textwidth]{hw5-1-1.JPG}
+    	%	\captionof{figure}{Messung 1: Diagramm}
+    	\end{minipage}
+    \end{center}
+    	\begin{center}
+    	\begin{minipage}{\linewidth}
+    		\centering
+    		\includegraphics[width=\textwidth]{hw5-1-2.JPG}
+    	%	\captionof{figure}{Messung 1: Diagramm}
+    	\end{minipage}
+    	\end{center}
+\pagebreak
 
+ \item Chapter 4, Exercise 16 [a-g][5 pts each part, 35 pts total]
+
+    	\begin{center}
+    	\begin{minipage}{\linewidth}
+    		\centering
+    		\includegraphics[width=\textwidth]{hw5-2-1.JPG}
+    	%	\captionof{figure}{Messung 1: Diagramm}
+    	\end{minipage}
+    \end{center}
+    	\begin{center}
+    	\begin{minipage}{\linewidth}
+    		\centering
+    		\includegraphics[width=\textwidth]{hw5-2-2.JPG}
+    	%	\captionof{figure}{Messung 1: Diagramm}
+    	\end{minipage}
+    	\end{center}
 
 
 \item
@@ -114,23 +139,44 @@ The data consists of two columns, \textbf{excessive weight (in tonnes)} is the a
 \textbf{distance to failure (in tens of thousands of miles)} is the simulated distance to the axel's failure. 
 
 %-- : R code (Code in Document)
+<<echo=FALSE, cache=FALSE, include = TRUE>>=
+   options(scipen=999)
+   set.seed(50)
+   weight = 2*(.025*1:50)
+   failure_time = round(17.5 + 1.5*weight - 9*weight^2 + rnorm(50,0,5),0)
+   write.csv(file = "./axel_break.csv",data.frame(weight,failure_time), row.names=FALSE,quote=FALSE)
+
+   dw <- read.csv("axel_break.csv")
+
+   dw$failure_time <- dw$failure_time + abs(min(dw$failure_time)) + 1
+
+   weight <- dw$weight
+
+   failure_time <- dw$failure_time
+@
 
 \begin{center}
+<<cache=FALSE,fig.width=5, fig.height=5, out.width='.5\\linewidth', echo=FALSE, fig=TRUE>>=
+  library(ggplot2)
+  p<-qplot(weight,failure_time, data = dw,xlab="Weight Exceeding Guidelines (in tonnes)",ylab="Travel Distance to Failure (10,000 miles)") + coord_fixed(.05)
+   
+  p  
+@
 \end{center}
 
 
 Here are some summaries of the data:
 
 $$
-\sum_{i=1}^{50} x_i = 64 \hspace{3cm} \sum_{i=1}^{50} x_i^2 = 107 \\
+\sum_{i=1}^{50} x_i = \Sexpr{round(sum(weight))} \hspace{3cm} \sum_{i=1}^{50} x_i^2 = \Sexpr{round(sum(weight^2))} \\
 $$
 
 $$
-\sum_{i=1}^{50} y_i = 2106 \hspace{3cm} \sum_{i=1}^{50} y_i^2 = 102108 \\
+\sum_{i=1}^{50} y_i = \Sexpr{round(sum(failure_time))} \hspace{3cm} \sum_{i=1}^{50} y_i^2 = \Sexpr{round(sum(failure_time^2))} \\
 $$
 
 $$
-\sum_{i=1}^{50} x_i y_i = 2145
+\sum_{i=1}^{50} x_i y_i = \Sexpr{round(sum(failure_time*weight))}
 $$
 
 \begin{enumerate}
@@ -145,10 +191,22 @@ $$
  
  
        \item Write the equation of the fitted quadratic relationship. [5 pts]
-       \vspace{2cm}
+      $$
+      \hat{y} = 16.27602 + 4.6604349 x - 10.2775 x^2
+      $$
+      
        \item Find and interpret the value of $R^2$ for the fitted quadratic relationship.[5 pts]
-       \vspace{2cm}
+      
+        $$
+        R^2 = 1 - SSE/SSTO = 1 - (1311.073/14540.720) = \Sexpr{1 - (1311.073/14540.720)}
+        $$
+        In other words, 90.98\% of the variability in travel distance to failure can be explained by the linear relationship with weight exceeding guidelines.
+
        \item Using the fitted quadratic relationship, provide a predicted value of travel distance to failure when the weight exceeding the guidelines is 3.4 tonnes.[5 pts]
+
+    $$
+    \hat{y} = 16.27602 + 4.6604349 (3.4) - 10.2775 (3.4)^2 = \Sexpr{ 16.27602 + 4.6604349 * (3.4) - 10.2775 * (3.4)^2 }
+    $$
 
 \end{enumerate}
 

@@ -506,7 +506,7 @@ X = \text{ the count of occurences of a phenomenon across a specified interval o
 $$
 
 \begin{df}
-The \emph{Poisson($\lambda$) distribution} is a discrete probability distribution with pmf
+The **Poisson**$(\lambda)$ distribution is a discrete probability distribution with pmf
 $$
 f(x) = \left\{\begin{matrix}\frac{e^{-\lambda}\lambda^x}{x!} & x = 0, 1, \dots \\ 0 & \text{otherwise}\end{matrix}\right.
 $$

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.26)  6 OCT 2019 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.26)  6 OCT 2019 20:08
 entering extended mode
-**./stat305_hw5.tex
-(stat305_hw5.tex
+**./stat305_hw5_sol.tex
+(stat305_hw5_sol.tex
 LaTeX2e <2018-12-01>
 ("C:\Users\4M1N\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -527,8 +527,8 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
 ("C:\Users\4M1N\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 ))))
-(stat305_hw5.aux)
-\openout1 = `stat305_hw5.aux'.
+(stat305_hw5_sol.aux)
+\openout1 = `stat305_hw5_sol.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
 LaTeX Font Info:    ... okay on input line 85.
@@ -609,29 +609,35 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 85.
 LaTeX Info: Redefining \pageref on input line 85.
 LaTeX Info: Redefining \nameref on input line 85.
- (stat305_hw5.out) (stat305_hw5.out)
+ (stat305_hw5_sol.out) (stat305_hw5_sol.out)
 \@outlinefile=\write4
-\openout4 = `stat305_hw5.out'.
+\openout4 = `stat305_hw5_sol.out'.
 
- (stat305_hw5-concordance.tex)
+
+(stat305_hw5_sol-concordance.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 124.
+<hw5-1-1.JPG, id=4, 576.7146pt x 371.4678pt>
+File: hw5-1-1.JPG Graphic file (type jpg)
+<use hw5-1-1.JPG>
+Package pdftex.def Info: hw5-1-1.JPG  used on input line 100.
+(pdftex.def)             Requested size: 442.37993pt x 284.95413pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 102.
 ("C:\Users\4M1N\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 124.
+LaTeX Font Info:    Try loading font information for U+msb on input line 102.
 
 ("C:\Users\4M1N\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<FitModel.jpg, id=4, 1276.77pt x 1023.825pt>
-File: FitModel.jpg Graphic file (type jpg)
-<use FitModel.jpg>
-Package pdftex.def Info: FitModel.jpg  used on input line 144.
-(pdftex.def)             Requested size: 255.34947pt x 204.76137pt.
+<hw5-1-2.JPG, id=5, 585.8688pt x 351.2322pt>
+File: hw5-1-2.JPG Graphic file (type jpg)
+<use hw5-1-2.JPG>
+Package pdftex.def Info: hw5-1-2.JPG  used on input line 107.
+(pdftex.def)             Requested size: 442.37993pt x 265.21889pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -641,7 +647,24 @@ This may cause the page layout to be inconsistent, however.
 
 [1{C:/Users/4M1N/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-]
+ <./hw5-1-1.JPG> <./hw5-1-2.JPG>]
+<hw5-2-1.JPG, id=15, 486.1362pt x 666.3294pt>
+File: hw5-2-1.JPG Graphic file (type jpg)
+<use hw5-2-1.JPG>
+Package pdftex.def Info: hw5-2-1.JPG  used on input line 118.
+(pdftex.def)             Requested size: 442.37993pt x 606.3607pt.
+<hw5-2-2.JPG, id=16, 477.9456pt x 513.5988pt>
+File: hw5-2-2.JPG Graphic file (type jpg)
+<use hw5-2-2.JPG>
+Package pdftex.def Info: hw5-2-2.JPG  used on input line 125.
+(pdftex.def)             Requested size: 442.37993pt x 475.38493pt.
+ [2 <./hw5-2-1.JPG>] [3 <./hw5-2-2.JPG>]
+<FitModel.jpg, id=27, 1276.77pt x 1023.825pt>
+File: FitModel.jpg Graphic file (type jpg)
+<use FitModel.jpg>
+Package pdftex.def Info: FitModel.jpg  used on input line 170.
+(pdftex.def)             Requested size: 255.34947pt x 204.76137pt.
+ [4 <./FitModel.jpg>]
 
 ! LaTeX Error: \begin{enumerate} on input line 94 ended by \end{document}.
 
@@ -649,34 +672,34 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 \end{document}
+l.204 \end{document}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
-[2 <./FitModel.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
- (stat305_hw5.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
-Package rerunfilecheck Info: File `stat305_hw5.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 204.
+ (stat305_hw5_sol.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
+Package rerunfilecheck Info: File `stat305_hw5_sol.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 94 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7918 strings out of 492895
- 117990 string characters out of 3124202
- 208301 words of memory out of 3000000
- 11679 multiletter control sequences out of 15000+200000
+ 7942 strings out of 492895
+ 118376 string characters out of 3124202
+ 207301 words of memory out of 3000000
+ 11695 multiletter control sequences out of 15000+200000
  14456 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,13n,43p,291b,486s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,14n,43p,295b,511s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/4M1N/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmbx10.pfb><C:/Users/4M1N/AppData/Local/Programs/MiKTeX 2.9/fo
 nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/4M1N/AppData/Local/Programs/M
@@ -684,10 +707,11 @@ iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/4M1N/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/4M1N/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/U
 sers/4M1N/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
-.pfb>
-Output written on stat305_hw5.pdf (2 pages, 352392 bytes).
+.pfb><C:/Users/4M1N/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb>
+Output written on stat305_hw5_sol.pdf (5 pages, 1195081 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 10 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 69 PDF objects out of 1000 (max. 8388607)
+ 12 named destinations out of 1000 (max. 500000)
+ 30 words of extra memory for PDF output out of 10000 (max. 10000000)
 

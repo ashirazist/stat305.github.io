@@ -81,9 +81,7 @@
 \def\Case#1#2#3#4{\left\{ \begin{tabular}{cc} #1 & #2 \phantom
 {\Big|} \\ #3 & #4 \phantom{\Big|} \end{tabular} \right.}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\usepackage{Sweave}
 \begin{document}
-\input{stat305_hw5-concordance}
 \pagestyle{fancy} 
 
 Show \textbf{all} of your work on this assignment and answer each question fully in the given context. \\
@@ -93,67 +91,19 @@ Show \textbf{all} of your work on this assignment and answer each question fully
 
 \begin{enumerate}
 	
-
+	\item Chapter 4, Exercise 12, page 208  (unless directed otherwise you may use JMP; include plots as requested; skip part (f)) [5 pts each part, 20 pts total]
 	
-	\item Chapter 4, Exercise 12, page 208(skip part d)  (unless directed otherwise you may use JMP; include plots as requested) [5 pts each part, 15 pts total]
 	
-	\item Chapter 4, Exercise 16 (unless directed otherwise you may use JMP; include plots as requested; parts (a) - (g) only) (page 211)[5 pts each, 35 pts total]\\
-	\textbf{Note:} Doing this by hand would take time, so you'd better use JMP for this problem eventhough the question asks you to do it by hand.
+	\item Chapter 4, Exercise 1 (page 203) (unless directed otherwise you may use JMP; include plots as requested; skip part (f)) [5 pts each part, 25 pts total]
+	
+	\item Chapter 4, Exercise 16 (unless directed otherwise you may use JMP; include plots as requested; parts (a) - (g) only) (page 211)[5 pts each, 35 pts total]
+	
+	\item Chapter 4, Exercise 23 (unless directed otherwise you may use JMP; include plots as requested; skip part (h)) (page 215)[5 pts each, 35 pts total]
+\end{enumerate}	
 
 
 
-\item
-This is the rest of the problem 5 in HW 4.\\
-The major cause of axel failure in freight trucks is when shippers exceed the recommended weight limits that can be handled by the axels. 
-Issues resulting from these failures have been becoming more frequent as shippers try to cut corners, 
-leading members of the state's Department of Transportation to ask one of their civil engineers 
-to look into the available data and better advise them on the relationship between excessive weight and axel failure.
-
-A company manufacturing axels provides the engineer with data gathered from conducting experiments loading axels with excessive weight and simulating traveling conditions.
-The data consists of two columns, \textbf{excessive weight (in tonnes)} is the amount of weight over the limit that was placed on the axel, and 
-\textbf{distance to failure (in tens of thousands of miles)} is the simulated distance to the axel's failure. 
-
-%-- : R code (Code in Document)
-
-\begin{center}
-\end{center}
-
-
-Here are some summaries of the data:
-
-$$
-\sum_{i=1}^{50} x_i = 64 \hspace{3cm} \sum_{i=1}^{50} x_i^2 = 107 \\
-$$
-
-$$
-\sum_{i=1}^{50} y_i = 2106 \hspace{3cm} \sum_{i=1}^{50} y_i^2 = 102108 \\
-$$
-
-$$
-\sum_{i=1}^{50} x_i y_i = 2145
-$$
-
-\begin{enumerate}
-
-      % \item Sketch what you believe the plot of residuals vs weight would look like. Why would this be a problem?[5 pts]
-      % \vspace{2cm}
-
-% 
-   \item[]The JMP output below comes from fitting a quadratic model using $x$ and $x^2$.  
- 
-    \centerline{\includegraphics[scale=.2]{FitModel}}
- 
- 
-       \item Write the equation of the fitted quadratic relationship. [5 pts]
-       \vspace{2cm}
-       \item Find and interpret the value of $R^2$ for the fitted quadratic relationship.[5 pts]
-       \vspace{2cm}
-       \item Using the fitted quadratic relationship, provide a predicted value of travel distance to failure when the weight exceeding the guidelines is 3.4 tonnes.[5 pts]
-
-\end{enumerate}
-
-
-Total: 65 pts
+Total: 95 pts
 
 
 

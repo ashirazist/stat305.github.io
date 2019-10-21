@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>ch5_part_III_continuous_rv.utf8.md</title>
+    <meta charset="utf-8" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: center, middle, inverse
+layout: yes
+name: inverse
+
+## STAT 305: Chapter 5 
+### Part III
+### Amin Shirazi
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io/)]  
+---
+layout: true
+class: center, middle, inverse
+---
+# Continuous Random Variables
+## Terminology, Use, and Common Distributions
+---
+# What is a Continuous Random Variable?
+---
+layout:false
+.left-column[
+## Background
+### What?
+]
+.right-column[
+## Background on Continuous Random Variable
+
+Along with discrete random variables, we have continuous random variables. While discrete random variables take one specific values from a _discrete_ (aka countable) set of possible real-number values, continous random variables take values over intervals of real numbers.
+
+&gt;**def: Continuous random variable ** &lt;/br&gt;
+&gt;A continuous random variable is a random variable which takes values on a continuous interval of real numbers.
+
+The reason we treat them differently has mainly to do with the differences in how the math behaves: now that we are dealing with interval ranges, we change summations to integrals.
+]
+---
+layout:false
+.left-column[
+## Background
+### What?
+]
+.right-column[
+
+
+###Examples of continuous random variable:
+
+
+&gt; **Z** is the amount of torque required to lossen the next bold (not rounded)
+
+&gt; **T** is the time you will wait for the next bus
+
+&gt; **C** is the outside temprature at 11:49 pm tomorrow
+
+&gt; **L** is the length of the next manufactured metal bar
+
+&gt; **V** is the `\(%\)` yield of the next run of process
+
+]
+
+
+---
+layout: true
+class: center, middle, inverse
+---
+# Terminology and Usage
+---
+layout:false
+.left-column[
+## Background
+## Terminology
+### pdf
+]
+.right-column[
+### Probability Density Function
+
+Since we are now taking values over an interval, we can not "add up" probabilities with our probability function anymore. Instead, we need a new function to describe probability:
+
+&gt;**def: probability density function** &lt;/br&gt;
+&gt;A probability density function (pdf) defines the way the probability of a continuous random variable is distributed across the interval of values it can take. Since it represents probability, the probability function must always be non-negative. Regions of higher density have higher probability.
+
+]
+---
+
+layout:false
+.left-column[
+## Background
+## Terminology
+### pdf
+]
+.right-column[
+### Probability Density Function
+####Validity of a *pdf*
+Any function that satisfies the following can be a probability density function:
+
+1. `\(\int_{-\infty}^{\infty} f(x) dx = 1\)`
+
+2. `\(f(x) \ge 0\)` for all `\(x\)` in `\((-\infty, \infty)\)`
+
+
+ and such that for all `\(a \le b\)`,
+    `$$P(a \le X \le b) = P(a \le X &lt; b) =\\ P(a &lt; X \le b) = P(a &lt; X &lt; b)\\ =\int\limits_a^bf(x)dx.$$`
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+]
+.right-column[
+### Probability Density Function
+
+With continuous random variables, we use pdfs to get probabilities as follows:
+
+&gt;For a continuous random variable `\(X\)` with probability density function `\(f(x)\)`, 
+&gt;$$P(a \le X \le b) = \int_{a}^{b} f(x) dx$$`
+
+&gt;for any real values `\(a, b\)` such that `\(a\le b\)`
+
+&lt;!-- **Drawing: Figure 5.6 in book** --&gt;
+
+![](ch5_part_III_continuous_rv_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+]
+.right-column[
+
+###Example
+
+Consider a de-magnetized compass needle mounted at its center so that it can spin freely.  It is spun clockwise and when it comes to rest the angle, `\(\theta\)`, from the vertical, is measured. Let 
+`$$Y = \text{the angle measured after each spin in radians}$$`
+What values can `\(Y\)` take?
+
+&amp;nbsp;
+
+What form makes sense for `\(f(y)\)`?
+
+]
+
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+]
+.right-column[
+
+###Example
+
+If this form is adopted, that what must the pdf be?
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+Using this pdf, calculate the following probabilities:
+- `\(P[Y &lt; \frac{\pi}{2}]\)`
+
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+]
+.right-column[
+
+###Example
+
+
+- `\(P[\frac{\pi}{2} &lt; Y &lt; 2\pi]\)`
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+
+- `\(P[Y = \frac{\pi}{6}]\)`
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+### cdf
+]
+.right-column[
+### Cumulative Density Function (**CDF**)
+
+We also have the cumulative density function for continuous random variables:
+&gt;**def: Cumulative density function (cdf)**
+&gt;For a continous random variable, `\(X\)`, with pdf f(x) the cumulative density function `\(F(x)\)` is defined as the probability that `\(X\)` takes a value less than or equal to `\(x\)` which is to say
+&gt;$$ F(x) = P(X \le x) = \int_{-\infty}^{x} f(t) dt $$
+
+TRUE FACT: the Fundamental Theorem of Calculus applies here:
+$$ \dfrac{d}{dx} F(x) = f(x) $$
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+### cdf
+]
+.right-column[
+### Cumulative Density Function (**CDF**)
+#### Properties of CDF for continuous random variables
+
+
+As with discrete random variables, `\(F\)` has the following properties:
+
+- F(x)===???
+
+- **F** is monotonically increasing (i.e it is never decreasing)
+
+- `\(\lim_{x\rightarrow-\infty}{F(x)}= 0\)` and `\(\lim_{x\rightarrow+\infty}{F(x)}= 1\)` 
+
+    - This means that `\(0\leq{F(x)}\le 1\)` for **any CDF**
+
+- **F** is *continuous*. (instead of just right continuous in discrete form)
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Mean and Variance 
+###of
+##Continuous Random Variables
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+### cdf
+### E(X), V(X)
+]
+.right-column[
+### Expected Value and Variance
+
+#### Expected Value
+As with discrete random variables, continuous random variables have expected values and variances:
+&gt;**def: Expected Value of Continuous Random Variable** &lt;/br&gt;
+&gt;For a continous random variable, `\(X\)`, with pdf f(x) the expected value (also known as the mean) is defined as
+&gt;$$ E(X) = \int_{-\infty}^{\infty} x f(x) dx $$
+
+We often use the symbol `\(\mu\)` for the mean of a random variable, since writing `\(E(X)\)` can get confusing when lots of other parenthesis are around. We also sometimes write `\(EX\)`.
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+### cdf
+### E(X), V(X)
+]
+.right-column[
+### Expected Value and Variance
+
+#### Variance
+&gt;**def: Variance of Continuous Random Variable** &lt;/br&gt;
+&gt;For a continous random variable, `\(X\)`, with pdf f(x) and expected value `\(\mu\)`, the variance is defined as
+&gt;$$ V(X) = \int_{-\infty}^{\infty} (x - \mu)^2 \cdot f(x) dx $$
+&gt;which is identical to saying
+&gt;$$ V(X) = E(X^2) - E(X)^2 $$
+
+We will sometimes use the symbol `\(\sigma^2\)` to refer to the variance and you may see the notation `\(Var X\)` or `\(VX\)` as well.
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+### cdf
+### E(X), V(X)
+]
+.right-column[
+### Expected Value and Variance
+
+#### Sdandard Deviation (SD)
+We can also use the variance to get the standard deviation of the random variable:
+&gt;**def: Standard Deviation of Continuous Random Variable** &lt;/br&gt;
+&gt;For a continous random variable, `\(X\)`, with pdf f(x) and expected value `\(\mu\)`, the standard deviation is defined as:
+&gt;$$ \sigma = \sqrt{\sigma^2} = \sqrt{\int_{-\infty}^{\infty} (x - \mu)^2 \cdot f(x) dx} $$
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+]
+.right-column[
+### Probability Density Function: Example
+
+Suppose that `\(X\)` is a continuous random variable which can take any value on the interval `\((0,10)\)` and that it's density is spread uniformly across that interval. In other words, 
+$$
+f(x) = \begin{cases}
+0.10 &amp; 0 &lt; x &lt; 10 \\\\
+0 &amp; o.w.
+\end{cases}`
+$$
+
+1. Find the standard deviation of `\(X\)`.
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+# Common Distributions
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+]
+.right-column[
+
+## Common Distributions
+
+### Uniform Distribution
+
+For cases where we only know/believe/assume that a value will be between two numbers but know/believe/assume _nothing_ else.
+
+**Origin**: We know a the random variable will take a value inside a certain range, but we don't have any belief that one part of that range is more likely than another part of that range.
+
+&gt;**Definition: Uniform random variable **&lt;/br&gt;
+&gt;The random variable `\(U\)` is a uniform random variable on the interval `\([a, b]\)` if it's density is constant on `\([a, b]\)` and the probability it takes a value outside `\([a, b]\)` is 0. We say that `\(U\)` follows a uniform distribution or `\(U \sim uniform(a, b)\)`.
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+]
+.right-column[
+### Uniform Distribution
+
+&gt;**Definition: Uniform pdf** &lt;/br&gt;
+&gt;If `\(U\)` is a uniform random variable on `\([a, b]\)` then the probability density function of `\(U\)` is given by
+&gt;$$`
+&gt;f(u) = \begin{cases}
+&gt;\dfrac{1}{b-a} &amp; a \le u \le b \\\\
+&gt;0 &amp; o.w.
+&gt;\end{cases}
+&gt;$$`
+
+With this, we can find the for any value of `\(a\)` and `\(b\)`, if `\(U \sim uniform(a, b)\)` the mean and variance are:
+
+$$
+E(U) = \frac{1}{2}(b-a)
+$$
+
+$$
+Var(U) = \frac{1}{12}(b-a)^2
+$$
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+]
+.right-column[
+### Uniform Distribution
+
+&gt;**Definition: Uniform cdf** &lt;/br&gt;
+&gt;If `\(U\)` is a uniform random variable on `\([a, b]\)` then the cumulative density function of `\(U\)` is given by
+&gt;$$`
+&gt;F(u) = \begin{cases}
+&gt;0 &amp; u &lt; a \\\\
+&gt;\dfrac{u-a}{b-a} &amp; a \le u \le b \\\\
+&gt;1 &amp; u &gt; b \\\\
+&gt;\end{cases}
+&gt;$$`
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+]
+.right-column[
+### Uniform Distribution
+
+A few useful notes:
+
+- The most commonly used uniform random variable is `\(U \sim Uniform(0,1)\)`.
+
+- Again, this is useful if we want to use a random variable that takes values within an interval, but we don't think it is likely to be in any certain region. 
+
+- The values `\(a\)` and `\(b\)` used to determine the range in which `\(f(u)\)` is not 0 are parameters of the distribution.
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+]
+.right-column[
+
+### Exponential Distribution
+
+**Origin**: Often used in to take the values of waiting times until some specific occurance where the idea of "memorylessness" is important - meaning that if you expect to see the occurance in 1 minute after waiting 5 minutes you still expect to see the occurance in 1 minute.
+
+&gt;**Definition: Exponential random variable **&lt;/br&gt;
+&gt;The random variable `\(X\)` is a exponential random variable on the interval `\([0, \infty]\)` if it's density drops exponentially with rate `\(\frac{1}{\alpha}\)` as you move away from 0. We say that `\(X\)` follows a exponential distribution or `\(X \sim exponential(\alpha)\)`.
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+]
+.right-column[
+
+### Exponential Distribution
+
+&gt;**Definition: Exponential pdf** &lt;/br&gt;
+&gt;If `\(X\)` is an exponential random variable with rate `\(\frac{1}{\alpha}\)` then the probability density function of `\(X\)` is given by
+&gt;$$`
+&gt;f(u) = \begin{cases}
+&gt;\dfrac{1}{\alpha} e^{-\frac{x}{\alpha}} &amp; x \ge 0 \\\\
+&gt;0 &amp; o.w.
+&gt;\end{cases}
+&gt;$$`
+
+From this, we can derive:
+
+$$
+E(X) = \alpha
+$$
+
+$$
+Var(X) = \alpha^2
+$$
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+]
+.right-column[
+### Exponential Distribution
+
+&gt;**Definition: Exponential cdf** &lt;/br&gt;
+&gt;If `\(X\)` is a exponential random variable with rate `\(1/\alpha\)` then the cumulative density function of `\(X\)` is given by
+&gt;$$`
+&gt;F(x) = \begin{cases}
+&gt;1 - exp(-x/\alpha) &amp; 0 \le x \\\\
+&gt;0 &amp; x &lt; 0 \\\\
+&gt;\end{cases}
+&gt;$$`
+
+We sometimes write the exponential part as `\(exp(-x/\alpha)\)` for clarity. 
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+]
+.right-column[
+### Exponential Distribution
+
+**The memoryless property of exponential random variables**
+
+Exponential random variables have what is called a memory less property. That is, that if we know the random variable is greater than `\(s\)` then the probability that it is greater than `\(s + t\)` can be found by the following:
+$$
+P(X &gt; s + t | X &gt; s) = P(X &gt; t)
+$$
+In other words, if we knowing that a process has not occured _yet_ does not change the probability that it will occur _soon_. The waiting time is forgotten. This can be both good and bad, depending on what the event you are waiting for is.
+
+**Example**: An elec. surge passes through a resistor randomly following an exponential distribution with a rate of once every hour. It has been two hours since the last surge. How long should we wait expect to wait for the next surge?
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+]
+.right-column[
+### Exponential Distribution
+
+**Example**
+
+Suppose that `\(X \sim exponential(.5)\)`. Find the probability that `\(X &gt; \mu\)`.
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

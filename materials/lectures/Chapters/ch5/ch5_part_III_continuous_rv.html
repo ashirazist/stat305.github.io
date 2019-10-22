@@ -247,7 +247,6 @@ layout:false
 
 As with discrete random variables, `\(F\)` has the following properties:
 
-- F(x)===???
 
 - **F** is monotonically increasing (i.e it is never decreasing)
 
@@ -333,17 +332,43 @@ layout:false
 ### pdf
 ]
 .right-column[
-### Probability Density Function: Example
-
-Suppose that `\(X\)` is a continuous random variable which can take any value on the interval `\((0,10)\)` and that it's density is spread uniformly across that interval. In other words, 
+### Expected Value and Variance: Example
+####Library books
+Let `\(X\)` denote the amount of time for which a book on `\(2\)`-hour hold reserve at a college library is checked out by a randomly selected student and suppose its density function is
 $$
 f(x) = \begin{cases}
-0.10 &amp; 0 &lt; x &lt; 10 \\\\
-0 &amp; o.w.
-\end{cases}`
-$$
+0.5x &amp; 0 \le x \le 2 \\\\
+0 &amp; \text{otherwise} 
+\end{cases} $$
 
-1. Find the standard deviation of `\(X\)`.
+Calculate `\(\text{E}X\)` and `\(\text{Var}X\)`.
+
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##An important point about Expected Value
+##and Variance of Random Variables
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+### pdf
+]
+.right-column[
+### Expected Value and Variance:
+
+For a linear function, `\(g(X) = aX + b\)`, where `\(a\)` and `\(b\)` are constants,
+
+&gt; `\(\text{E}(aX + b)= a \text{E}(X) + b\)`
+ 
+&gt; `\(\text{Var}(aX + b)= a^2 \text{Var}(X)\)`
+
+e.g Let `\(X\sim Binomial(5, 0.2)\)`. What is the expected value and variance of 4X- 3?
+
 
 ]
 ---
@@ -351,6 +376,7 @@ layout: true
 class: center, middle, inverse
 ---
 # Common Distributions
+## Uniform Distribution
 ---
 layout:false
 .left-column[
@@ -371,6 +397,7 @@ For cases where we only know/believe/assume that a value will be between two num
 
 &gt;**Definition: Uniform random variable **&lt;/br&gt;
 &gt;The random variable `\(U\)` is a uniform random variable on the interval `\([a, b]\)` if it's density is constant on `\([a, b]\)` and the probability it takes a value outside `\([a, b]\)` is 0. We say that `\(U\)` follows a uniform distribution or `\(U \sim uniform(a, b)\)`.
+
 ]
 ---
 layout:false
@@ -385,11 +412,10 @@ layout:false
 
 &gt;**Definition: Uniform pdf** &lt;/br&gt;
 &gt;If `\(U\)` is a uniform random variable on `\([a, b]\)` then the probability density function of `\(U\)` is given by
-&gt;$$`
-&gt;f(u) = \begin{cases}
-&gt;\dfrac{1}{b-a} &amp; a \le u \le b \\\\
-&gt;0 &amp; o.w.
-&gt;\end{cases}
+&gt;$$f(u) = \begin{cases}
+&gt; \dfrac{1}{b-a} &amp; a \le u \le b \\\\
+&gt; 0 &amp; o.w.
+&gt; \end{cases}
 &gt;$$`
 
 With this, we can find the for any value of `\(a\)` and `\(b\)`, if `\(U \sim uniform(a, b)\)` the mean and variance are:
@@ -416,11 +442,10 @@ layout:false
 
 &gt;**Definition: Uniform cdf** &lt;/br&gt;
 &gt;If `\(U\)` is a uniform random variable on `\([a, b]\)` then the cumulative density function of `\(U\)` is given by
-&gt;$$`
-&gt;F(u) = \begin{cases}
-&gt;0 &amp; u &lt; a \\\\
-&gt;\dfrac{u-a}{b-a} &amp; a \le u \le b \\\\
-&gt;1 &amp; u &gt; b \\\\
+&gt;$$F(u) = \begin{cases}
+&gt; 0 &amp; u &lt; a \\\\
+&gt; \dfrac{u-a}{b-a} &amp; a \le u \le b \\\\
+&gt; 1 &amp; u &gt; b \\\\
 &gt;\end{cases}
 &gt;$$`
 ]
@@ -443,6 +468,13 @@ A few useful notes:
 
 - The values `\(a\)` and `\(b\)` used to determine the range in which `\(f(u)\)` is not 0 are parameters of the distribution.
 ]
+---
+layout:true
+class: middle, center, inverse
+---
+# Common Distributions
+##Exponential Distribution
+
 ---
 layout:false
 .left-column[

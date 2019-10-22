@@ -127,10 +127,7 @@ With continuous random variables, we use pdfs to get probabilities as follows:
 
 &gt;For a continuous random variable `\(X\)` with probability density function `\(f(x)\)`, 
 &gt;$$P(a \le X \le b) = \int_{a}^{b} f(x) dx$$`
-
 &gt;for any real values `\(a, b\)` such that `\(a\le b\)`
-
-&lt;!-- **Drawing: Figure 5.6 in book** --&gt;
 
 ![](ch5_part_III_continuous_rv_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
 
@@ -387,7 +384,7 @@ layout:false
 ]
 .right-column[
 
-## Common Distributions
+## Common continuous Distributions
 
 ### Uniform Distribution
 
@@ -472,10 +469,11 @@ A few useful notes:
 layout:true
 class: middle, center, inverse
 ---
-# Common Distributions
+#  Common Continuous Distributions
 ##Exponential Distribution
 
 ---
+
 layout:false
 .left-column[
 ## Background
@@ -487,11 +485,23 @@ layout:false
 .right-column[
 
 ### Exponential Distribution
+**Definition: Exponential random variable **
 
-**Origin**: Often used in to take the values of waiting times until some specific occurance where the idea of "memorylessness" is important - meaning that if you expect to see the occurance in 1 minute after waiting 5 minutes you still expect to see the occurance in 1 minute.
 
-&gt;**Definition: Exponential random variable **&lt;/br&gt;
-&gt;The random variable `\(X\)` is a exponential random variable on the interval `\([0, \infty]\)` if it's density drops exponentially with rate `\(\frac{1}{\alpha}\)` as you move away from 0. We say that `\(X\)` follows a exponential distribution or `\(X \sim exponential(\alpha)\)`.
+An `\(\text{Exp}(\alpha)\)` random variable measures the waiting time until a specific event that has an equal chance of happening at any point in time. (it can be cosidered the continous version of geometric distribution)
+
+&gt;Examples:
+&gt;- Time between your arrival at the bus station and the moment that bus arrives 
+&gt;
+&gt;&amp;nbsp;
+&gt;
+&gt;- Time until the next person walks inside the park's library 
+&gt;
+&gt;&amp;nbsp;
+&gt;
+&gt;- The time (in hours) until a light bulb burns out. 
+
+
 ]
 ---
 layout:false
@@ -508,13 +518,67 @@ layout:false
 
 &gt;**Definition: Exponential pdf** &lt;/br&gt;
 &gt;If `\(X\)` is an exponential random variable with rate `\(\frac{1}{\alpha}\)` then the probability density function of `\(X\)` is given by
+&gt;$$f(u) = \begin{cases}
+&gt;\dfrac{1}{\alpha} e^{-\frac{x}{\alpha}} &amp; x \ge 0 \\\\
+&gt;0 &amp; o.w.
+&gt;\end{cases}$$`
+
+![](ch5_part_III_continuous_rv_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+]
+---
+
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+]
+.right-column[
+### Exponential Distribution
+
+&gt;**Definition: Exponential CDF** &lt;/br&gt;
+&gt;If `\(X\)` is a exponential random variable with rate `\(1/\alpha\)` then the cumulative density function of `\(X\)` is given by
+&gt;$$F(x) = \begin{cases}
+&gt;1 - exp(-x/\alpha) &amp; 0 \le x \\\\
+&gt;0 &amp; x &lt; 0 \\\\
+&gt;\end{cases}
 &gt;$$`
-&gt;f(u) = \begin{cases}
+
+
+![](ch5_part_III_continuous_rv_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+]
+
+
+---
+layout:true
+class: middle, center, inverse
+---
+##Mean and Variance of
+##Exponential Distribution
+
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+]
+.right-column[
+
+### Exponential Distribution
+
+&gt;**Definition: Exponential pdf** &lt;/br&gt;
+&gt;If `\(X\)` is an exponential random variable with rate `\(\frac{1}{\alpha}\)` then the probability density function of `\(X\)` is given by
+&gt;$$f(u) = \begin{cases}
 &gt;\dfrac{1}{\alpha} e^{-\frac{x}{\alpha}} &amp; x \ge 0 \\\\
 &gt;0 &amp; o.w.
 &gt;\end{cases}
 &gt;$$`
-
 From this, we can derive:
 
 $$
@@ -537,17 +601,21 @@ layout:false
 ]
 .right-column[
 ### Exponential Distribution
+**Example**: Library arrivals, cont'd
 
-&gt;**Definition: Exponential cdf** &lt;/br&gt;
-&gt;If `\(X\)` is a exponential random variable with rate `\(1/\alpha\)` then the cumulative density function of `\(X\)` is given by
-&gt;$$`
-&gt;F(x) = \begin{cases}
-&gt;1 - exp(-x/\alpha) &amp; 0 \le x \\\\
-&gt;0 &amp; x &lt; 0 \\\\
-&gt;\end{cases}
-&gt;$$`
+Recall the example the arrival rate of students at Parks library between 12:00 and 12:10pm early in the week to be about `\(12.5\)` students per minute. That translates to a `\(1/12.5 = .08\)` minute average waiting time between student arrivals. 
 
-We sometimes write the exponential part as `\(exp(-x/\alpha)\)` for clarity. 
+Consider observing the entrance to Parks library at exactly noon next Tuesday and define the random variable
+$$
+`\begin{align}
+    T&amp;: \text{the waiting time (min) until the first}  \\
+    &amp;  \text{student passes through the door.}\\
+\end{align}`
+$$
+
+
+Using `\(T \sim \text{Exp}(.08)\)`, what is the probability of waiting more than `\(10\)` seconds (1/6 min) for the first arrival?
+
 
 ]
 ---
@@ -561,16 +629,49 @@ layout:false
 ]
 .right-column[
 ### Exponential Distribution
+**Example**: Library arrivals, cont'd
 
-**The memoryless property of exponential random variables**
-
-Exponential random variables have what is called a memory less property. That is, that if we know the random variable is greater than `\(s\)` then the probability that it is greater than `\(s + t\)` can be found by the following:
 $$
-P(X &gt; s + t | X &gt; s) = P(X &gt; t)
+`\begin{align}
+    T&amp;: \text{the waiting time (min) until the first}  \\
+    &amp;  \text{student passes through the door.}\\
+\end{align}`
 $$
-In other words, if we knowing that a process has not occured _yet_ does not change the probability that it will occur _soon_. The waiting time is forgotten. This can be both good and bad, depending on what the event you are waiting for is.
 
-**Example**: An elec. surge passes through a resistor randomly following an exponential distribution with a rate of once every hour. It has been two hours since the last surge. How long should we wait expect to wait for the next surge?
+What is the probability of waiting less than `\(5\)` seconds?
+
+
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Common Continous Distibutions
+##Normal Distribution
+
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+]
+.right-column[
+### The Normal distribution
+
+We have already seen the normal distribution as a "bell shaped" distribution, but we can formalize this.
+
+
+The **normal** or **Gaussian** `\((\mu, \sigma^2)\)` distribution is a continuous probability distribution with probability density function (pdf)
+`$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x - \mu)^2/{2\sigma^2}} \qquad \text{for all } x$$`
+for `\(\sigma &gt; 0\)`.
+
+We then show that by `\(X\sim\text{N}(\mu, \sigma^2)\)`
+
 
 ]
 ---
@@ -581,13 +682,96 @@ layout:false
 ## Common Dists
 ### Uniform
 ### Exponential
+### Normal
 ]
 .right-column[
-### Exponential Distribution
+### The Normal distribution
 
-**Example**
 
-Suppose that `\(X \sim exponential(.5)\)`. Find the probability that `\(X &gt; \mu\)`.
+A normal random variable is (often) a finite average of many repeated, independent, identical trials.
+
+&gt;Mean width of the next 50 hexamine pallets
+&gt;
+&gt;Mean height of 30 students
+&gt;
+&gt;Rotal `\(\%\)` yield of the next 10 runs of a chemical process
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+]
+.right-column[
+### Normal Distribution's Center and Shape
+
+
+Regardless of the values of `\(\mu\)` and `\(\sigma^2\)`, the normal pdf has the following shape:
+&lt;center&gt;
+&lt;img src="normal_pdf.png" alt="normal_pdf" width="400"/&gt;
+&lt;/center&gt;
+
+In other words, the distribution is centered around `\(\mu\)` and has an inflection point at `\(\sigma = \sqrt{\sigma^2}\)`.
+
+In this way, the value of `\(\mu\)` determines the center of our distribution and the value of `\(\sigma^2\)` deterimes the spread. 
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+]
+.right-column[
+### Normal Distribution's Center and Shape
+
+Here we can see what differences in `\(\mu\)` and `\(\sigma^2\)` do to the shape of the shape of distribution
+&lt;center&gt;
+&lt;img src="normal_comparisons.png" alt="normal_comparisons" width="600" height= "400"/&gt;
+&lt;/center&gt;
+
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Mean dna Variance 
+###of 
+##Normal Distribution
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+]
+.right-column[
+### The Normal distribution
+
+It is not obvious, but
+
+- `\(\int\limits_{-\infty}^\infty f(x) dx = \int\limits_{-\infty}^\infty \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x - \mu)^2/{2\sigma^2}} dx =\)`
+
+&amp;nbsp;
+
+- `\(\text{E}X = \int\limits_{-\infty}^\infty x \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x - \mu)^2/{2\sigma^2}} dx =\)`
+
+&amp;nbsp;
+
+- `\(\text{Var}X = \int\limits_{-\infty}^\infty (x - \mu)^2 \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x - \mu)^2/{2\sigma^2}} dx =\)`
 
 ]
     </textarea>

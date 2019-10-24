@@ -79,7 +79,7 @@ Here we can see what differences in $\mu$ and $\sigma^2$ do to the shape of the 
 While it requires levels of mathematics beyond what we can introduce here in this course, it is possible to show that the parameters also lead to the following:
 
 <center>
-<img src="normal_comparisons.png" alt="normal_comparisons" width="300"/>
+<img src="normal_pdf.png" alt="normal_pdf" width="300"/>
 </center>
 
 >**Mean and Variance of Normal Distribution** </br>

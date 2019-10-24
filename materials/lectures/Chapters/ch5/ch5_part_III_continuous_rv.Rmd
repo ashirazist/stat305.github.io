@@ -745,7 +745,7 @@ A normal random variable is (often) a finite average of many repeated, independe
 >
 >Mean height of 30 students
 >
->Rotal $\%$ yield of the next 10 runs of a chemical process
+>Total $\%$ yield of the next 10 runs of a chemical process
 
 ]
 ---
@@ -796,7 +796,7 @@ Here we can see what differences in $\mu$ and $\sigma^2$ do to the shape of the 
 layout: true
 class: center, middle, inverse
 ---
-##Mean dna Variance 
+##Mean and Variance 
 ###of 
 ##Normal Distribution
 ---
@@ -825,3 +825,413 @@ It is not obvious, but
 - $\text{Var}X = \int\limits_{-\infty}^\infty (x - \mu)^2 \frac{1}{\sqrt{2\pi\sigma^2}}e^{-(x - \mu)^2/{2\sigma^2}} dx =$
 
 ]
+---
+layout: true
+class: center, middle, inverse
+---
+##One poine before we go on
+###*Standardization*
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+]
+.right-column[
+###Definition
+
+**Standardization** is the process of transforming a random variable, $X$, into the signed number of standard deviations by which it is is above its mean value.
+$$
+Z = \frac{X - \text{E}X}{\text{SD}(X)}
+$$
+
+
+$Z$ has mean $0$
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+$Z$ has variance (and standard deviation) $1$
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+]
+.right-column[
+
+&nbsp;
+
+&nbsp;
+
+The Calculus I methods of evaluating integrals via anti-differentiation will fail when it comes to normal densities. They do not have anti-derivatives that are expressible in terms of elementary functions.
+
+> This means we cannot find probabilities of a Normally distributed random variable by hand.
+>
+>So, what is the solution?
+
+    >Use computers or tables of values.
+
+]    
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+]
+.right-column[
+
+
+&nbsp;
+
+&nbsp;
+
+
+The use of tables for evaluating normal probabilities depends on the following relationship. If $X \sim \text{Normal}(\mu, \sigma^2)$,
+
+
+$$\begin{align}
+P[a \le X \le b] &= \int\limits_a^b\frac{1}{\sqrt{2\pi\sigma^2}} e^{-(x - \mu)^2/{2\sigma^2}}dx  \\
+\\
+&= \int\limits_{(a- \mu)/\sigma}^{(b-\mu)/\sigma}\frac{1}{\sqrt{2\pi}} e^{-z^2/2}dz \\
+\\
+&= P\left[\frac{a - \mu}{\sigma} \le Z \le \frac{b - \mu}{\sigma}\right]
+\end{align}$$
+
+where $Z \sim \text{Normal}(0, 1)$.
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+###Standard Normal Distribution
+
+The parameters are important in determining the probability, but because the pdf of a normal random variable is difficult to work with we often use the distribution with $\mu = 0$ and $\sigma^2 = 1$ as a reference point. 
+
+>**Definition: Standard Normal Distribution** </br>
+>The standard normal distribution is a normal distribution with $\mu=0$ and $\sigma^2=1$. It has pdf
+>$$ 
+>\begin{align}
+>f(z) &= \dfrac{1}{\sqrt{2 \pi}} e^{-\frac{1}{2} z^2} \\\\
+>     &= \dfrac{1}{\sqrt{2 \pi}} \exp\left(-\frac{1}{2} z^2\right) \\\\
+>\end{align} 
+>$$
+
+We say that a random variable is a "standard normal random variable" if it follows a standard normal distribution or that $Z \sim N(0, 1)$.
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+
+### Standard Normal Distribution (cont)
+
+It's worth pointing out the reason why the standard normal distribution is important. There is no "closed form" for the cdf of a normal distribution. 
+
+In other words, since we can't finish this step:
+$$
+F(x) = \int_{-\infty}^{x} \dfrac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{1}{2 \sigma^2} (t - \mu)^2} dt = ???
+$$
+
+we have to estimate the value each time. However, we have already done this for _standard_ normal random variables already in **Table B.3**
+
+So if $Z \sim N(0, 1)$ then $P(Z \le 1.5) = F(1.5) = 0.9332$.
+
+The good news is that we can connect any normal probabilities to the values we have for the standard normal probabilities.
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+### Standard Normal Distribution (cont)
+
+These facts drive the connection between different normal random variables:
+
+>**Key Facts: Converting Normal Distributions**</br>
+> If $X \sim N(\mu, \sigma^2)$ and $Z = \dfrac{X - \mu}{\sigma}$ then $Z \sim N(0, 1)$
+> &nbsp;</br>
+> &nbsp;</br>
+> If $Z \sim N(0, 1)$ and $X = \sigma Z + \mu$ then $X \sim N(\mu, \sigma^2)$
+
+We use this connection as a way to avoid working with the normal pdf directly. 
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Standard Normal
+]
+.right-column[
+### Standard Normal Distribution (cont)
+A rule of thumb in dealing with questions about finding probabilities of Normally distributed probabilities of $N(\mu, \sigma^2)$:
+
+>(1) Translate that question to standard Normal distribution. i.e. $Z\sim N(0,1)$
+>
+>(2) Look it up in a table
+
+]
+---
+
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+###CDF of Standard Normal Distribution
+
+The standard Normal distribution $ Z\sim N(0,1)$ plays an important rule in finding probabilities associated with a Normal random variable. The **CDF** of a standard Normal distribution is 
+
+$$
+\Phi(z) = F(z) = \int\limits_{-\infty}^z\frac{1}{\sqrt{2\pi}}e^{-t^2}dt = P(Z \leq z) .
+$$
+
+Therefore,  we can find probabilities for all normal distributions by tabulating probabilities for only the standard normal distribution. We will use a table of the **standard normal cumulative probability function**.
+]
+
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+### Standard Normal Distribution (cont)
+
+**Example: Normal to Standard Normal**
+
+If $X \sim N(3, 4)$ then:
+$$
+\begin{align}
+P(X \le 6) &= P\left(\frac{X - 3}{2} \le \frac{6 - 3}{2} \right)\\\\
+                 &= P(Z \le 1.5) \\\\
+                 &= 0.9332
+\end{align}
+$$
+where the valeu 0.9332 if found from **Table B.3**
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+### Standard Normal Distribution (cont)
+
+**Example**: Standard normal probabilities
+
+
+$P[Z < 1.76]$
+
+&nbsp;
+
+&nbsp;
+
+
+$P[.57 < Z < 1.32]$
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+<center>
+<img src="normal_table1.jpg" alt="normal_table1.jpg" width="600" height= "550"/>
+</center>
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+<center>
+<img src="normal_table2.jpg" alt="normal_table2.jpg" width="600" height= "550"/>
+</center>
+
+]
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+### Some useful tips about standard Normal distribution
+
+>By symmetry of the standard Normal distribution around zero
+>   $P(Z\ge a)= P(Z\le -a)$
+    
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+>We can also do it reverse, find $z$ such that $P(-z \le Z \le z)= 0.95$
+>
+>   $P(Z \geq \#)= 0.025$
+
+]
+
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+**Example**: Baby food
+
+J. Fisher, in his article Computer Assisted Net Weight Control (**Quality Progress**, June 1983), discusses the filling of food containers with strained plums and tapioca by weight. The mean of the values portrayed is about $137.2$g, the standard deviation is about $1.6$g, and data look bell-shaped. Let 
+$$
+W = \text{the next fill weight.}
+$$
+
+
+
+Let $W\sim N(137.2, 1.6^2)$.  Find the probability that the next jar contains less food by mass than it's supposed to (declared weight = $135.05$g).
+]
+
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+### More example
+
+Using the standard normal table, calculate the following:
+
+$P(X > 7), X \sim \text{Normal}(6, 9)$
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+$P(|X - 1| > 0.5), X \sim \text{Normal}(2, 4)$
+]
+
+---
+layout:false
+.left-column[
+## Background
+## Terms and Use
+## Common Dists
+### Uniform
+### Exponential
+### Normal
+### Std. Normal
+]
+.right-column[
+### More example
+
+Find $c$ such that 
+$$P(|X - 2| > c) = 0.01$$
+where $X \sim \text{Normal}(2, 4)$ 
+
+
+]
+
+
+
+
+
+
+
+

@@ -1,0 +1,442 @@
+---
+
+output: 
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+library(knitr)
+library(tidyverse)
+library(xtable)
+library(MASS)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, fig.height = 2)
+theme_set(theme_bw(base_family = "serif"))
+set.seed(305)
+```
+
+```{r wrap-hook, echo=FALSE, include=FALSE}
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = knitr:::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+```
+class: center, middle, inverse
+layout: yes
+name: inverse
+
+## STAT 305: Chapter 5 
+### Part IV
+### Amin Shirazi
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io/)] 
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Chapter 5.4: Joint Distributions and Independence
+## Working with Multiple Random Variables
+---
+layout:false
+.left-column[
+### Joint Distributions
+]
+.right-column[
+## Joint Distributions
+
+We often need to consider two random variables together - for instance, we may consider
+- the length and weight of a squirrel,
+- the loudness and clarity of a speaker,
+- the blood concentration of Protein A, B, and C
+and so on.
+
+This means that we need a way to describe the probability of two variables _jointly_. We call the way the probability is simultaneously assigned the "joint distribution".
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+### Joint distribution of discrete random variables
+
+For several discrete random variable, the device typically used to specify probabilities is a *joint probability function*. The two-variable version of this is defined.
+
+
+>A **joint probability function (joint pmf)** for discrete random variables $X$ and $Y$ is a nonnegative function $f(x, y)$, giving the probability that (simultaneously) $X$ takes the values $x$ and $Y$ takes the values $y$. That is,
+$$
+f(x, y) = P[X = x \text{ and } Y = y]
+$$
+
+
+Properties of a valid joint pmf:
+
+- $f(x, y) \in [0, 1]$ for all $x, y$
+
+- $\sum_{x, y} f(x.y)= 1$
+
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+### Joint distribution of discrete random variables
+
+So we have probability functions for $X$, probability functions for $Y$ and now a probability function for $X$ and $Y$ together - that's a lot of $f$s floating around though! In order to be clear which function we refer to when we refer to $"f"$, we also add some subscripts
+
+Suppose $X$ and $Y$ are two discrete random variables.
+
+- we may need to identify the _joint probability function_ using $f_{XY}(x, y)$, 
+
+- we may need to identify the probability function of $X$ by itself (aka the _marginal probability function_ for $X$) using $f_{X}(x)$,
+
+- we may need to identify the probability function of $Y$ by itself (aka the _marginal probability function_ for $Y$) using $f_{Y}(y)$
+
+]
+
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+###Joint pmf
+
+
+For the discrete case, it is useful to give $f(x,y)$ in a **table**.
+
+**Two bolt torques, cont'd**
+
+Recall the example of measure the bolt torques on the face plates of a heavy equipment component to the nearest integer. With
+
+
+\begin{align*}
+X &= \text{the next torque recorded for bolt }3\\
+Y &= \text{the next torque recorded for bolt }4
+\end{align*}
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+###Joint pmf
+
+the joint probability function, $f(x,y)$, is
+
+<center>
+<span size= 60%>
+<img src="figs/joint.jpg" alt="joint.jpg" >
+</center>
+<span>
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+Calculate:
+
+- $P[X = 14 \text{ and } Y = 19]$
+
+&nbsp;
+
+&nbsp;
+
+- $P[X = 18 \text{ and } Y = 17]$
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+By summing up certain values of $f(x, y)$, probabilities associated with $X$ and $Y$ with patterns of interest can be obtained.
+
+Consider:
+$P(X \ge Y)$
+
+
+&nbsp;
+
+<span size= 60%>
+<center>
+<img src="figs/joint1.jpg" alt="joint1.jpg" >
+</center>
+<span>
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+&nbsp;
+
+$P(|X - Y| \le 1)$
+
+
+
+<span size= 60%>
+<center>
+<img src="figs/joint1.jpg" alt="joint1.jpg" >
+</center>
+<span>
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+&nbsp;
+
+$P(X = 17)$
+
+<span size= 60%>
+<center>
+<img src="figs/joint1.jpg" alt="joint1.jpg">
+</center>
+<span>
+
+]
+---
+layout:true
+class: center, middle, inverse
+---
+##Marginal Distribution
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+### Marginal distributions
+
+In a bivariate problem, one can add down columns in the (two-way) table of $f(x, y)$ to get values for the probability function of $X$, $f_X(x)$ and across rows in the same table to get values for the probability distribution of $Y$, $f_Y(y)$.
+
+
+The individual probability functions for discrete random variables $X$ and $Y$ with joint probability function $f(x, y)$ are called **marginal probability functions**. They are obtained by summing $f(x, y)$ values over all possible values of the other variable.
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+### Connecting Joint and Marginal Distributions
+
+
+>**Use: Joint to Marginal for Discrete RVs** 
+>
+>
+>Let $X$ and $Y$ be discrete random variables with joint probability function 
+>Then the marginal probability function for $X$ can be found by:
+>$$f\_{X}(x) = \sum\_{y} f\_{XY}(x, y) $$
+>
+>and the marginal probability function for $Y$ can be found by:
+>$$f\_{Y}(y) = \sum\_{x} f\_{XY}(x, y) 
+>$$
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+**Example:** [Torques, cont'd]
+
+Find the marginal probability functions for $X$ and $Y$ from the following joint pmf.
+
+
+<center>
+<span size= 60%>
+<img src="figs/joint.jpg" alt="joint.jpg" >
+</center>
+<span>
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+Getting marginal probability functions from joint probability functions begs the question whether the process can be reversed. 
+
+>**Can we find joint probability functions from marginal probability functions?**
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Conditional Distribution
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+### Conditional Distribution
+]
+.right-column[
+###Conditional Distribution of Discrete Random Variables
+
+When working with several random variables, it is often useful to think about what is expected of one of the variables, given the values assumed by all others.
+
+
+>For discrete random variables $X$ and $Y$ with joint probability function $f(x, y)$, the **conditional probability function of $X$ given $Y = y$** is *a function of $x$*
+$$f_{X|Y}(x|y) = \frac{f(x, y)}{f_{Y}(y)} = \frac{f(x, y)}{\sum\limits_{x}f(x, y)}$$
+and the **conditional probability function of $Y$ given $X = x$** is *a function of $y$*
+$$f_{Y|X}(y|x) = \frac{f(x, y)}{f_{X}(x)} = \frac{f(x, y)}{\sum\limits_{y}f(x, y)}.$$
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+###Discrete RVs
+###Conditional Distribution
+]
+.right-column[
+**Example:** [Torque, cont'd]
+
+<span size= 60%>
+<center>
+<img src="figs/joint.jpg" alt="joint.jpg" >
+</center>
+<span>
+
+Find the following probabilities:
+
+- $f_{Y|X}(20|18)$
+
+
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+###Discrete RVs
+###Conditional Distribution
+]
+.right-column[
+**Example:** [Torque, cont'd]
+
+- $f_{Y|X}(y|15)$
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+- $f_{Y|X}(y|20)$
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+
+
+- $f_{X|Y}(x|18)$
+
+
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Independence
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+### Conditional Distribution
+###Independence
+]
+.right-column[
+
+Let's start with an example. Look at the following joint probability distribution and the associated marginal probabilities. 
+
+<center>
+<img src= "figs/independence.png">
+</center>
+
+What do you notice?
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+### Conditional Distribution
+###Independence
+]
+.right-column[
+
+Discrete random variables $X$ and $Y$ are **independent** if their joint distribution function $f(x, y)$ is the product of their respective marginal probability functions. This is, 
+>independence means that
+$$
+f(x, y) = f_X(x)f_Y(y) \qquad \text{for all } x, y.
+$$
+If this does not hold, then $X$ and $Y$ are **dependent**
+
+
+**Alternatively**, discrete random variables $X$ and $Y$ are independent if for all $x$ and $y$,
+
+If $X$ and$Y$ are not only independent but also have the same marginal distribution, then they are **independent and identically distributed (iid)**.
+
+]

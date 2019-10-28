@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>ch5_part_IV_joint_distribution_indep.utf8.md</title>
+    <meta charset="utf-8" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+class: center, middle, inverse
+layout: yes
+name: inverse
+
+## STAT 305: Chapter 5 
+### Part IV
+### Amin Shirazi
+.footnote[Course page: [ashirazist.github.io/stat305.github.io](https://ashirazist.github.io/stat305.github.io/)] 
+---
+name: inverse
+layout: true
+class: center, middle, inverse
+---
+# Chapter 5.4: Joint Distributions and Independence
+## Working with Multiple Random Variables
+---
+layout:false
+.left-column[
+### Joint Distributions
+]
+.right-column[
+## Joint Distributions
+
+We often need to consider two random variables together - for instance, we may consider
+- the length and weight of a squirrel,
+- the loudness and clarity of a speaker,
+- the blood concentration of Protein A, B, and C
+and so on.
+
+This means that we need a way to describe the probability of two variables _jointly_. We call the way the probability is simultaneously assigned the "joint distribution".
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+### Joint distribution of discrete random variables
+
+For several discrete random variable, the device typically used to specify probabilities is a *joint probability function*. The two-variable version of this is defined.
+
+
+&gt;A **joint probability function (joint pmf)** for discrete random variables `\(X\)` and `\(Y\)` is a nonnegative function `\(f(x, y)\)`, giving the probability that (simultaneously) `\(X\)` takes the values `\(x\)` and `\(Y\)` takes the values `\(y\)`. That is,
+$$
+f(x, y) = P[X = x \text{ and } Y = y]
+$$
+
+
+Properties of a valid joint pmf:
+
+- `\(f(x, y) \in [0, 1]\)` for all `\(x, y\)`
+
+- `\(\sum_{x, y} f(x.y)= 1\)`
+
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+### Joint distribution of discrete random variables
+
+So we have probability functions for `\(X\)`, probability functions for `\(Y\)` and now a probability function for `\(X\)` and `\(Y\)` together - that's a lot of `\(f\)`s floating around though! In order to be clear which function we refer to when we refer to `\("f"\)`, we also add some subscripts
+
+Suppose `\(X\)` and `\(Y\)` are two discrete random variables.
+
+- we may need to identify the _joint probability function_ using `\(f_{XY}(x, y)\)`, 
+
+- we may need to identify the probability function of `\(X\)` by itself (aka the _marginal probability function_ for `\(X\)`) using `\(f_{X}(x)\)`,
+
+- we may need to identify the probability function of `\(Y\)` by itself (aka the _marginal probability function_ for `\(Y\)`) using `\(f_{Y}(y)\)`
+
+]
+
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+###Joint pmf
+
+
+For the discrete case, it is useful to give `\(f(x,y)\)` in a **table**.
+
+**Two bolt torques, cont'd**
+
+Recall the example of measure the bolt torques on the face plates of a heavy equipment component to the nearest integer. With
+
+
+`\begin{align*}
+X &amp;= \text{the next torque recorded for bolt }3\\
+Y &amp;= \text{the next torque recorded for bolt }4
+\end{align*}`
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+###Joint pmf
+
+the joint probability function, `\(f(x,y)\)`, is
+
+&lt;center&gt;
+&lt;span size= 60%&gt;
+&lt;img src="figs/joint.jpg" alt="joint.jpg" &gt;
+&lt;/center&gt;
+&lt;span&gt;
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+Calculate:
+
+- `\(P[X = 14 \text{ and } Y = 19]\)`
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+- `\(P[X = 18 \text{ and } Y = 17]\)`
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+By summing up certain values of `\(f(x, y)\)`, probabilities associated with `\(X\)` and `\(Y\)` with patterns of interest can be obtained.
+
+Consider:
+`\(P(X \ge Y)\)`
+
+
+&amp;nbsp;
+
+&lt;span size= 60%&gt;
+&lt;center&gt;
+&lt;img src="figs/joint1.jpg" alt="joint1.jpg" &gt;
+&lt;/center&gt;
+&lt;span&gt;
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+&amp;nbsp;
+
+`\(P(|X - Y| \le 1)\)`
+
+
+
+&lt;span size= 60%&gt;
+&lt;center&gt;
+&lt;img src="figs/joint1.jpg" alt="joint1.jpg" &gt;
+&lt;/center&gt;
+&lt;span&gt;
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+&amp;nbsp;
+
+`\(P(X = 17)\)`
+
+&lt;span size= 60%&gt;
+&lt;center&gt;
+&lt;img src="figs/joint1.jpg" alt="joint1.jpg"&gt;
+&lt;/center&gt;
+&lt;span&gt;
+
+]
+---
+layout:true
+class: center, middle, inverse
+---
+##Marginal Distribution
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+### Marginal distributions
+
+In a bivariate problem, one can add down columns in the (two-way) table of `\(f(x, y)\)` to get values for the probability function of `\(X\)`, `\(f_X(x)\)` and across rows in the same table to get values for the probability distribution of `\(Y\)`, `\(f_Y(y)\)`.
+
+
+The individual probability functions for discrete random variables `\(X\)` and `\(Y\)` with joint probability function `\(f(x, y)\)` are called **marginal probability functions**. They are obtained by summing `\(f(x, y)\)` values over all possible values of the other variable.
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+### Connecting Joint and Marginal Distributions
+
+
+&gt;**Use: Joint to Marginal for Discrete RVs** 
+&gt;
+&gt;
+&gt;Let `\(X\)` and `\(Y\)` be discrete random variables with joint probability function 
+&gt;Then the marginal probability function for `\(X\)` can be found by:
+&gt;$$f\_{X}(x) = \sum\_{y} f\_{XY}(x, y) $$
+&gt;
+&gt;and the marginal probability function for `\(Y\)` can be found by:
+&gt;$$f\_{Y}(y) = \sum\_{x} f\_{XY}(x, y) 
+&gt;$$`
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+**Example:** [Torques, cont'd]
+
+Find the marginal probability functions for `\(X\)` and `\(Y\)` from the following joint pmf.
+
+
+&lt;center&gt;
+&lt;span size= 60%&gt;
+&lt;img src="figs/joint.jpg" alt="joint.jpg" &gt;
+&lt;/center&gt;
+&lt;span&gt;
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+]
+.right-column[
+
+Getting marginal probability functions from joint probability functions begs the question whether the process can be reversed. 
+
+&gt;**Can we find joint probability functions from marginal probability functions?**
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Conditional Distribution
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+### Conditional Distribution
+]
+.right-column[
+###Conditional Distribution of Discrete Random Variables
+
+When working with several random variables, it is often useful to think about what is expected of one of the variables, given the values assumed by all others.
+
+
+&gt;For discrete random variables `\(X\)` and `\(Y\)` with joint probability function `\(f(x, y)\)`, the **conditional probability function of `\(X\)` given `\(Y = y\)`** is *a function of `\(x\)`*
+`$$f_{X|Y}(x|y) = \frac{f(x, y)}{f_{Y}(y)} = \frac{f(x, y)}{\sum\limits_{x}f(x, y)}$$`
+and the **conditional probability function of `\(Y\)` given `\(X = x\)`** is *a function of `\(y\)`*
+`$$f_{Y|X}(y|x) = \frac{f(x, y)}{f_{X}(x)} = \frac{f(x, y)}{\sum\limits_{y}f(x, y)}.$$`
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+###Discrete RVs
+###Conditional Distribution
+]
+.right-column[
+**Example:** [Torque, cont'd]
+
+&lt;span size= 60%&gt;
+&lt;center&gt;
+&lt;img src="figs/joint.jpg" alt="joint.jpg" &gt;
+&lt;/center&gt;
+&lt;span&gt;
+
+Find the following probabilities:
+
+- `\(f_{Y|X}(20|18)\)`
+
+
+
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+###Discrete RVs
+###Conditional Distribution
+]
+.right-column[
+**Example:** [Torque, cont'd]
+
+- `\(f_{Y|X}(y|15)\)`
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+- `\(f_{Y|X}(y|20)\)`
+
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+
+
+
+- `\(f_{X|Y}(x|18)\)`
+
+
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Independence
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+### Conditional Distribution
+###Independence
+]
+.right-column[
+
+Let's start with an example. Look at the following joint probability distribution and the associated marginal probabilities. 
+
+&lt;center&gt;
+&lt;img src= "figs/independence.png"&gt;
+&lt;/center&gt;
+
+What do you notice?
+]
+---
+layout:false
+.left-column[
+### Joint Distributions
+### Discrete RVs
+### Conditional Distribution
+###Independence
+]
+.right-column[
+
+Discrete random variables `\(X\)` and `\(Y\)` are **independent** if their joint distribution function `\(f(x, y)\)` is the product of their respective marginal probability functions. This is, 
+&gt;independence means that
+$$
+f(x, y) = f_X(x)f_Y(y) \qquad \text{for all } x, y.
+$$
+If this does not hold, then `\(X\)` and `\(Y\)` are **dependent**
+
+
+**Alternatively**, discrete random variables `\(X\)` and `\(Y\)` are independent if for all `\(x\)` and `\(y\)`,
+
+If `\(X\)` and$Y$ are not only independent but also have the same marginal distribution, then they are **independent and identically distributed (iid)**.
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

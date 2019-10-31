@@ -416,7 +416,413 @@ If this does not hold, then `\(X\)` and `\(Y\)` are **dependent**
 
 **Alternatively**, discrete random variables `\(X\)` and `\(Y\)` are independent if for all `\(x\)` and `\(y\)`,
 
-If `\(X\)` and$Y$ are not only independent but also have the same marginal distribution, then they are **independent and identically distributed (iid)**.
+If `\(X\)` and `\(Y\)` are not only independent but also have the same marginal distribution, then they are **independent and identically distributed (iid)**.
+
+]
+---
+layout: true
+class: center, middle, inverse
+---
+#Chapter 5.5: Functions of Random
+# Variables
+###Results and Theorems
+---
+layout:false
+.left-column[
+### Functions of RVs
+]
+.right-column[
+###Functions of Random Variables
+A random variable can be thought of as a function whose input is an outcome and whose output is a real number. When we take a function of the value the random variable takes, the resulting value is still depends on the outcome of a random experiment - in other words: functions of random variables are random variables.
+
+This means that a function of a random variable will have probabilities attached to the value it takes, based on the value taken by the random variable. It also means functions of random variables will have: 
+
+&gt;- probability functions (if discrete) or probability density functions (if continuous) 
+&gt;- cumulative probability functions (if discrete) or cumulative density functions (if continuous)
+&gt;- expected values and variances
+&gt;...
+
+
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+]
+.right-column[
+### Linear combinations
+
+For engineering purposes, it often suffices to know the mean and variance for a function of several random variables, `\(U = g(X_1, X_2, \dots, X_n)\)` (as opposed to knowing the whole distribution of `\(U\)`). When `\(g\)` is **linear**, there are explicit functions.
+
+**Proposition:** If `\(X_1, X_2, \dots, X_n\)` are `\(n\)` **independent** random variables and `\(a_0, a_1, \dots, a_n\)` are `\(n + 1\)` constants, then consider  
+`$$U = a_0 + a_1X_1 + a_2X_2 + \cdots + a_nX_n$$`
+&gt; U is itself a random variable as it is a linear combination of n *independent* random variables 
+
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+]
+.right-column[
+### Linear combinations[cont'd]
+
+U, as a random variable has mean
+
+&gt;$$`
+\text{E}U = a_0 + a_1\text{E}X_1 + a_2\text{E}X_2 + \cdots + a_n\text{E}X_3
+$$
+
+and variance
+
+&gt;$$`
+\text{Var}U = a_1^2\text{Var}X_1 + a_2^2\text{Var}X_2 + \cdots + a_n^2\text{Var}X_3
+$$
+
+
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+]
+.right-column[
+
+**Example:** 
+
+Say we have two independent random variables `\(X\)` and `\(Y\)` with `\(\text{E}X = 3.3, \text{Var}X = 1.91, \text{E}Y = 25\)`, and `\(\text{Var}Y = 65\)`. Find the mean and variance for 
+
+
+- U = 3 + 2X - 3Y 
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+- V = -4X + 3Y 
+
+
+
+
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+]
+.right-column[
+**Example:**
+
+Say `\(X \sim Binomial(n= 10,p= 0.5)\)` and `\(Y\sim Poisson(\lambda= 3)\)`. Calculate the mean and variance of `\(Z = 5 + 2X - 7Y\)`.
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+]
+.right-column[
+
+A particularly important use of functions of random variables concerns `\(n\)` iid random variables where each `\(a_i = \frac{1}{n}\)` for `\(i= 1, 2, \cdots, n\)`. Then we can define the random variable `\(\overline{X}\)` as follows
+
+
+`$$\overline{X} = \frac{1}{n} X_1 + \cdots \frac{1}{n}X_n = \frac{1}{n}\sum\limits_{i=1}^n X_i$$`
+
+&gt;Note that `\(\overline{X}\)` is a random variable
+
+We can then find the mean and variance of this random variable.
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+]
+.right-column[
+`$$\overline{X} = \frac{1}{n} X_1 + \cdots \frac{1}{n}X_n = \frac{1}{n}\sum\limits_{i=1}^n X_i$$`
+as they relate to the population parameters `\(\mu = \text{E}X_i\)` and `\(\sigma^2 = \text{Var}X_i\)`.
+
+For **independent** variables `\(X_1, \dots, X_n\)` with common mean `\(\mu\)` and variance `\(\sigma^2\)`,
+
+`\(\text{E}(\overline{X}):\)`
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+`\(\text{V}(\overline{X}):\)`
+]
+
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+]
+.right-column[
+###What is the point?
+
+It does not matter if we are working with discrete or continuous random variables, as long as we have an independent and identically distributed (iid) sample of size `\(n\)` with the same mean `\(\mu\)` and the same variance `\(\sigma^2\)`, the random variable `\(\overline{X}\)` has
+
+&gt; `\(\text{E}(\overline{X}): \mu\)`
+
+and 
+
+&gt; `\(\text{V}(\overline{X}): \dfrac{\sigma^2}{n}\)`
+
+&gt;The point is that the variance of a sample mean of size `\(n\)` is the population variance devided by the sample size `\(n\)` which makes it smaller
+
+&gt;i.e. as the sample size increases, the variability of the sample mean decreases.
+
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+]
+.right-column[
+**Example:**[Seed lengths]
+
+One botanist measured the length of `\(10\)` seeds from the same plant. The seed lengths measurements are `\(X_1,X_2, \dots,X_{10}\)`. Suppose it is known that the seed lengths are iid with mean `\(\mu= 5\)` mm and variance `\(\sigma^2= 2\)`mm.
+
+Calculate the mean and variance of the average of `\(10\)` seed measurements.
+]
+---
+layout: true
+class: center, middle, inverse
+---
+#Central Limit Theorem
+####The Most Important Result in Statistics
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+### Central limit theorem
+
+One of the most frequently used statistics in engineering applications is the sample mean. We can relate the mean and variance of the probability distribution of the sample mean to those of a single observation when an iid model is appropriate.
+
+In the case of the sample mean, if the sample size ($n$) is large enough, we can also approximate the *shape* of the *probability distribution function* of the sample mean!
+]
+
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+### Central limit theorem
+If `\(X_1, \dots, X_n\)` are **independent** and **identically** distributed (iid) random variable (with mean `\(\mu\)` and variance `\(\sigma^2\)`), then for large `\(n\)`, the variable `\(\overline{X}\)` is approximately normally distributed. That is,
+
+$$
+\overline{X} \stackrel{\cdot}{\sim} Normal\left(\mu, \frac{\sigma^2}{n}\right)
+$$
+
+This is one of the **most important** results in statistics.
+
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+**Example: ** [Tool serial numbers]
+
+Consider selecting the last digit of randomly selected serial numbers of pneumatic tools. Let
+`\begin{align}
+W_1 = &amp;\text{ the last digit of the serial number}\\
+      &amp;\text{ observed next Monday at 9am} \\
+W_2 = &amp;\text{ the last digit of the serial number}\\
+    &amp;\text{observed the following Monday at 9am}
+\end{align}`
+
+A plausible model for the pair of random variables `\(W_1, W_2\)` is that they are independent, each with the marginal probability function 
+
+`$$f(w) = \begin{cases} .1 &amp; w = 0, 1, 2, \dots, 9 \\ 
+0 &amp; \text{otherwise}
+\end{cases}$$`
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+**Example: ** [Tool serial numbers]
+
+![](ch5_part_IV_joint_distribution_indep_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+
+With `\(\text{E} W = 4.5\)` and `\(\text{Var} W = 8.25\)`.
+
+Using such a distribution, it is possible to see that `\(\overline{W} = \frac{1}{2}(W_1 + W_2)\)` has probability distribution
+
+
+
+&lt;center&gt;
+&lt;img src= "figs/clt.png"&gt;
+&lt;/center&gt;
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+**Example: ** [Tool serial numbers]
+
+
+![](ch5_part_IV_joint_distribution_indep_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+
+
+Comparing the two distributions, it is clear that even for a completely flat/uniform distribution of `\(W\)` and a small sample size of `\(n = 2\)`, the probability distribution of `\(W\)` looks more bell-shaped than the underlying distribution.
+]
+
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+Now consider larger and larger sample sizes, `\(n = 1, \dots, 40\)`:
+
+Watch how CLT works &lt;a href="https://www.youtube.com/watch?v=dlbkaurTAUg" target=_blank &gt;here&lt;/a&gt; 
+
+&lt;center&gt;
+&lt;img src= "figs/clt_gif.gif" height= "400"&gt;
+&lt;/center&gt;
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+
+**Example: **[Stamp sale time]
+
+Imagine you are a stamp salesperson (on eBay). Consider the time required to complete a stamp sale as `\(S\)`, and let 
+`\begin{align}
+\overline{S} = &amp;\text{the sample mean time required to}\\
+              &amp;\text{complete the next 100 sales}
+\end{align}`
+
+Each individual sale time should have an `\(Exp(\alpha= 16.5 s)\)` distribution. We want to consider approximating `\(P[\overline{S} &gt; 17]\)`. 
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+**Example: **[Cars]
+
+Suppose a bunch of cars pass through certain stretch of road. Whenever a car comes, you look at your watch and record the time. Let `\(X_i\)` be the time (in minutes) between when the `\(i^{th}\)` car comes and the `\((i+ 1)^{th}\)` car comes for `\(i= 1,\dots,44\)`. Suppose you know the average time between cars is `\(1\)` minute. 
+
+Find the probability that the average time gap between cars for the next 44 cars exceeds 1.05 minutes.
+
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+**Example: **[Baby food jars, cont'd]
+
+The process of filling food containers appears to have an inherent standard deviation of measured fill weights on the order of `\(1.6g\)`. Suppose we want to calibrate the filling machine by setting an adjustment knob and filling a run of `\(n\)` jars. Their sample mean net contents will serve as an indication of the process mean fill level corresponding to that knob setting.
+
+You want to choose a sample size, `\(n\)`, large enough that there is an `\(80\)`\% chance the sample mean is within `\(.3\)`g of the actual process mean. 
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+
+**Example: **[Printing mistakes]
+
+Suppose the number of printing mistakes on a page follows some unknown distribution with a mean of `\(4\)` and a variance of `\(9\)`. Assume that number of printing mistakes on a printed page are iid.
+
+
+-  What is the approximate probability distribution of the average number of printing mistakes on 50 pages?
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+- Can you find the probability that the number of printing mistakes on a single page is less than 3.8?
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+]
+---
+layout:false
+.left-column[
+### Functions of RVs
+###Linear Combinations
+###Sample Mean
+###CLT
+].right-column[
+
+**Example: **[Printing mistakes]
+
+- Can you find the probability that the average number of printing mistakes on 10 pages is less than 3.8?
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+&amp;nbsp;
+
+- Can you find the probability that the average number of printing mistakes on 50 pages is less than 3.8?
 
 ]
     </textarea>

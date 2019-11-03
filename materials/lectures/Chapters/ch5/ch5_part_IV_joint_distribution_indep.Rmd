@@ -435,7 +435,7 @@ $$
 If this does not hold, then $X$ and $Y$ are **dependent**
 
 
-**Alternatively**, discrete random variables $X$ and $Y$ are independent if for all $x$ and $y$,
+
 
 If $X$ and $Y$ are not only independent but also have the same marginal distribution, then they are **independent and identically distributed (iid)**.
 
@@ -454,7 +454,7 @@ layout:false
 ]
 .right-column[
 ###Functions of Random Variables
-A random variable can be thought of as a function whose input is an outcome and whose output is a real number. When we take a function of the value the random variable takes, the resulting value is still depends on the outcome of a random experiment - in other words: functions of random variables are random variables.
+A random variable can be thought of as a function whose input is an outcome and whose output is a real number. When we take a function of the value the random variable takes, the resulting value  still depends on the outcome of a random experiment - in other words: functions of random variables are random variables.
 
 This means that a function of a random variable will have probabilities attached to the value it takes, based on the value taken by the random variable. It also means functions of random variables will have: 
 
@@ -545,7 +545,7 @@ layout:false
 .right-column[
 **Example:**
 
-Say $X \sim Binomial(n= 10,p= 0.5)$ and $Y\sim Poisson(\lambda= 3)$. Calculate the mean and variance of $Z = 5 + 2X - 7Y$.
+Say $X \sim Binomial(n= 10,p= 0.5)$ and $Y\sim Poisson(\lambda= 3)$ and $X$ and $Y$ are independent. Calculate the mean and variance of $Z = 5 + 2X - 7Y$.
 ]
 ---
 layout:false
@@ -646,7 +646,7 @@ layout:false
 
 One of the most frequently used statistics in engineering applications is the sample mean. We can relate the mean and variance of the probability distribution of the sample mean to those of a single observation when an iid model is appropriate.
 
-In the case of the sample mean, if the sample size ($n$) is large enough, we can also approximate the *shape* of the *probability distribution function* of the sample mean!
+In the case of the sample mean, if the sample size $(n)$ is large enough, we can also approximate the *shape* of the *probability distribution function* of the sample mean!
 ]
 
 ---
@@ -772,7 +772,7 @@ p <- ggplot(clt, aes(frame = factor(iter))) +
   geom_line(aes(x, f), data = norm_approx)
 #gganimate(p, filename = "images/clt_animate.mp4", interval = .2)
 ```
-Comparing the two distributions, it is clear that even for a completely flat/uniform distribution of $W$ and a small sample size of $n = 2$, the probability distribution of $W$ looks more bell-shaped than the underlying distribution.
+Comparing the two distributions, it is clear that even for a completely flat/uniform distribution of $W$ and a small sample size of $n = 2$, the probability distribution of $\overline W$ looks more bell-shaped than the underlying distribution.
 ]
 
 ---
@@ -837,7 +837,7 @@ layout:false
 
 The process of filling food containers appears to have an inherent standard deviation of measured fill weights on the order of $1.6g$. Suppose we want to calibrate the filling machine by setting an adjustment knob and filling a run of $n$ jars. Their sample mean net contents will serve as an indication of the process mean fill level corresponding to that knob setting.
 
-You want to choose a sample size, $n$, large enough that there is an $80$\% chance the sample mean is within $.3$g of the actual process mean. 
+You want to choose a sample size, $n$, large enough that there is an $80\%$ chance the sample mean is within $.3$g of the actual process mean. 
 ]
 ---
 layout:false

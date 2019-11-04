@@ -201,6 +201,260 @@ layout:false
 `$$(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}\ ,\ +\infty)$$`
 
 ]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+]
+.right-column[
+**Example:**[Fill weight of jars]
+
+Suppose a manufacturer fills jars of food using a stable filling process with a known standard deviation of `\(\sigma = 1.6\)`g. We take a sample of `\(n=47\)` jars and measure the sample mean weight `\(\overline{x} = 138.2\)`g. A two-sided `\(90\%\)` confidence interval, `\(\alpha = 0.1\)`, for the true mean weight `\(\mu\)` is:
+`\begin{align}
+(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}&amp;, \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})\\
+=(\overline{x} - z_{1- 0.1/2}\frac{\sigma}{\sqrt{n}}&amp;, \overline{x} + z_{1- 0.1/2}\frac{\sigma}{\sqrt{n}})\\
+=(138.2 - z_{.95}\frac{1.6}{\sqrt{47}}\ &amp;,\   138.2+ z_{.95}\frac{1.6}{\sqrt{47}})\\
+=(038.2 -1.64(.23) \ &amp;, \ 138.2+ 1.64(.23))\\
+=(137.82\ &amp;,  \ 138.58)
+\end{align}`
+or we can write it as `\(138.2 \pm 0.38\)`g
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+]
+.right-column[
+**Example:**[Fill weight of jars]
+
+Interpretation:
+
+&gt;We are `\(90\%\)` **confident** that the **true mean**  is between `\(137.82\)`g and `\(138.58\)`g
+&gt;
+&gt;or we can say
+&gt;
+&gt;If we took 100 more samples of 47 jams each, roughly *90 of those samples would have a confidence interval containing the true mean fill weight*
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+]
+.right-column[
+**Example:**[Fill weight of jars]
+
+What if we just want to be sure that the true mean fill weight is high enough?
+
+We could use a one-sided `\(90\%\)` CI with a lower bound:
+
+`\begin{align}
+(\overline{x}-z_{1-\alpha}\frac{\sigma}{\sqrt{n}}\ &amp;, \ +\infty ) \\
+=(138.2 - z_{.9}\frac{1.6}{\sqrt{47}}\ &amp;, \ +\infty )\\
+=(137.91\ &amp;, \ +\infty)
+\end{align}`
+
+Then we would say:
+&gt;We are `\(90\%\)` confident that the true mean fill weight is above 137.91
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+]
+.right-column[
+**Example:**[Hard disk failures]
+
+F. Willett, in the article "The Case of the Derailed Disk Drives?" (**Mechanical Engineering**, 1988), discusses a study done to isolate the cause of link code A failure in a model of Winchester hard disk drive. 
+
+For each disk, the investigator measured the breakaway torque (in. oz.) required to loosen the drive's interrupter flag on the stepper motor shaft. 
+
+Breakaway torques for `\(26\)` disk drives were recorded, with a sample mean of `\(11.5\)` in. oz. Suppose you know the true standard deviation of the breakaway torques is `\(5.1\)` in. oz.
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+]
+.right-column[
+**Example:**[Hard disk failures]
+
+ Calculate and interpret:
+ 
+- A two-sided `\(90\%\)` confidence interval for the true mean breakaway torque of the relevant type of Winchester drive.
+`\begin{align}
+(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}&amp;, \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})\\
+=(\overline{x} - z_{1- 0.1/2}\frac{\sigma}{\sqrt{n}}&amp;, \overline{x} + z_{1- 0.1/2}\frac{\sigma}{\sqrt{n}})\\
+=(11.5 - z_{.95}\frac{5.1}{\sqrt{26}}\ &amp;,\   11.5 + z_{.95}\frac{5.1}{\sqrt{26}})\\
+=(11.5 -1.64(1.0002) \ &amp;, \ 11.5+ 1.64(1.0002))\\
+=(9.86\ &amp;,  \ 13.14)
+\end{align}`
+**Interpretation:** we are `\(90\%\)` confident that the true mean breaking torque lies between `\(9.86\)` and `\(13.14\)` in.oz.
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+]
+.right-column[
+**Example:**[Width of a CI]
+
+If you want to estimate the breakaway torque with a 2-sided, `\(95\%\)` confidence interval with `\(\pm 2.0\)` in. oz. of precision, what sample size would you need?
+
+&gt;Interval precision = intervald half width
+
+Therefore, for a two-sided `\(95\%\)` CI we have
+`$$(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})$$`
+which means that the precision is `\(z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}\)`
+
+We want `\(z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}} \leq 2\)`&lt;br&gt;
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+]
+.right-column[
+**Example:**[Width of a CI]
+
+So, 
+
+`\begin{align}
+z_{1-.05/2}\frac{5.1}{\sqrt{n}}&amp;\leq 2\\
+z_{.975}\frac{5.1}{\sqrt{n}}&amp;\leq 2\\
+1.96\frac{5.1}{\sqrt{n}}&amp;\leq 2\\
+\frac{9.996}{\sqrt{n}}&amp;\leq 2
+\end{align}`
+`$$\Rightarrow n\ge 24.98$$`
+`$$\Rightarrow n\ge 25$$`
+We would need a sample of at least 25 disks to have at least a precision of 2 in.oz
+]
+---
+layout:true
+class: center, middle, inverse
+---
+##A large-n confidence interval 
+##for `\(\mu\)` when `\(\sigma\)` is Unknown
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+###CI for `\(\mu\)` unknown `\(\sigma^2\)`
+]
+.right-column[
+#### A generally applicable large-n confidence interval for `\(\mu\)`
+
+Although the equations for a `\(1-\alpha\)` confidence interval is mathematically correct, it is severely limited in its usefulness because
+it requres us to know `\(\sigma\)` (the population variance). It is unusual to have to estimate `\(\mu\)` and know `\(\sigma\)` in real life. 
+
+&gt;If `\(n \ge 25\)` and `\(\sigma\)` is *unknown*, `\(Z = \frac{\overline{X} - \mu}{s/\sqrt{n}}\)`, where 
+$$
+s = \sqrt{\frac{1}{n-1}\sum\limits_{i = 1}^n (x_i-\overline{x})^2}.
+$$
+
+is still **approximately standard normally distributed**. 
+
+So, you can replace `\(\sigma\)` in the confidence interval formula with the sample standard deviation, `\(s\)`.
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+###CI for `\(\mu\)` unknown `\(\sigma^2\)`
+]
+.right-column[
+#### A generally applicable large-n confidence interval for `\(\mu\)`
+
+- Two-sided `\(1-\alpha\)` confidence interval for `\(\mu\)`
+`$$(\overline{x} - z_{1-\alpha/2}\frac{s}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{s}{\sqrt{n}})$$`
+
+
+- One-sided `\(1-\alpha\)` confidence interval for `\(\mu\)` with a upper confidence bound
+
+`$$(-\infty\ ,\  \overline{x} + z_{1-\alpha/2}\frac{s}{\sqrt{n}})$$`
+
+- One-sided `\(1-\alpha\)` confidence interval for `\(\mu\)` with a lower confidence bound
+
+`$$(\overline{x} - z_{1-\alpha/2}\frac{s}{\sqrt{n}}\ ,\ +\infty)$$`
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+###CI for `\(\mu\)` unknown `\(\sigma^2\)`
+]
+.right-column[
+
+
+**Example:**
+
+Suppose you are a manufacturer of construction equipment. You make `\(\color{blue}{0.0125}\)` inch wire rope and need to determine how much weight it can hold before breaking so that you can label it clearly. Here are breaking strengths, in kg, for `\(\color{blue}{41}\)` sample wires:
+
+
+```
+ [1] 100.37  96.31  72.57  88.02 105.89
+ [6] 107.80  75.84  92.73  67.47  94.87
+[11] 122.04 115.12  95.24 119.75 114.83
+[16] 101.79  80.90  96.10 118.51 109.66
+[21]  88.07  56.29  86.50  57.62  74.70
+[26]  92.53  86.25  82.56  97.96  94.92
+[31]  62.00  93.00  98.44 119.37 103.70
+[36]  72.40  71.29 107.24  64.82  93.51
+[41]  86.97
+```
+
+&gt;The sample mean breaking strength is `\(\color{red}{91.85}\)` kg and the sample standard deviation is `\(\color{red}{17.6}\)` kg.
+
+
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for `\(\mu\)` 
+###CI for `\(\mu\)` unknown `\(\sigma^2\)`
+]
+.right-column[
+**Example:**
+Using the appropriate `\(95\)`% confidence interval, try to determine whether the breaking strengths meet the requirement of at least `\(85\)` kg.
+`$$(1-\alpha =.95\hspace{.5cm}, \hspace{.5cm}\overline{x}=91.85 \hspace{.5cm},\hspace{.5cm} s=17.6\hspace{.5cm}, \hspace{.5cm} n=41 )$$`
+The CI is then
+`\begin{align}
+(\overline{x} - z_{1-\alpha/2}\frac{s}{\sqrt{n}}\ &amp;,\ +\infty )\\
+=(91.85 - z_{\color{red}{.95}}\frac{17.6}{\sqrt{41}}\ &amp;,\ +\infty )\\
+=(91.85 - 1.64\frac{17.6}{\sqrt{41}}\ &amp;,\ +\infty )\\
+=(87.3422\ &amp;,\ +\infty )\\
+\end{align}`
+&gt;With `\(95\%\)` confidence, we have shown that the true mean breaking strength is above `\(87.3422\)`kg.&lt;br&gt;
+&gt;Hence, we meet the `\(85\)`kg requirement with `\(95\%\)` confidence
+
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

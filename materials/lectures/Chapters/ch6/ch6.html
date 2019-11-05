@@ -113,6 +113,14 @@ $$
 (Z-2,Z+ 2)
 $$
 What is the probability that `\(-1\)` is inside the interval? 
+`\begin{align}
+P(-1\  \text{is in}\  (Z-2 , Z+2)) &amp;= P(Z-2 &lt; -1 &lt; Z+2)\\
+&amp;= P(Z-1 &lt; -1 &lt; Z+3)\\
+&amp;= P(-1 &lt; -Z &lt; 3)\\
+&amp;= P(-3 &lt; Z &lt; 1)\\
+&amp;= \Phi(1)- \Phi(-3)\\
+&amp;= 0.84.
+\end{align}`
 ]
 ---
 layout:false
@@ -122,9 +130,21 @@ layout:false
 ]
 .right-column[
 **Example:**[More practice]&lt;br&gt;
+
 Calculate:
 
 - `\(P(2 \text{ in } (X-1,X+ 1))\)`, `\(X\sim N(2,4)\)`
+
+&amp;nbsp;
+
+`\begin{align}
+P( 2\in (X-1 , X+1))&amp;= P(X-1 &lt; 2 &lt; X+1)\\
+&amp;= P(-1 &lt; 2-X &lt; 1)\\
+&amp;= P(-1/2 &lt; X &lt; 1/2)\\
+&amp;= \Phi(1/2) - \Phi(-1/2)\\
+&amp;= 0.6915 - 0.3085\\
+&amp;= 0.383
+\end{align}`
 ]
 ---
 layout:false
@@ -138,6 +158,34 @@ layout:false
 
 Let's say `\(X_1,X_2,\dots,X_n\)` are iid with `\(n\ge 25\)`, mean `\(\mu\)`, variance `\(\sigma^2\)`. We can find a random interval that provides a lower bound for `\(\mu\)` with `\(1 - \alpha\)` probability:
 
+We want **A** such that `\(P(\mu\in (A, +\infty))= 1-\alpha\)`. &lt;br&gt;
+We know by CLT: 
+`$$\overline{X} \approx N(\mu, \sigma^2/n)$$`
+Therefore, 
+$$\dfrac{\overline{X}- \mu}{\sigma/\sqrt{n}} \sim N(0 , 1). $$
+
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+]
+.right-column[
+
+**Example:**[Abstract random intervals]&lt;br&gt;
+
+Then
+`\begin{align}
+&amp;P(\dfrac{\overline{X}- \mu}{\sigma/\sqrt{n}} \le Z_{1-\alpha})\approx 1-\alpha\\
+\Rightarrow &amp;P(\overline{X}- Z_{1-\alpha}\dfrac{\sigma}{\sqrt{n}}\le \mu)\approx 1-\alpha\\
+\Rightarrow &amp;P(\mu\in (\overline{X} - Z_{1-\alpha}\dfrac{\sigma}{\sqrt{n}}  , +\infty))\approx 1-\alpha
+\end{align}`
+Now if we set 
+$$A= \overline{X} - Z_{1-\alpha}\dfrac{\sigma}{\sqrt{n}} $$
+then we have 
+`$$P(\mu\in(A, +\infty))\approx 1-\alpha$$`
 ]
 ---
 layout:false
@@ -147,10 +195,19 @@ layout:false
 ]
 .right-column[
 **Example:**[Abstract random intervals]&lt;br&gt;
-
 Calculate:
 - `\(P(\mu \in (\overline{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})), X \sim N(\mu,\sigma^2)\)`
 
+`\begin{align}
+&amp;P(\mu \in (\overline{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}))\\
+=&amp;P(\overline{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}&lt; \mu &lt; \overline{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})\\
+=&amp;P(-z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}&lt; \mu - \overline{X} &lt; z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})\\
+=&amp;P(-z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}&lt; \overline{X} - \mu   &lt; z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})\\ 
+=&amp;P(-z_{1-\alpha/2} &lt; \dfrac{\overline{X} - \mu}{\sigma/\sqrt{n}}   &lt; z_{1-\alpha/2})\\
+=&amp;P(-z_{1-\alpha/2} &lt; Z &lt; z_{1-\alpha/2})\\
+\approx &amp; 1-\alpha
+\end{align}`
+The last result is by **CLT** assuming that `\(n\ge 25\)`
 ]
 ---
 layout:true

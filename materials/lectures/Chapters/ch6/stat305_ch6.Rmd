@@ -203,8 +203,9 @@ layout:false
 ]
 .right-column[
 **Example:**[Abstract random intervals]<br>
-Calculate:
-- $P(\mu \in (\overline{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})), X \sim N(\mu,\sigma^2)$
+Calculate:<br>
+<span size= "80%">
+$P(\mu \in (\overline{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})), X \sim N(\mu,\sigma^2)$
 
 \begin{align}
 &P(\mu \in (\overline{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}))\\
@@ -215,7 +216,19 @@ Calculate:
 =&P(-z_{1-\alpha/2} < Z < z_{1-\alpha/2})\\
 \approx & 1-\alpha
 \end{align}
-The last result is by **CLT** assuming that $n\ge 25$
+</span>
+(<font size="3"> The last result is by **CLT** assuming that $n\ge 25$ </font>)<br>
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+]
+.right-column[
+**Example:**[Abstract random intervals]<br>
+
+So, $\mu$ falls within the interval $(\overline{X} - z_{1-\color{red}{\alpha/2}}\frac{\sigma}{\sqrt{n}}, \overline{X} + z_{1-\color{red}{\alpha/2}}\frac{\sigma}{\sqrt{n}})$ with the probability of $\color{red}{1-\alpha}$ for $X \sim N(\mu,\sigma^2)$
 ]
 ---
 layout:true
@@ -233,14 +246,14 @@ layout:false
 .right-column[
 ### A Large-n confidence interval for $\mu$ involving $\sigma$
 
-A **1- $\alpha$ confidence interval** for an unknown parameter is the realization of a random interval that contains that parameter with probability $1-\alpha$.
-> $\alpha$ is called the **confidence level**
+A <span style="color:red"> **(1- $\alpha)\%$ confidence interval** </span> for an unknown parameter is the realization of a random interval that contains that parameter with probability $1-\alpha$.
+> $\color{red}\alpha$ is called the **confidence level**
 
-For random variables $X_1,X_2,\dots,X_n$ iid with $E(X_1) = \mu$, $Var(X_1) = \sigma^2$, a $1-\alpha$ confidence interval for $\mu$ is
+For random variables $X_1,X_2,\dots,X_n$ iid with $E(X_1) = \mu$, $Var(X_1) = \sigma^2$, a $(1-\alpha)\%$ confidence interval for $\mu$ is
 
-$$(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})$$
-which is a **realization** from the random interval
-$$(\overline{X} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{X} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}).$$
+$$(\color{red}{\overline{x}} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \color{red}{\overline{x}} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})$$
+which is a **realization** from the <span style="color:red">random interval</span>
+$$(\color{red}{\overline{X}} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}},\color{red}{ \overline{X}} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}).$$
 
 ]
 ---
@@ -251,19 +264,19 @@ layout:false
 ###CI for $\mu$ 
 ]
 .right-column[
+###In General
+
+- *Two-sided* $100(1-\alpha)\%$ confidence interval for $\mu$
+$$\color{red}{(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})}$$
 
 
-- Two-sided $1-\alpha$ confidence interval for $\mu$
-$$(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})$$
+- *One-sided* $100(1-\alpha)\%$ confidence interval for $\mu$ with a upper confidence bound
 
+$$\color{red}{(-\infty\ ,\  \overline{x} + z_{1-\alpha}\frac{\sigma}{\sqrt{n}})}$$
 
-- One-sided $1-\alpha$ confidence interval for $\mu$ with a upper confidence bound
+- *One-sided* $100(1-\alpha)\%$ confidence interval for $\mu$ with a lower confidence bound
 
-$$(-\infty\ ,\  \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})$$
-
-- One-sided $1-\alpha$ confidence interval for $\mu$ with a lower confidence bound
-
-$$(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}\ ,\ +\infty)$$
+$$\color{red}{(\overline{x} - z_{1-\alpha}\frac{\sigma}{\sqrt{n}}\ ,\ +\infty)}$$
 
 ]
 ---
@@ -296,7 +309,7 @@ layout:false
 .right-column[
 **Example:**[Fill weight of jars]
 
-Interpretation:
+<span style="color:red">Interpretation:</span>
 
 >We are $90\%$ **confident** that the **true mean**  is between $137.82$g and $138.58$g
 >
@@ -379,7 +392,7 @@ layout:false
 
 If you want to estimate the breakaway torque with a 2-sided, $95\%$ confidence interval with $\pm 2.0$ in. oz. of precision, what sample size would you need?
 
->Interval precision = intervald half width
+>Interval precision = interval half width
 
 Therefore, for a two-sided $95\%$ CI we have
 $$(\overline{x} - z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}})$$
@@ -426,10 +439,10 @@ layout:false
 .right-column[
 #### A generally applicable large-n confidence interval for $\mu$
 
-Although the equations for a $1-\alpha$ confidence interval is mathematically correct, it is severely limited in its usefulness because
+Although the equations for a $(1-\alpha)\%$ confidence interval is mathematically correct, it is severely limited in its usefulness because
 it requres us to know $\sigma$ (the population variance). It is unusual to have to estimate $\mu$ and know $\sigma$ in real life. 
 
->If $n \ge 25$ and $\sigma$ is *unknown*, $Z = \frac{\overline{X} - \mu}{s/\sqrt{n}}$, where 
+>If $n \ge 25$ and $\sigma$ is *unknown*, $Z = \frac{\overline{X} - \mu}{\color{red}{s}/\sqrt{n}}$, where 
 $$
 s = \sqrt{\frac{1}{n-1}\sum\limits_{i = 1}^n (x_i-\overline{x})^2}.
 $$
@@ -450,17 +463,17 @@ layout:false
 .right-column[
 #### A generally applicable large-n confidence interval for $\mu$
 
-- Two-sided $1-\alpha$ confidence interval for $\mu$
-$$(\overline{x} - z_{1-\alpha/2}\frac{s}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{s}{\sqrt{n}})$$
+- *Two-sided* $100(1-\alpha)\%$ confidence interval for $\mu$
+$$\color{red}{(\overline{x} - z_{1-\alpha/2}\frac{s}{\sqrt{n}}, \overline{x} + z_{1-\alpha/2}\frac{s}{\sqrt{n}})}$$
 
 
-- One-sided $1-\alpha$ confidence interval for $\mu$ with a upper confidence bound
+- *One-sided * $100(1-\alpha)\%$ confidence interval for $\mu$ with a upper confidence bound
 
-$$(-\infty\ ,\  \overline{x} + z_{1-\alpha/2}\frac{s}{\sqrt{n}})$$
+$$\color{red}{(-\infty\ ,\  \overline{x} + z_{1-\alpha}\frac{s}{\sqrt{n}})}$$
 
-- One-sided $1-\alpha$ confidence interval for $\mu$ with a lower confidence bound
+- *One-sided* $100(1-\alpha)\%$ confidence interval for $\mu$ with a lower confidence bound
 
-$$(\overline{x} - z_{1-\alpha/2}\frac{s}{\sqrt{n}}\ ,\ +\infty)$$
+$$\color{red}{(\overline{x} - z_{1-\alpha}\frac{s}{\sqrt{n}}\ ,\ +\infty)}$$
 
 ]
 ---
@@ -515,3 +528,390 @@ The CI is then
 
 
 ]
+---
+layout:true
+class: center, middle, inverse
+---
+##Small-sample Confidence Interval
+##for a Mean
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+]
+.right-column[
+### Small-sample confidence intervals for a mean
+
+- The most important practical limitation on the use of the methods of the previous sections is the requirement that $n$ **must be large $(\ge 25)$**
+
+- That restriction comes from the fact that without it, there is no way (in general) to calculate $\dfrac{\overline{X}- \mu}{S/n}$ that is approximately $N(0,1)$. (i.e we cannot use CLT when sample size is small)
+
+- So, if one mechanically uses the large- $n$ interval formula $\overline{x} \pm z \frac{s}{\sqrt{n}}$ with a small sample, there is no way of assessing what actual level of confidence should be declared. 
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+]
+.right-column[
+### Small-sample confidence intervals for a mean
+
+- **If** it is sensible to model the observations as iid normal random variables, then we can arrive at inference methods for small-$n$ sample means.
+
+In this case (small sample size), $\overline{x} \pm z \frac{s}{\sqrt{n}}$ is not standard Normal anymore, BUT it is a different normed distribution!
+]
+---
+layout:true
+class:center, middle, inverse
+---
+##The Student t Distribution
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+]
+.right-column[
+###t Student distribution
+
+**Definition**: The (Student) $t$ distribution with degrees of freedom parameter $\nu$ is a continuous probability distribution with probability density
+
+$$f(t) = \frac{\Gamma\left(\frac{\nu + 1}{2}\right)}{\Gamma\left(\frac{\nu}{2}\right)\sqrt{\pi \nu}}\left(1 + \frac{t^2}{\nu}\right)^{-(\nu + 1)/2} \qquad  \text{for all } t \in R.$$
+The $t$ distribution
+ 
+>- is bell-shaped and symmetric about $0$
+>- has fatter tails than the normal, but approaches the shape of the normal as $\nu \rightarrow \infty$.
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+]
+.right-column[
+###t Student distribution
+
+We use the $t$ table (Table B.4 in Vardeman and Jobe) to calculate quantiles. 
+
+```{r, fig.height=6, fig.width=8}
+expand.grid(x = seq(-3, 3, length.out = 200),
+            df = c(1, 2, 5, 11, 20)) %>%
+  mutate(f = dt(x, df)) %>% 
+  mutate(df = as.character(df)) %>%
+  bind_rows(data.frame(x = seq(-3, 3, length.out = 200), df = "Standard normal") %>%
+            mutate(f = dnorm(x))) %>%
+  mutate(df = factor(df, levels = c("1", "2", "5", "11", "20", "Standard normal"))) %>%
+  ggplot() +
+  geom_line(aes(x, f, group = df, linetype = df, colour = df)) +
+  xlab("t") + ylab("f(t)") + 
+  scale_colour_discrete(expression(nu)) +
+  scale_linetype_discrete(expression(nu))
+
+
+```
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+]
+.right-column[
+###t Student distribution
+
+
+**Example**: Say $T \sim t_5$. Find $c$ such that $P(T \le c) = 0.9$.
+
+![Student's $t$ distribution quantiles.](ch6-andee/images/head_t_quantiles.png)
+
+So, $P(T\le c) = 0.9$ holds true if $c= 1.476$ (by the table).
+]
+---
+layout: true
+class: center, middle, inverse
+---
+##Small-sample Confidence Interval
+## for $\mu$ when $\sigma$ is unknown
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+
+]
+.right-column[
+
+### Small-sample confidence intervals, $\sigma$ unknown
+
+**If** we can assume that $X_1,\dots,X_n$ are iid with mean $\mu$ and variance $\sigma^2$, and are also normally distributed, if $n < 25$, we cannot use CLT.
+
+It is not easy to prove but, 
+
+> $\dfrac{\overline{X}-\mu}{S/\sqrt{n}} \sim t_{n-1}$
+
+We can then use $t_{n-1,1-\alpha/2}$ instead of $z_{1-\alpha/2}$ in the confidence intervals.
+
+Note that the df (degree of freedom) for the t distribution is $n-1$. 
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+
+]
+.right-column[
+
+### Small-sample confidence intervals, $\sigma$ unknown
+
+- *Two-sided* $100(1-\alpha)\%$ confidence interval for $\mu$
+$$\color{red}{(\overline{x} - t_{n-1, 1-\alpha/2}\frac{s}{\sqrt{n}}, \overline{x} + t_{n-1,\  1-\alpha/2}\frac{s}{\sqrt{n}})}$$
+
+
+- *One-sided * $100(1-\alpha)\%$ confidence interval for $\mu$ with a upper confidence bound
+
+$$\color{red}{(-\infty\ ,\  \overline{x} + t_{n-1,\ 1-\alpha}\frac{s}{\sqrt{n}})}$$
+
+- *One-sided* $100(1-\alpha)\%$ confidence interval for $\mu$ with a lower confidence bound
+
+$$\color{red}{(\overline{x} - t_{n-1, \ 1-\alpha}\frac{s}{\sqrt{n}}\ ,\ +\infty)}$$
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+
+]
+.right-column[
+
+**Example**: [Concrete beams]
+
+10 concrete beams were each measured for flexural strength (MPa). Assuming the flexural strengths are iid normal, calculate and interpret a two-sided $99$\% CI for the flexural strength of the beams. 
+
+```{r, comment = NA, results='asis'}
+options(width = 80)
+
+beams <- c(8.2, 8.7, 7.8, 9.7, 7.4, 7.8, 7.7, 11.6, 11.3, 11.8)
+print(beams)
+```
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+
+]
+.right-column[
+
+**Example**: [Concrete beams]
+
+Is the true mean flexural strength below the minimum requirement of 11 MPa?  Find out with the appropriate 95\% CI.
+
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+
+]
+.right-column[
+
+**Example**: [Paint thickness]
+
+Consider the following sample of observations on coating thickness for low-viscosity paint.
+```{r, comment=NA}
+options(width = 40)
+
+paint <- c(0.83, 0.88, 0.88, 1.04, 1.09, 1.12, 1.29, 1.31, 1.48, 1.49, 1.59, 1.62, 1.65, 1.71, 1.76, 1.83)
+paint
+```
+
+A normal QQ plot shows that they are close enough to normally distributed.
+
+```{r, fig.height=4, fig.width=6}
+y <- quantile(paint[!is.na(paint)], c(0.25, 0.75))
+x <- qnorm(c(0.25, 0.75))
+slope <- diff(y)/diff(x)
+int <- y[1L] - slope * x[1L]
+
+d <- data.frame(resids = paint)
+
+ggplot(d, aes(sample = resids)) + 
+  stat_qq() + 
+  geom_abline(slope = slope, intercept = int)
+
+
+```
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+
+]
+.right-column[
+
+**Example**: [Paint thickness]
+
+Calculate and interpret a two-sided $90$% confidence interval for the true mean thickness.
+
+]
+---
+layout:true
+class: center, middle, inverse
+---
+##Let's Wrap Up
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+###Wrap Up
+]
+.right-column[
+### Common Assumptions and Common Statements
+Suppose that $X_1, X_2, \ldots, X_n$ are random variables whose values will be determined based on the results of random events.
+>**Large Sample Size, Known Variance**</br>
+>Assuming:</br>
+>- $E(X_i) = \mu$, 
+>- $n \ge 30$,
+>- $Var(X_i) = \sigma^2$ is known
+>
+>Then by CLT,
+>$$\dfrac{\bar{X} - \mu}{\sqrt{\sigma^2/n}} \sim N(0, 1)$$
+
+$100(1-\alpha)\%$ Confidence interval for $\mu$: 
+
+>$$\bar{x} \pm z_{1 - \alpha/2} \sqrt{\frac{\sigma^2}{n}}$$
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+###Wrap Up
+]
+.right-column[
+### Common Assumptions and Common Statements
+
+>**Large Sample Size, Unknown Variance**</br>
+>Assuming:</br>
+>- $E(X_i) = \mu$, 
+>- $n \ge 30$,
+>- $Var(X_i)$ is unknown, but sample variance $S^2 = \frac{1}{n-1}\sum{(X_i - \bar{X})^2}$ can be calculated
+>
+>Then by CLT and convergence of sample variance
+>$$\dfrac{\bar{X} - \mu}{\sqrt{S^2/n}} \sim N(0, 1)$$
+
+$100\cdot(1 - \alpha)$%-Confidence interval for $\mu$: 
+>$$\bar{x} \pm z_{1 - \alpha/2} \sqrt{\frac{s^2}{n}}$$
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+###Wrap Up
+]
+.right-column[
+### Common Assumptions and Common Statements
+>**Small Sample Size, Unknown Variance**</br>
+>Assuming:</br>
+>- $E(X_i) = \mu$, 
+>- $n < 30$,
+>- $Var(X_i)$ is unknown, but sample variance $S^2 = \frac{1}{n-1}\sum_{i=1}^{n}{(X_i - \bar{X})^2}$ can be calculated
+>
+>Then by CLT and convergence of sample variance
+>$$\dfrac{\bar{X} - \mu}{\sqrt{S^2/n}} \sim t_{n-1}$$
+
+$100\cdot(1 - \alpha)$%-Confidence interval for $\mu$: 
+>$$\bar{x} \pm t_{n-1, 1 - \alpha/2} \sqrt{\frac{s^2}{n}}$$
+
+]
+---
+layout:false
+.left-column[
+### Large Sample Inference
+###Confidence Interval
+###CI for $\mu$ 
+###CI for $\mu$ unknown $\sigma^2$
+###t Distribution
+###Small $n$ unknown $\sigma^2$
+###Wrap Up
+]
+.right-column[
+### Common Assumptions and Common Statements
+
+With the last set of assumptions, we can conclude that $\dfrac{\bar{X} - \mu}{\sqrt{S^2/n}}$ follows a "t-distribution with $n-1$ degrees of freedom"
+
+The t-distribution looks a lot like a standard normal distribution and we use it the same way: 
+- It is symmetric
+- It is centered at 0
+- Important quantiles are collected together in tables for reference
+
+It only has one parameter, the degrees of freedom. In this class, the degrees of freedom are related to the number of parameters being tested
+<center>
+degrees of freedom = (# of observations) - (# of parameters)
+</center>
+]
+---

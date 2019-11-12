@@ -147,7 +147,7 @@ Of course our assumptions could be wrong. We call the other assumptions our "alt
 &gt;The conditions that we do require proof to accept. We would have to change our beliefs based on evidence. We use the notation `\(H_A\)` (or sometimes, `\(H_1\)`) to refer to the alternative hypothesis.
 
 In this case, we could say that our alternative to believing the game is "fair" is to believe the game is not fair, or that the probability of winning is not `\(0.5\)`. We write:
-`$$H_A: p = 0.5$$`
+`$$H_A: p \ne 0.5$$`
 
 ]
 ---
@@ -270,7 +270,7 @@ Again, if we consider the example of criminal court:
 
 In general, we want to make sure that a Type I error is unlikely. To take the example of court again,
 - We commit a Type II error: a guilty person goes free
-- We commit a Type I erro: an innocent person goes to jail; the guiilty person is still free
+- We commit a Type I error: an innocent person goes to jail; the guiilty person is still free
 
 ]
 ---
@@ -284,13 +284,11 @@ layout:false
 ]
 .right-column[
 ### The Mistakes We Might Make
-
-Let's go back to my game: We assume I am an honest person (i.e., we assume that the probability of winning a single game is `\(p = 0.5\)`)
-
+Let's go back to my game: We assume I am an honest person (i.e., we assume that the probability of winning a single game is `\(p = 0.5\)`)&lt;br&gt;
 **Type I Error: Rejecting True Assumptions**
 - We gather evidence
 - Looking at our evidence, we decide that the game was not fair even though it was.
-- Fallout: you slander me, you disparge me, we have a fight, there is ill will in the class.
+- Fallout: you slander me, you disparge me, we have a fight, BOOOM.&lt;br&gt;
 
 **Type II Error: Failing to Reject False Assumptions**
 - We gather evidence
@@ -328,8 +326,10 @@ layout:false
 ### The Test
 ### The Errors
 ### The Evidence
+### p-value
 ]
 .right-column[
+### p-value
 
 If we assume the null hypothesis, then we can make some assumptions about what results are likely and what results are unlikely. We describe the likelihood of the results that we actually get using a **p-value**
 
@@ -345,8 +345,11 @@ layout:false
 ### The Test
 ### The Errors
 ### The Evidence
+### p-value
+
 ]
 .right-column[
+### p-value
 
 In other words, we collect evidence and determine a way to measure the whether or not our data was unusual *if our assumptions are true*. 
 
@@ -355,7 +358,7 @@ If we have a very, very low chance of
 - having true assumptions
 then we reject the assumptions
 
-Going along with the terminology we have introduced, if we have a small p-value the we reject our null hypothesis.
+Going along with the terminology we have introduced, if we have a small p-value then we reject our null hypothesis.
 
 ]
 ---
@@ -367,6 +370,7 @@ layout:false
 ### The Test
 ### The Errors
 ### The Evidence
+### p-value
 ]
 .right-column[
 ### Gathering Statistical Evidence
@@ -374,7 +378,7 @@ layout:false
 In this game, if we assume that the game is fair, we have
 
 - two outcomes: success (winning) and failure (losing)
-- a constant chance of a successful outcome ($p = 0.5$, assuming the game is fair)
+- a constant chance of a successful outcome `\((p = 0.5)\)`, assuming the game is fair)
 - independent rounds of the game (assuming fair shuffle, which we can check)
 
 In other words, if we test the game 10 times we can model the number of successful outcomes as binomial: For `\(X\)` = the total number of wins,
@@ -400,6 +404,7 @@ layout:false
 ### The Test
 ### The Errors
 ### The Evidence
+### p-value
 ### The Conclusion
 ]
 .right-column[
@@ -424,6 +429,7 @@ layout:false
 ### The Test
 ### The Errors
 ### The Evidence
+### p-value
 ### The Conclusion
 ]
 .right-column[
@@ -441,13 +447,13 @@ layout:false
 ---
 layout: true
 class: center, middle, inverse
-
+---
 ##Now let's make everything 
 ##a little more formal
 ---
 layout: true
 class: center, middle, inverse
-
+---
 #Section 6.3
 #Hypothesis Testing
 ---
@@ -506,8 +512,8 @@ or
 
 Examples (testing the true mean value):
 `\begin{eqnarray*}
-\text{H}_0: \mu = \# &amp; \text{H}_0: \mu = \# &amp; \text{H}_0: \mu = \# \\
-\text{H}_a: \mu \not= \# &amp; \text{H}_a: \mu &gt; \# &amp; \text{H}_a: \mu &lt; \#
+\text{H}_0: \mu = \# \quad &amp; \text{H}_0: \mu = \# \quad&amp;\ \text{H}_0: \mu = \# \\
+\text{H}_a: \mu \not= \# \quad  &amp; \text{H}_a: \mu &gt; \# \quad &amp; \text{H}_a: \mu &lt; \#
 \end{eqnarray*}`
 Often, the alternative hypothesis is based on an investigator's suspicions and/or hopes about th true state of affairs.
 
@@ -522,14 +528,30 @@ layout:false
 .right-column[
 The **goal** is to use the data to debunk the null hypothesis in favor of the alternative.
 
-1. Assume `\(\text{H}_0\)`.
+1. Assume `\(\text{H}_0\)`.&lt;br&gt;
 
-2. Try to show that, under `\(\text{H}_0\)`, the data are preposterous.(using probability)
+2. Try to show that, under `\(\text{H}_0\)`, the data are preposterous.(using probability)&lt;br&gt;
 
-3. If the data are preposterous, reject `\(\text{H}_0\)` and conclude `\(\text{H}_a\)`.
+3. If the data are preposterous, reject `\(\text{H}_0\)` and conclude `\(\text{H}_a\)`.&lt;br&gt;
 
 The outcomes of a hypothesis test consists of:
 
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+]
+.right-column[
+###Probability of type I error
+
+It is not possible to reduce both type I and type II erros at the same time. The approach is then to fix one of them.
+
+We then fix the **probability of type I error** and try to minimize the probability of type II error.
+
+&gt;We define the &lt;span style="color:red"&gt;probability of type I error&lt;/span&gt; to be `\(\alpha\)` (the significance level)
 
 ]
 ---
@@ -548,9 +570,9 @@ Suppose we toss a coin `\(n=25\)` times, and the results are denoted by `\(X_1,X
 \text{Alternative hypothesis} &amp;: H_a: \rho \ne 0.5
 \end{align}`
 
-If H_0 was correct, then `\(P(\text{results are all heads})= (1/2)^{25}&lt; 0.000001\)`
+If `\(H_0\)` was correct, then `\(P(\text{results are all heads})= (1/2)^{25}&lt; 0.000001\)`
 
-&gt;I don't think this coin is fair (reject H_0 in favor of H_a)
+&gt;I don't think this coin is fair (reject `\(H_0\)` in favor of `\(H_a\)`)
 
 ]
 ---
@@ -641,8 +663,8 @@ H_0&amp;: \mu = \mu_0\\
 H_a&amp;: \mu \ne \mu_0
 \end{align}`
 
-`$$P(\text{observing data as or more extreme as K} )= P(Z&lt; -K\ or \ Z&gt;k )$$`
-is defined as the p-value
+`$$P(\text{observing data as or more extreme as K} )\\= P(Z&lt; -K\ or \ Z&gt;k )$$`
+is defined as the &lt;span style= "color:green"&gt;p-value&lt;/span&gt;
 
 ]
 ---
@@ -687,7 +709,7 @@ layout:false
 
 &gt;4. Calculate the test statistic and p-value
 
-&gt;5. Make a decision based on the p-value(if p-value &lt; `\(\alpha\)`, reject H_0 otherwise we fail to reject H_0)
+&gt;5. Make a decision based on the p-value(if p-value &lt; `\(\alpha\)`, reject `\(H_0\)` otherwise we fail to reject$ H_0$)
 
 &gt;6. Interpret the conclusion using the consept of the problem
 

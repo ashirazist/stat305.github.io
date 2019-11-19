@@ -732,6 +732,20 @@ layout:false
 ]
 .right-column[
 
+**Example:**[Cylinders]
+
+The strengths of $40$ steel cylinders were measured in MPa. The sample mean strength is $1.2$ MPa with a sample standard deviation of $0.5$ MPa. At significance level $\alpha = 0.01$, conduct a hypothesis test to determine if the cylinders meet the strength requirement of 0.8 MPa.
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+]
+.right-column[
+
 **Example:** [Concrete beams]
 
 10 concrete beams were each measured for flexural strength (MPa). The data is as follows.

@@ -709,9 +709,227 @@ layout:false
 
 &gt;4. Calculate the test statistic and p-value
 
-&gt;5. Make a decision based on the p-value(if p-value &lt; `\(\alpha\)`, reject `\(H_0\)` otherwise we fail to reject$ H_0$)
+&gt;5. Make a decision based on the p-value(if p-value &lt; `\(\alpha\)`, reject `\(H_0\)` otherwise we fail to reject `\(H_0\)`)
 
 &gt;6. Interpret the conclusion using the consept of the problem
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+]
+.right-column[
+
+**Example:** [Concrete beams]
+
+10 concrete beams were each measured for flexural strength (MPa). The data is as follows.
+
+ [1]  8.2  8.7  7.8  9.7  7.4  7.8  7.7 11.6 11.3 11.8
+
+The sample mean was `\(9.2\)` MPa and the sample variance was `\(3.0933\)` MPa. Conduct a hypothesis test to find out if the flexural strength is different from `\(9.0\)` MPa.
+]
+---
+
+layout:true
+class: center, middle, inverse
+---
+#Hypothesis Testing Using Confidence Interval
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+]
+.right-column[
+### Hypothesis testing using the CI
+
+We can also use the `\(1-\alpha\)` confidence interval to perform hypothesis tests (instead of `\(p\)`-values). The confidence interval will contain `\(\mu_0\)` when there is little to no evidence against `\(\text{H}_0\)` and will not contain `\(\mu_0\)` when there is strong evidence against `\(\text{H}_0\)`.
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+]
+.right-column[
+### Hypothesis testing using the CI
+Steps to perform a hypothesis test using a confidence interval:
+&gt;1. State `\(H_0\)` and `\(H_1\)`
+
+&gt;2. State `\(\alpha\)`, significance level
+
+&gt;3. State the form of 100 `\((1-\alpha)\)` %  CI along with all assumptions necessary. (use one-sided CI for one-sided tests and two-sided CI for two sided tests)
+
+&gt;4. Calculate the CI
+
+&gt;5. Based on 100 `\((1-\alpha)\)` % CI, either reject `\(H_0\)` (if `\(\mu_0\)` is not in the interval) or fail to reject (if `\(\mu_0\)` is in the interval )
+
+&gt;6. Interpret the conclusion in the content of the problem
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+]
+.right-column[
+**Example:**[Breaking strength of wire, cont'd]
+
+
+
+Suppose you are a manufacturer of construction equipment. You make `\(0.0125\)` inch wire rope and need to determine how much weight it can hold before breaking so that you can label it clearly. You have breaking strengths, in kg, for `\(41\)` sample wires with sample mean breaking strength `\(91.85\)` kg and sample standard deviation `\(17.6\)` kg. Using the appropriate `\(95\%\)` confidence interval, conduct a hypothesis test to find out if the true mean breaking strength is above `\(85\)` kg.
+
+Steps:
+&gt;1- `\(H_0: \ \ \mu= 85 \ vs.\quad H_1: \ \ \mu&gt; 85\)`
+
+&gt;2- `\(\alpha= 0.05\)`
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+]
+.right-column[
+**Example:**[Breaking strength of wire, cont'd]
+&gt;3- One-sided test and we care about the lower bound. So, we use `\((\overline{X}- z_{1-\alpha}\dfrac{s}{\sqrt{n}}, +\infty )\)`.
+
+&gt;4- From the example in previous set of slides, the CI is `\((87.3422, +\infty)\)`.
+
+&gt;5- Since `\(\mu_0 = 85\)` is not in the CI, we **reject** `\(H_0\)`.
+
+&gt;6- There is &lt;span style= "color:red"&gt; significant evidence&lt;/span&gt;  to conclude that the true mean breaking strength of wire is greater than the 85kg. Hence the requirement is met. 
+
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+]
+.right-column[
+**Example:** [Concrete beams, cont'd]
+
+10 concrete beams were each measured for flexural strength (MPa). The data is as follows.
+
+ [1]  8.2  8.7  7.8  9.7  7.4  7.8  7.7 11.6 11.3 11.8
+
+The sample mean was `\(9.2\)` MPa and the sample variance was `\(3.0933\)` `\((MPa)^2\)`. At `\(\alpha= 0.01\)`, test the hypothesis that the true mean flexural strength is `\(10\)` MPa using a confidence interval.
+Steps:
+&gt;1- `\(H_0: \ \ \mu= 105 \ vs.\quad H_1: \ \ \mu\ne 10\)`
+
+&gt;2- `\(\alpha= 0.01\)`
+
+&gt; 3- This is two-sided test with `\(n=10\)` and 100 `\((1-\alpha)\)` % CI is 
+`$$(\overline{X}- t_{(n-1, 1-\alpha/2)}\dfrac{s}{\sqrt{n}}, \overline{X}+ t_{(n-1, 1-\alpha/2)}\dfrac{s}{\sqrt{n}})$$`
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+]
+.right-column[
+**Example:**[Breaking strength of wire, cont'd]
+
+&gt; 4- Check that the CI is `\((7.393, 11.007)\)`.
+
+&gt; 5- Since `\(\mu_0 = 10\)` is within the CI, we **fail** to reject `\(H_0\)`.
+
+&gt; 6- There is &lt;span style= "color:red"&gt; not enough  evidence&lt;/span&gt;  to conclude that the true mean flexural strength is different from 10 Mpa. 
+ 
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+]
+.right-column[
+**Example:**[Paint thickness, cont'd]
+
+Consider the following sample of observations on coating thickness for low-viscosity paint.
+
+ [1] 0.83 0.88 0.88 1.04 1.09 1.12 1.29 1.31 1.48 1.49 1.59 1.62 1.65 1.71
+[15] 1.76 1.83
+
+Using `\(\alpha= 0.1\)`, test the hypothesis that the true mean paint thickness is `\(1.00\)` mm. Note, the `\(90\)`\% confidence interval for the true mean paint thickness was calculated from before as `\((1.201,1.499)\)`.
+
+&gt;1- `\(H_0: \ \ \mu= 15 \ vs.\quad H_1: \ \ \mu\ne 1\)`
+
+&gt;2- `\(\alpha= 0.1\)`
+
+&gt; 3- This is two-sided test with `\(n=16\)`, `\(\sigma\)` unknown, so 100 `\((1-\alpha)\)` % CI is 
+`$$(\overline{X}- t_{(n-1, 1-\alpha/2)}\dfrac{s}{\sqrt{n}}, \overline{X}+ t_{(n-1, 1-\alpha/2)}\dfrac{s}{\sqrt{n}})$$`
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+]
+.right-column[
+**Example:**[Breaking strength of wire, cont'd]
+
+&gt; 4- The CI is `\((1.201,1.499)\)`.
+
+&gt; 5- Since `\(\mu_0 = 1\)` is not in the  the CI, we **reject**   `\(H_0\)`.
+
+&gt; 6- There is &lt;span style= "color:red"&gt;  enough  evidence&lt;/span&gt;  to conclude that the true mean paint thickness is not 1mm. 
+ 
+]
+---
+layout: true
+class: center, middle, inverse
+---
+#Section 6.4
+#Inference for matched pairs and two-sample data
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+
+
 
 ]
     </textarea>

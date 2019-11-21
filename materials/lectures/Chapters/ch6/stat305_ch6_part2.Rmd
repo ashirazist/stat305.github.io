@@ -960,7 +960,261 @@ layout:false
 ###Two-sample
 ]
 .right-column[
+### Inference for matched pairs and two-sample data
+An important type of application of confidence interval estimation and significance testing is when we either have *paired data* or *two-sample* data.
 
+###Recall: Matched pairs
+
+Paired data is bivariate responses that consists of several determinations of basically the same characteristics
+>**Example:** <br>
+
+>- Practice SAT scores *before* and *after* a preperation course
+
+>- Severity of a disease *before* and *after* a treatment
+
+>- Fuel economy of cars  *before* and *after* testing new formulations of gasoline
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+## Inference for matched pairs and two-sample data
+
+One simple method of investigating the possibility of a consistent difference between paired data is to
+
+>1. Reduce the measurements on each object to a single difference between them
+
+>2. Methods of confidence interval estimation and significance testing applied to differences (using Normal or t distributions when appropriate)
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+
+**Example:**[Fuel economy]
+
+Twelve cars were equipped with radial tires and driven over a test course. Then **the same twelve cars** (with the same drivers) were equipped with regular belted tires and driven over the same course. 
+
+After each run, the cars gas economy (in km/l) was measured. Using significance level $\alpha= 0.05$ and the method of critical values, test for a difference in fuel economy between the radial tires and belted tires. 
+
+Construct a 95% confidence interval for <span style= "color:red">true mean difference due to tire type.</span> (i.e $\mu_d$)
+
+
+```{r}
+tires <- data.frame(car = 1:12,
+                    radial = c(4.2, 4.7, 6.6, 7.0, 6.7, 4.5, 5.7, 6.0, 7.4, 4.9, 6.1, 5.2),
+                    belted = c(4.1, 4.9, 6.2, 6.9, 6.8, 4.4, 5.7, 5.8, 6.9, 4.7, 6.0, 4.9))
+
+kable(t(tires), format = "html")
+```
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+**Example:**[Fuel economy]
+```{r}
+tires<- tires %>% mutate(d=radial-belted )
+
+kable(t(tires), format = "html")
+```
+
+Since we have paired data, the first thing to do is to find the differences of the paired data. ( $d= d_1 - d_2$, where $d_1$ is associated with radial and $d_2$ is associated with belted tires.)
+
+Then writing down the information available:
+$$n= 12,\quad \overline{d}= 0.142,\quad s_d= 0.198$$
+ $$\color{red}{\overline{d}= \frac{1}{n}\sum_{i=1}^{n}d_i}, \quad \color{blue}{s^{2}_{d}= \frac{1}{n-1}\sum_{i=1}^{n}(d_{i} - \overline{d})^{2}}$$
+
+
+Then we just need to apply steps of hypothesis testing. Note that the null hypothesis here is that<span style= "color:red"> **there is no difference** between the gas economy recorded of the two different tires.</span>(i.e $\mu_{d}=0$)
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+**Example:**[Fuel economy]
+
+>1- $H_0: \ \ \mu_d= 0 \ vs.\quad H_1: \ \ \mu_d\ne 0$
+
+>2- $\alpha= 0.05$
+
+> 3- I will use the test statistics $K=\frac{\overline{d}-0}{s_d/\sqrt{n}}$ which has a $t_{n-1}$ distribution assuming that<br> 
+
+  >- $H_{0}$ is true and 
+  
+  >- $d_{1}, d_{2}, \cdots, d_{12}$ are iid $N(\mu_{d}, \sigma_{d}^{2})$ 
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+**Example:**[Breaking strength of wire, cont'd]
+
+> 4- $K= \frac{0.421}{0.198/\sqrt{12}}= 2.48 \sim t_{(11, 0.975)}$.
+
+>\begin{align} p-value &= P(\vert{T}\vert > K)= P(\vert{T}\vert > 2.48)\\\\
+&=P(T > 2.48) + P(T <- 2.48)\\\\
+> &=1- P(T < 2.48) + P(T <- 2.48)\\\\
+>(\text{by the t table})&=1- 0.9847+ 0.9694= 0.03 
+>\end{align}
+
+> 5- Since p-value < 0.05, we  **reject**   $H_0$.
+
+> 6- There is <span style= "color:red">  enough  evidence</span>  to conclude that fuel economy differs between radial and belted tires. 
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+**Example:**[Breaking strength of wire, cont'd]
+
+A two-sided 95% confidence interval for the true mean fuel economy **difference** is
+\begin{align}
+(\overline{d}- t_{(n-1, 1-\color{red}{\alpha/2})}\frac{s_d}{\sqrt{n}}\ &,\  \overline{d}+ t_{(n-1, 1-\color{red}{\alpha/2})}\frac{s_d}{\sqrt{n}})\\\\
+= (0.142- t_{(11, 0.975)}\frac{0.198}{\sqrt{12}}\ &,\  0.142+ t_{(11, 0.975)}\frac{0.198}{\sqrt{12}})\\\\
+= (0.142- 2.2\frac{0.198}{\sqrt{12}}\ &,\  0.142+ 2.2\frac{0.198}{\sqrt{12}})\\\\
+=(0.0164\ &,\ 0.2764)
+\end{align}
+Note that $d= d_1 - d_2$, so the interpretation will be:
+
+We are 95% confident that the radial tires get between 0.0166 km/l and 0.2674 km/l more in fuel economy than belted tires on average
 
 
 ]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+**Example:**[End-cut router]
+
+Consider the operation of an end-cut router in the manufacture of a company's wood product. Both a leading-edge and a trailing-edge measurement were made on each wooden piece to come off the router. 
+
+Is the leading-edge measurement different from the trailing-edge measurement for a typical wood piece? 
+
+Do a hypothesis test at $\alpha= 0.05$ to find out. Make a two-sided 95% confidence interval for the true mean of the difference between the measurements.
+
+
+```{r}
+wood <- data.frame(piece =1:5,
+                   leading_edge = c(.168, .170, .165, .165, .170),
+                   trailing_edge = c(.169, .168, .168, .168, .169))
+
+kable(t(wood), format = "html")
+```
+
+
+]
+---
+layout:true
+class: center, middle, inverse
+---
+#Two-Sample Data
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+### Two-sample data
+
+Paired differences provide inference methods of a special kind for comparison. Methods that can be used to compare two means where two different *unrelated* samples will be discussed next.
+
+
+>SAT score of high school A vs. high school B
+
+>Severity of a disease in men vs. women
+
+>Height of Liverpool soccerr players vs. Man United soccer players
+
+>Fuel economy of gas formula type A vs. formula type B
+
+
+]
+---
+layout:false
+.left-column[
+###Hypothesis Testing
+###Null
+###Alternative
+###P-value
+###CI method
+###Matched Pairs
+###Two-sample
+]
+.right-column[
+### Two-sample data
+
+####Notations:
+
+
+]
+
+

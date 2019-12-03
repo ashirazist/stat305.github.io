@@ -1445,7 +1445,7 @@ $\text{E}(\overline{X}_1 - \overline{X}_2) = \text{E}(\overline{X}_1) - \text{E}
 
 &nbsp;
 
-$\text{Var}(\overline{X}_1 - \overline{X}_2) = \text{Var}(\overline{X}_1) -  \text{Var}(\overline{X}_2) = \frac{\sigma_1^2}{n_1}+ \frac{\sigma_2^2}{n_2}$
+$\text{Var}(\overline{X}_1 - \overline{X}_2) = \text{Var}(\overline{X}_1) +  \text{Var}(\overline{X}_2) = \frac{\sigma_1^2}{n_1}+ \frac{\sigma_2^2}{n_2}$
 
 ]
 ---

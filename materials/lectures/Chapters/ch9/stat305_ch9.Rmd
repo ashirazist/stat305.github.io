@@ -76,10 +76,11 @@ Recall:
 **Goal:** We want to use inference to get interval estimates for our slope and predicted values and significance tests that the slope is not equal to zero.
 ]
 ---
-layout: true
-calss: center, middle, inverse
----
-## Variance Estimation
+class: center, middle, inverse
+layout: yes
+name: inverse
+
+##Variance Estimation
 ---
 layout:false
 .left-column[
@@ -121,7 +122,7 @@ layout:false
  
  >It has $\nu= n-2$ degrees of freedom because we must estimate 2 quantities $\beta_0$ and $\beta_1$ to calculate it.
  
- >$s_{LF}^2$ estimates the level of basic background variation $\sigma^2$, whenever the model is an adequate description of the data.
+ > $s_{LF}^{2}$ estimates the level of basic background variation $\sigma^2$, whenever the model is an adequate description of the data.
 
  ]
  
@@ -144,7 +145,7 @@ layout:false
 #### Inference for $\beta_1$:</br>
 We are often interested in testing if $\beta_1 = 0$. This tests whether or not there is a *significant linear relationship* between $x$ and $y$. We can do this using
 
->1. 100*$(1-\alpha)$% confidence interval 
+>1. 100* $(1-\alpha)$ % confidence interval 
 
 >2.Formal hypothesis tests
 
@@ -357,9 +358,9 @@ layout:false
 
 > 4- $K= \frac{4.8667\exp{-5}}{1.817\exp{-6}}= 26.7843 > t_{(13, .975)= 2.160}$. So, 
 
-> p-value $= P(\vert{T}\vert > K)< 0.05) = \alpha$
+> p-value $= P(\vert{T}\vert > K)< 0.05 = \alpha$
 
-> 5- Since $K= 26.7843 > 2.160= t_{(13, .975)$, we  **reject**   $H_0$.
+> 5- Since $K= 26.7843 > 2.160= t_{(13, .975)}$, we  **reject**   $H_0$.
 
 > 6- There is <span style= "color:red">  enough  evidence</span>  to conclude that there is **a linear relationship between density and pressure**
 

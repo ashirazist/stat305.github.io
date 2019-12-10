@@ -519,10 +519,9 @@ layout:false
 ### Inference for mean response
 
 Using JMP we can get 
-`$$s_{LF}\sqrt{(\frac{1}{n} + \frac{(x - \overline{x})^2}{\sum(x_i - \overline{x})^2})}= \sqrt{(\frac{s_{LF}^2}{n} + (x - \overline{x})^2\frac{s_{LF}^2}{\sum(x_i - \overline{x})^2})}\\
-= \hat{Var}(b_1)$$`
+`$$s_{LF}\sqrt{(\frac{1}{n} + \frac{(x - \overline{x})^2}{\sum(x_i - \overline{x})^2})}= \sqrt{(\frac{s_{LF}^2}{n} + (x - \overline{x})^2\frac{s_{LF}^2}{\sum(x_i - \overline{x})^2})}\\$$`
 Note that:
-&gt;We can get `\(\hat{Var}(b_0)\)` from JMP as `\((SE(b_1))^2\)`
+&gt;We can get `\(\hat{Var}(b_1)\)` from JMP as `\((SE(b_1))^2\)`
 
 ]
 ---
@@ -573,8 +572,7 @@ Therefore, a two-sided `\(95\)`% confidence interval for the true mean density a
 `\begin{align}
 &amp;\hat\mu_{Y\vert{x= 4000}} \pm t_{(n-2, 1-\alpha/2)}\ \times \  s_{LF}\sqrt{(\frac{1}{n} + \frac{(x - \overline{x})^2}{\sum(x_i - \overline{x})^2})}\\\\
 &amp;= 2.569648 \pm t_{(15-2, 0.975)}\times{(0.0062933)}\\\\
-&amp;= 2.569648 \pm 2.160\times{(0.0062933)}\\\\
-&amp;=(2.5561\ ,\ 2.5833)
+&amp;= 2.569648 \pm 2.160\times{(0.0062933)}=(2.5561\ ,\ 2.5833)
 \end{align}`
 We are 95% cofident that the true mean density of the ceramics at 4000 psi is between 2.5561 and 2.5833.
 ]
@@ -596,13 +594,11 @@ Now calculate and interpret a 2-sided `\(95\)`% confidence interval for the true
 = 2.375 + 4.8667\times10^{-5}\times(5000)= 2.618335$$`
 
 and 
-
 `\begin{align}
 &amp;s_{LF}\sqrt{(\frac{1}{n} + \frac{(x - \overline{x})^2}{\sum(x_i - \overline{x})^2})}  \\\\
 &amp;= \sqrt{(\frac{s_{LF}^2}{n} + (x - \overline{x})^2\frac{s_{LF}^2}{\sum(x_i - \overline{x})^2})}\\\\
 &amp;= \sqrt{\frac{0.00395}{15} + (5000- 6000)^2 (1.817\times 10^{-6})^2}\\\\
-&amp;= \sqrt{0.00002970}\\\\
-&amp;= 0.005449
+&amp;= \sqrt{0.00002970}= 0.005449
 \end{align}`
 ]
 ---
@@ -620,12 +616,12 @@ layout:false
 Therefore, a two-sided `\(95\)`% confidence interval for the true mean density at 4000 psi is
 
 `\begin{align}
-&amp;\hat\mu_{Y\vert{x= 5000}} \pm t_{(n-2, 1-\alpha/2)}\ \times \  s_{LF}\sqrt{(\frac{1}{n} + \frac{(x - \overline{x})^2}{\sum(x_i - \overline{x})^2})}\\\\
+&amp;\hat\mu_{Y\vert{x= 4000}} \pm t_{(n-2, 1-\alpha/2)}\ \times \  s_{LF}\sqrt{(\frac{1}{n} + \frac{(x - \overline{x})^2}{\sum(x_i - \overline{x})^2})}\\\\
 &amp;= 2.618335 \pm t_{(15-2, 0.975)}\times{(0.005449)}\\\\
 &amp;= 2.618335 \pm 2.160\times{(0.005449)}\\\\
 &amp;=(2.60656\ ,\ 2.63011)
 \end{align}`
-We are 95% cofident that the true mean density of the ceramics at 5000 psi is between 2.60656 and 2.63011
+We are 95% cofident that the true mean density of the ceramics at 4000 psi is between 2.60656 and 2.63011
 ]
 ---
 layout: true
@@ -717,7 +713,7 @@ layout:false
 .right-column[
 **Example:**[Stack loss]
 
-Consider a chemical plant that makes nitric acid from ammonia. We want to predict stack loss ($y$, 10 times the \% of ammonia lost) using
+Consider a chemical plant that makes nitric acid from ammonia. We want to predict stack loss ( `\(y\)`, 10 times the `\(\%\)` of ammonia lost) using
 
 &gt; `\(x_1\)`: air flow into the plant
 
@@ -983,6 +979,146 @@ Then
 = (0.2834\, \ 0.87.127)$$`
 
 We are 90% confident that for every one degree increase in temprature **with all other covariates held constant**, stack loss is expected to increase by anywhere from 0.2834 units to 0.8713 units.
+]
+---
+layout: true
+class: center, middle, inverse
+---
+## Inference for Mean Response
+---
+layout:false
+.left-column[
+### Simple Linear Regression
+### Variance Estimation
+### MSE
+### Inference for Parameters
+### Inference for mean response
+### MLR
+]
+.right-column[
+
+### Inference for mean response
+
+We can also estimate the mean response at the set of covariate values, `\((x_1,x_2,\dots,x_{p-1})\)`. Under the model assumptions, the estimated mean response, `\(\hat{\mu_{y|\boldsymbol x}}\)`, at `\(\boldsymbol x=(x_1,x_2,\dots,x_{p-1})\)` is **Normally distributed** with:
+`$$\mathbb{E}(\hat{\mu_{y|\boldsymbol x}})=\mu_{y|\boldsymbol x}= \beta_0 +\beta_1 \boldsymbol{x}_1+\cdots \beta_{p-1}\boldsymbol{x}_{p-1}$$`
+and
+
+`$$Var(\hat{\mu_{y|\boldsymbol x}})= \sigma^2 A^2$$`
+for some constant A, that is hard to compute by hand. 
+]
+---
+layout:false
+.left-column[
+### Simple Linear Regression
+### Variance Estimation
+### MSE
+### Inference for Parameters
+### Inference for mean response
+### MLR
+]
+.right-column[
+
+### Inference for mean response
+
+Then, under the model assumptions
+`$$Z= \frac{\hat{\mu_{y|\boldsymbol x}}- \mu_{y|\boldsymbol x}}{\sigma A}\sim N(0,1)$$`
+and 
+`$$T=\frac{\hat{\mu_{y|\boldsymbol x}}- \mu_{y|\boldsymbol x}}{\color{red}{s_{LF}}A}$$`
+And a test statistic for testing `\(\text{H}_0: \mu_{y|\boldsymbol x} = \#\)` is
+
+`$$K=\frac{\hat{\mu_{y|\boldsymbol x}}- \#}{\color{red}{s_{LF}}A}$$`
+which has a `\(t_{(n-p)}\)` distribution under `\(H_0\)` if the model holds true.
+]
+---
+layout:false
+.left-column[
+### Simple Linear Regression
+### Variance Estimation
+### MSE
+### Inference for Parameters
+### Inference for mean response
+### MLR
+]
+.right-column[
+
+### Inference for mean response
+
+A 2-sided `\((1-\alpha)100\)`% CI for `\(\mu_{y|\boldsymbol x}\)` is
+
+`$$\hat{\mu_{y|\boldsymbol x}} \pm t_{(n-p, 1-\alpha/2)}\times s_{LF} A$$`
+Note that the one-sided CI will be analogous.
+
+&gt;Note: `\(S_{LF} A= SE(\hat{\mu_{y|\boldsymbol x}})\)`, and we can use JMP to get this. 
+
+]
+---
+layout:false
+.left-column[
+### Simple Linear Regression
+### Variance Estimation
+### MSE
+### Inference for Parameters
+### Inference for mean response
+### MLR
+]
+.right-column[
+**Example:**[Stack loss, cont'd]
+
+We can use JMP to compute a 2-sided 95\% CI around the mean response at point 3:
+`$$x_1 = 62, x_2= 23, x_3 = 87,y = 18$$`
+]
+---
+layout:false
+.left-column[
+### Simple Linear Regression
+### Variance Estimation
+### MSE
+### Inference for Parameters
+### Inference for mean response
+### MLR
+]
+.right-column[
+**Example:**[Stack loss, cont'd]
+
+&lt;img src= "images/get_multi_sterror.png" height=500&gt;
+&lt;figcaption&gt;How to get predicted values and standard errors&lt;/figcaption&gt;
+]
+---
+layout:false
+.left-column[
+### Simple Linear Regression
+### Variance Estimation
+### MSE
+### Inference for Parameters
+### Inference for mean response
+### MLR
+]
+.right-column[
+**Example:**[Stack loss, cont'd]
+
+&lt;img src= "images/stackloss_pred_error.png" height=500&gt;
+&lt;figcaption&gt;Predicted values and standard errors.&lt;/figcaption&gt;
+]
+---
+layout:false
+.left-column[
+### Simple Linear Regression
+### Variance Estimation
+### MSE
+### Inference for Parameters
+### Inference for mean response
+### MLR
+]
+.right-column[
+**Example:**[Stack loss, cont'd]
+
+With `\(t_{(n-p, 1-\alpha/2)}= t_{(13, .975)}= 2.16\)`, the 95% condidence interval is 
+`\begin{align}
+\hat{\mu_{y|\boldsymbol x}}&amp;\pm t_{(n-p, 1-\alpha/2)} SE(\hat{\mu_{y|\boldsymbol x}})\\\\
+= 19.2486 &amp;\pm 2.16\times (0.41785)\\\\
+= (18.343\ &amp;, \ 20.151)
+\end{align}`
+&gt;We are 95% confident that when air flow is 62 units, temperature is 23 degrees and the adjusted percentage of circulating acid is 87 units, the true mean stack loss is between 18.343 and 20.151 units. 
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

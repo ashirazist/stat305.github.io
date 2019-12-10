@@ -1023,10 +1023,10 @@ layout:false
 Then, under the model assumptions
 `$$Z= \frac{\hat{\mu_{y|\boldsymbol x}}- \mu_{y|\boldsymbol x}}{\sigma A}\sim N(0,1)$$`
 and 
-`$$T=\frac{\hat{\mu_{y|\boldsymbol x}}- \mu_{y|\boldsymbol x}}{\color{red}{s_{LF}}A}$$`
+`$$T=\frac{\hat{\mu_{y|\boldsymbol x}}- \mu_{y|\boldsymbol x}}{\color{red}{s_{SF}}A}$$`
 And a test statistic for testing `\(\text{H}_0: \mu_{y|\boldsymbol x} = \#\)` is
 
-`$$K=\frac{\hat{\mu_{y|\boldsymbol x}}- \#}{\color{red}{s_{LF}}A}$$`
+`$$K=\frac{\hat{\mu_{y|\boldsymbol x}}- \#}{\color{red}{s_{SF}}A}$$`
 which has a `\(t_{(n-p)}\)` distribution under `\(H_0\)` if the model holds true.
 ]
 ---
@@ -1045,10 +1045,10 @@ layout:false
 
 A 2-sided `\((1-\alpha)100\)`% CI for `\(\mu_{y|\boldsymbol x}\)` is
 
-`$$\hat{\mu_{y|\boldsymbol x}} \pm t_{(n-p, 1-\alpha/2)}\times s_{LF} A$$`
+`$$\hat{\mu_{y|\boldsymbol x}} \pm t_{(n-p, 1-\alpha/2)}\times s_{SF} A$$`
 Note that the one-sided CI will be analogous.
 
-&gt;Note: `\(S_{LF} A= SE(\hat{\mu_{y|\boldsymbol x}})\)`, and we can use JMP to get this. 
+&gt;Note: `\(S_{SF} A= SE(\hat{\mu_{y|\boldsymbol x}})\)`, and we can use JMP to get this. 
 
 ]
 ---

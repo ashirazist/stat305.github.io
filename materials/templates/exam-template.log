@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.26)  9 DEC 2019 01:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.26)  15 DEC 2019 10:35
 entering extended mode
 **./exam-template.tex
 (exam-template.tex
@@ -807,6 +807,21 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
 
+Underfull \hbox (badness 4913) in paragraph at lines 48--48
+[]\OT1/cmr/m/n/10 The exam is sched-uled for $\OML/cmm/m/it/10 if\OT1/cmr/m/n/1
+0 (\OML/cmm/m/it/10 time:length\OT1/cmr/m/n/10 )$$\OML/cmm/m/it/10 time:length$
+$else$\OT1/cmr/m/n/10 120 minutes$\OML/cmm/m/it/10 endif$\OT1/cmr/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 6675) in paragraph at lines 48--48
+\OT1/cmr/m/n/10 from $\OML/cmm/m/it/10 if\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 time
+:start\OT1/cmr/m/n/10 )$$\OML/cmm/m/it/10 time:start$$else$\OT1/cmr/m/n/10 09:4
+5$\OML/cmm/m/it/10 endif$ \OT1/cmr/m/n/10 to $\OML/cmm/m/it/10 if\OT1/cmr/m/n/1
+0 (\OML/cmm/m/it/10 time:stop\OT1/cmr/m/n/10 )$$\OML/cmm/m/it/10 time:stop$$els
+e$\OT1/cmr/m/n/10 11:45
+ []
+
 [1
 
 {C:/Users/4M1N/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
@@ -836,7 +851,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  24683 strings out of 492895
  623412 string characters out of 3124202
- 825529 words of memory out of 3000000
+ 825530 words of memory out of 3000000
  28209 multiletter control sequences out of 15000+200000
  12751 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -848,7 +863,7 @@ s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/4M1N/AppData/Local/Programs/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/4M1N/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/4M1N/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on exam-template.pdf (2 pages, 76164 bytes).
+Output written on exam-template.pdf (2 pages, 76597 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

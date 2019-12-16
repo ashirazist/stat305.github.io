@@ -124,19 +124,20 @@ The normal qq-plot of residual of the fit and the residual vs. predicted plot ar
 
 \vspace{0.5cm}
 
-\qparts{
-\part[2] Looking at the two plots above, are the assumptions of the regression model met?
-}
+
 \newpage
 Discouraged by the relationship between salary and GPA, the surveyors remember that they know the address of each respondant and are able to determine the median income of the area in which the respondant lives. 
 
 The JMP output below comes from fitting a linear relationship using for annual salary of the respondant ("\verb!salary!") using both the undergraduate GPA ("\verb!GPA!") and the median income of the area in which the respondant lives ("\verb!med_salary_loc!") (in thousands of dollars).
 
-\vspace{1cm}
+\vspace{0.3cm}
 \centerline{\includegraphics[scale=1]{salary_fit}}
-\vspace{1cm}
+\vspace{0.3cm}
 
 \qparts{
+
+\part[2] Looking at the two plots on the \textbf{bottom of page 2} (Residual vs. predicted variables () and Normal quantile plot), are the assumptions of the regression model met?\vspace{4cm}
+
 \part[3] Using the JMP output, write the equation of the fitted multivariate linear relationship between GPA, median salary income  and salary 
 
 \hfill \fbox{ \textcolor[rgb]{1.00,1.00,1.00}{$\bigcap$} \hskip -0.4cm $\hat y =$ \hspace{10cm}}
